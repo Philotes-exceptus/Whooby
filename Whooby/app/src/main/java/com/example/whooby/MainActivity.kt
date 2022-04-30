@@ -32,10 +32,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                 {
                     Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
                 }
-                else
-                    {
-                        Toast.makeText(this,"initialize failed",Toast.LENGTH_LONG).show()
-                    }
 
         }
     }
