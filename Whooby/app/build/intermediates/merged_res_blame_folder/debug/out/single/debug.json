@@ -12,16 +12,16 @@
         "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_ic_launcher_foreground.png.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_ic_launcher_foreground.png.flat",
@@ -116,11 +116,11 @@
         "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\font\\aclonica.xml"
     },
     {
-        "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_sysagar.jpeg.flat",
         "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\drawable-v24\\sysagar.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Admin\\Desktop\\Whooby\\Whooby\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     }
 ]
