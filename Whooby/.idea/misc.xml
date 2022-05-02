@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/layout/activity_main.xml" value="0.265625" />
+=======
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/drawable-v24/hover_buttons.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/drawable/hover_buttons.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/drawable/ic_launcher_background.xml" value="0.176" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/font/aclonica.xml" value="0.29583333333333334" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/layout/about.xml" value="0.265625" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/layout/activity_main.xml" value="0.265625" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/layout/home_screen.xml" value="0.265625" />
+        <entry key="..\:/Users/Admin/Desktop/Whooby/Whooby/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+>>>>>>> home_screen
       </map>
     </option>
   </component>

@@ -1,5 +1,9 @@
 R_DEF: Internal format may change without notice
 local
+<<<<<<< HEAD
+=======
+array com_google_android_gms_fonts_certs
+>>>>>>> home_screen
 color black
 color purple_200
 color purple_500
@@ -7,6 +11,7 @@ color purple_700
 color teal_200
 color teal_700
 color white
+<<<<<<< HEAD
 drawable hover_buttons
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -14,6 +19,27 @@ id button
 id editText
 layout activity_main
 mipmap ic_launcher
+=======
+drawable bg
+drawable hover_buttons
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable sysagar
+font aclonica
+id button
+id developer
+id editText
+id imageView3
+id root
+id sagar
+id textView2
+id whooby_button
+layout about
+layout activity_main
+layout home_screen
+mipmap ic_launcher
+mipmap ic_launcher_foreground
+>>>>>>> home_screen
 mipmap ic_launcher_round
 string app_name
 style Theme.Whooby

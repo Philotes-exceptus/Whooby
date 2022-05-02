@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+<<<<<<< HEAD
+=======
+    <string-array name="com_google_android_gms_fonts_certs">arr</string-array>
+>>>>>>> home_screen
     <color name="black">#FF000000</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

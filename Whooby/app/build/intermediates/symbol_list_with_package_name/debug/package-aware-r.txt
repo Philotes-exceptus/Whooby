@@ -63,6 +63,10 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
+<<<<<<< HEAD
+=======
+array com_google_android_gms_fonts_certs
+>>>>>>> home_screen
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -2437,6 +2441,10 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+<<<<<<< HEAD
+=======
+drawable bg
+>>>>>>> home_screen
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2503,10 +2511,18 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+<<<<<<< HEAD
+=======
+drawable sysagar
+>>>>>>> home_screen
 drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+<<<<<<< HEAD
+=======
+font aclonica
+>>>>>>> home_screen
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2659,6 +2675,10 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+<<<<<<< HEAD
+=======
+id developer
+>>>>>>> home_screen
 id dialog_button
 id dimensions
 id direct
@@ -2723,6 +2743,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+<<<<<<< HEAD
+=======
+id imageView3
+>>>>>>> home_screen
 id immediateStop
 id included
 id info
@@ -2850,8 +2874,15 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+<<<<<<< HEAD
 id rounded
 id row_index_key
+=======
+id root
+id rounded
+id row_index_key
+id sagar
+>>>>>>> home_screen
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2938,6 +2969,10 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+<<<<<<< HEAD
+=======
+id textView2
+>>>>>>> home_screen
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2977,6 +3012,10 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id west
+<<<<<<< HEAD
+=======
+id whooby_button
+>>>>>>> home_screen
 id withText
 id withinBounds
 id wrap
@@ -3070,6 +3109,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+<<<<<<< HEAD
+=======
+layout about
+>>>>>>> home_screen
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3087,6 +3130,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+<<<<<<< HEAD
+=======
+layout home_screen
+>>>>>>> home_screen
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3161,6 +3208,10 @@ layout text_view_without_line_height
 menu example_menu
 menu example_menu2
 mipmap ic_launcher
+<<<<<<< HEAD
+=======
+mipmap ic_launcher_foreground
+>>>>>>> home_screen
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
