@@ -32,12 +32,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-=======
         <activity
             android:name="com.example.whooby.opening"
             android:exported="true" />
->>>>>>> home_screen
 
         <provider
             android:name="androidx.startup.InitializationProvider"

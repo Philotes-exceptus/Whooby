@@ -1,16 +1,9 @@
 -- Merging decision tree log ---
 manifest
-<<<<<<< HEAD
-ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-=======
 ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
->>>>>>> home_screen
 MERGED from [androidx.core:core-ktx:1.7.0] C:\Users\Admin\.gradle\caches\transforms-3\f83e1b603bd1cb754cdf6be507666a50\transformed\core-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Admin\.gradle\caches\transforms-3\b21dd1d969b1b90338eb5a4fcebf64d6\transformed\material-1.5.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Admin\.gradle\caches\transforms-3\afcfaec32485a108823941ac4a541d55\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
@@ -51,34 +44,20 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Admin\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\687404e525885db7c85d59bd690fd292\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\ad7d2c64d7e0a72e024491ba50d4cdcb\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Admin\.gradle\caches\transforms-3\b3b3a01d8468e428f579e51d5e14bd4c\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-<<<<<<< HEAD
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-=======
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
->>>>>>> home_screen
 	package
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:3:5-33
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
-<<<<<<< HEAD
-		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
-	android:versionCode
-		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-27:12
-=======
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:1-30:12
->>>>>>> home_screen
 		INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:2:11-69
@@ -95,11 +74,7 @@ ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
 	android:name
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:7:19-60
 application
-<<<<<<< HEAD
-ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:9:5-25:19
-=======
 ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:9:5-28:19
->>>>>>> home_screen
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Admin\.gradle\caches\transforms-3\b21dd1d969b1b90338eb5a4fcebf64d6\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.5.0] C:\Users\Admin\.gradle\caches\transforms-3\b21dd1d969b1b90338eb5a4fcebf64d6\transformed\material-1.5.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Admin\.gradle\caches\transforms-3\afcfaec32485a108823941ac4a541d55\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -144,15 +119,12 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:27-74
-<<<<<<< HEAD
-=======
 activity#com.example.whooby.opening
 ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:26:5-27:44
 	android:exported
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:27:9-32
 	android:name
 		ADDED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:26:15-38
->>>>>>> home_screen
 uses-sdk
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml
