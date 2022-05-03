@@ -1,6 +1,7 @@
 Whooby/.gradle/
 Whooby/.idea/
 Whooby/app/build/
+Whooby/.idea/workspace.xml
 # Built application files
 *.apk
 *.aar
