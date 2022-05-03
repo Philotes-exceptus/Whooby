@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import java.util.*
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var btn: Button = findViewById(R.id.button)
+        var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
