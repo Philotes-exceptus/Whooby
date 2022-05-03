@@ -1,5 +1,6 @@
 Whooby/.gradle/
 Whooby/.idea/
+Whooby/app/build/
 
 # Built application files
 *.apk

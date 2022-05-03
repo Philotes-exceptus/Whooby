@@ -10,9 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dc104fc-241e-4271-9061-734f8d29c2c2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/hover_buttons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/hover_buttons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/whooby/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/whooby/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,14 +79,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder/Whooby" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\mipmap-anydpi-v26" />
-      <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\drawable" />
       <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\drawable" />
+      <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\mipmap-anydpi-v26" />
       <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res\authors" />
       <recent name="C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\res" />
     </key>

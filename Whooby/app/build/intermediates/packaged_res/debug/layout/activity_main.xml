@@ -6,23 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
+    <ImageView
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Speak"
+        android:layout_width="76dp"
+        android:layout_height="69dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintVertical_bias="0.466"
+        android:background="@drawable/sound_icon"
+        android:foreground="@drawable/sound_icon"
+        tools:srcCompat="@drawable/sound_icon" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="350dp"
         android:layout_height="111dp"
         android:ems="10"
+        android:hint="type your words....."
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

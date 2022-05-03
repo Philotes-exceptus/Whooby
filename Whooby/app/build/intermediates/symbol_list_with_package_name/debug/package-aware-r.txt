@@ -1272,6 +1272,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -1754,6 +1755,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -2505,6 +2507,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable sound_icon
 drawable sysagar
 drawable test_custom_background
 drawable test_level_drawable
