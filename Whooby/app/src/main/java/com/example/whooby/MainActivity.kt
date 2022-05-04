@@ -1,8 +1,10 @@
 package com.example.whooby
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {
         if(status== TextToSpeech.SUCCESS)
             {
-            val res : Int = textToSpeech.setLanguage(Locale.ENGLISH)
+            val res : Int = textToSpeech.setLanguage(Locale("hin"));
                 if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
                 {
                     Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
@@ -36,4 +38,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         }
     }
+
+
 }

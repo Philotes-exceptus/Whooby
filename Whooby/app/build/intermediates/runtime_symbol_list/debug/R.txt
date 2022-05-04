@@ -2440,6 +2440,7 @@ int drawable abc_vector_test 0x7f080055
 int drawable avd_hide_password 0x7f080056
 int drawable avd_show_password 0x7f080057
 int drawable bg 0x7f080058
+int drawable bg_for_lang 0x7f0800a1
 int drawable btn_checkbox_checked_mtrl 0x7f080059
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f08005a
 int drawable btn_checkbox_unchecked_mtrl 0x7f08005b
@@ -2448,6 +2449,7 @@ int drawable btn_radio_off_mtrl 0x7f08005d
 int drawable btn_radio_off_to_on_mtrl_animation 0x7f08005e
 int drawable btn_radio_on_mtrl 0x7f08005f
 int drawable btn_radio_on_to_off_mtrl_animation 0x7f080060
+int drawable converter 0x7f0800a2
 int drawable design_fab_background 0x7f080061
 int drawable design_ic_visibility 0x7f080062
 int drawable design_ic_visibility_off 0x7f080063
@@ -2506,12 +2508,12 @@ int drawable notification_template_icon_bg 0x7f080097
 int drawable notification_template_icon_low_bg 0x7f080098
 int drawable notification_tile_bg 0x7f080099
 int drawable notify_panel_notification_icon_bg 0x7f08009a
-int drawable sound_icon 0x7f0800a0
-int drawable sysagar 0x7f08009b
-int drawable test_custom_background 0x7f08009c
-int drawable test_level_drawable 0x7f08009d
-int drawable tooltip_frame_dark 0x7f08009e
-int drawable tooltip_frame_light 0x7f08009f
+int drawable sound_icon 0x7f08009b
+int drawable sysagar 0x7f08009c
+int drawable test_custom_background 0x7f08009d
+int drawable test_level_drawable 0x7f08009e
+int drawable tooltip_frame_dark 0x7f08009f
+int drawable tooltip_frame_light 0x7f0800a0
 int font aclonica 0x7f090000
 int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
@@ -2612,6 +2614,8 @@ int id bounceBoth 0x7f0a005f
 int id bounceEnd 0x7f0a0060
 int id bounceStart 0x7f0a0061
 int id button 0x7f0a0062
+int id button2 0x7f0a01e4
+int id button3 0x7f0a01e5
 int id buttonPanel 0x7f0a0063
 int id cache_measures 0x7f0a0064
 int id callMeasure 0x7f0a0065
@@ -2646,6 +2650,7 @@ int id content 0x7f0a0081
 int id contentPanel 0x7f0a0082
 int id contiguous 0x7f0a0083
 int id continuousVelocity 0x7f0a0084
+int id converter 0x7f0a01e6
 int id coordinator 0x7f0a0085
 int id cos 0x7f0a0086
 int id counterclockwise 0x7f0a0087
@@ -2730,6 +2735,7 @@ int id ifRoom 0x7f0a00d5
 int id ignore 0x7f0a00d6
 int id ignoreRequest 0x7f0a00d7
 int id image 0x7f0a00d8
+int id imageView 0x7f0a01e7
 int id imageView3 0x7f0a00d9
 int id immediateStop 0x7f0a00da
 int id included 0x7f0a00db
@@ -3101,6 +3107,7 @@ int layout design_navigation_menu_item 0x7f0d002b
 int layout design_text_input_end_icon 0x7f0d002c
 int layout design_text_input_start_icon 0x7f0d002d
 int layout home_screen 0x7f0d002e
+int layout language_option 0x7f0d0076
 int layout m3_alert_dialog 0x7f0d002f
 int layout m3_alert_dialog_actions 0x7f0d0030
 int layout m3_alert_dialog_title 0x7f0d0031

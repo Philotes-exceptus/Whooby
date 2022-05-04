@@ -2441,6 +2441,7 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg
+drawable bg_for_lang
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2449,6 +2450,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable converter
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2613,6 +2615,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id button
+id button2
+id button3
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -2647,6 +2651,7 @@ id content
 id contentPanel
 id contiguous
 id continuousVelocity
+id converter
 id coordinator
 id cos
 id counterclockwise
@@ -2731,6 +2736,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageView3
 id immediateStop
 id included
@@ -3102,6 +3108,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout home_screen
+layout language_option
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

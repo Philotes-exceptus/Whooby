@@ -53,9 +53,16 @@ class opening : AppCompatActivity() {
         if(view.getId()==R.id.whooby_button);
         startActivity(intent);
 
-
-
     }
 
+    fun convert(view: View)
+    {
+
+        intent = Intent(applicationContext, language_select::class.java)
+        startActivity(intent)
+
+        if(view.getId()==R.id.converter);
+        startActivity(intent);
+    }
 
 }
