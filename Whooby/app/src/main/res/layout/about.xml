@@ -11,15 +11,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/aclonica"
-        android:text="hoii....!!! Namewa Sy"
+        android:text="hoii....!!! Namaewa SySagar"
         android:textColor="#C83F3F"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sagar"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.112" />
 
     <ImageView
         android:id="@+id/sagar"
@@ -27,9 +27,8 @@
         android:layout_height="251dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087"
+        app:layout_constraintVertical_bias="0.416"
         app:srcCompat="@drawable/sysagar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

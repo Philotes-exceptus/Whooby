@@ -18,6 +18,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".language_select"
+            android:exported="true">
+        </activity>
+
     <activity android:name=".opening"
         android:exported="true">
 

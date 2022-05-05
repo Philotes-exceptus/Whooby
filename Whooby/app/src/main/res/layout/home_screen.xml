@@ -18,29 +18,61 @@
 
     <Button
         android:id="@+id/whooby_button"
-        android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_width="152dp"
+        android:layout_height="98dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+<<<<<<< HEAD
         android:alpha="0.8"
         android:text="WHOOBY"
+=======
+        android:alpha="0.6"
+>>>>>>> hindi_tts
         android:onClick="mainApp"
+        android:text="WHOOBY"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.33" />
 
-    <Button
+    <ImageView
         android:id="@+id/developer"
+<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Developers"
         android:alpha="0.8"
+=======
+        android:layout_width="121dp"
+        android:layout_height="108dp"
+        android:alpha="0.6"
+>>>>>>> hindi_tts
         android:onClick="abt_author"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
+        app:srcCompat="@drawable/developer"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/converter"
+        android:layout_width="92dp"
+        android:layout_height="86dp"
+        android:onClick="convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"
+        app:srcCompat="@drawable/converter"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
