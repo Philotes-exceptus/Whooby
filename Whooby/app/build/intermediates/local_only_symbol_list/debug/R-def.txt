@@ -13,6 +13,7 @@ color white
 drawable bg
 drawable bg_for_lang
 drawable converter
+drawable developer
 drawable hover_buttons
 drawable ic_launcher_background
 drawable ic_launcher_foreground

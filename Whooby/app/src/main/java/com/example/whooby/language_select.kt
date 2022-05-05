@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import kotlin.properties.Delegates
@@ -40,6 +41,12 @@ open class language_select : AppCompatActivity() {
             lang_code=1
         else
             lang_code=2
+
+        if(lang_code==1)
+        Toast.makeText(this, "Hindi has been selected", Toast.LENGTH_SHORT).show();
+        else
+        if(lang_code==2)
+            Toast.makeText(this, "English has been selected", Toast.LENGTH_SHORT).show();
 
     }
     }
