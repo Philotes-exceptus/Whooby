@@ -18,11 +18,12 @@
         app:srcCompat="@drawable/bg_for_lang" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Hindi_button"
         android:layout_width="146dp"
         android:layout_height="78dp"
         android:text="Hindi"
         android:tag="1"
+        android:onClick="setLanguage"
         android:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -32,11 +33,12 @@
         app:layout_constraintVertical_bias="0.283" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/English_button"
         android:layout_width="147dp"
         android:layout_height="77dp"
         android:text="English"
         android:tag="2"
+        android:onClick="setLanguage"
         android:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,16 +1,13 @@
 package com.example.whooby
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import com.example.whooby.R
+import androidx.appcompat.app.AppCompatActivity
 
 class opening : AppCompatActivity() {
 
@@ -59,10 +56,11 @@ class opening : AppCompatActivity() {
     {
 
         intent = Intent(applicationContext, language_select::class.java)
-        startActivity(intent)
+
 
         if(view.getId()==R.id.converter);
         startActivity(intent);
+
     }
 
 }

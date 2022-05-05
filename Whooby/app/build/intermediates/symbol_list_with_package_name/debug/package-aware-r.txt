@@ -2520,7 +2520,9 @@ id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
+id English_button
 id FUNCTION
+id Hindi_button
 id META
 id NO_DEBUG
 id SHIFT
@@ -2615,8 +2617,6 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id button
-id button2
-id button3
 id buttonPanel
 id cache_measures
 id callMeasure

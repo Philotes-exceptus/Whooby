@@ -19,9 +19,9 @@ drawable ic_launcher_foreground
 drawable sound_icon
 drawable sysagar
 font aclonica
+id English_button
+id Hindi_button
 id button
-id button2
-id button3
 id converter
 id developer
 id editText

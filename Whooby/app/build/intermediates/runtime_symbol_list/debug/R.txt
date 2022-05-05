@@ -2519,7 +2519,9 @@ int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
 int id BOTTOM_START 0x7f0a0002
 int id CTRL 0x7f0a0003
+int id English_button 0x7f0a01e8
 int id FUNCTION 0x7f0a0004
+int id Hindi_button 0x7f0a01e9
 int id META 0x7f0a0005
 int id NO_DEBUG 0x7f0a0006
 int id SHIFT 0x7f0a0007
@@ -2614,8 +2616,6 @@ int id bounceBoth 0x7f0a005f
 int id bounceEnd 0x7f0a0060
 int id bounceStart 0x7f0a0061
 int id button 0x7f0a0062
-int id button2 0x7f0a01e4
-int id button3 0x7f0a01e5
 int id buttonPanel 0x7f0a0063
 int id cache_measures 0x7f0a0064
 int id callMeasure 0x7f0a0065
