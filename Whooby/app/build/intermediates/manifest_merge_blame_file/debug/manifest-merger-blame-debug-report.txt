@@ -22,7 +22,7 @@
 14-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:7:19-60
 15
 16    <application
-16-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:9:5-28:19
+16-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:9:5-31:19
 17        android:allowBackup="true"
 17-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:10:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -40,50 +40,51 @@
 25        android:theme="@style/Theme.Whooby" >
 25-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:15:9-44
 26        <activity
-26-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:16:9-24:20
+26-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:16:9-19:20
 27            android:name="com.example.whooby.MainActivity"
 27-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:17:13-41
 28            android:exported="true" >
 28-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:18:13-36
-29            <intent-filter>
-29-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:19:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:20:17-69
-30-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:20:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:17-77
-32-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35        <activity
-35-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:26:5-27:44
-36            android:name="com.example.whooby.opening"
-36-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:26:15-38
-37            android:exported="true" />
-37-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:27:9-32
-38
-39        <provider
-39-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-40            android:name="androidx.startup.InitializationProvider"
-40-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-41            android:authorities="com.example.whooby.androidx-startup"
-41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-42            android:exported="false" >
-42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-43            <meta-data
-43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-44                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-45                android:value="androidx.startup" />
-45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-46            <meta-data
-46-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-47                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-47-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-48                android:value="androidx.startup" />
-48-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-49        </provider>
-50    </application>
-51
-52</manifest>
+29        </activity>
+30        <activity
+30-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:21:5-30:16
+31            android:name="com.example.whooby.opening"
+31-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:21:15-38
+32            android:exported="true" >
+32-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:9-32
+33            <intent-filter>
+33-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:24:9-28:25
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:25:13-65
+34-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:25:21-62
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:27:13-73
+36-->C:\Users\Admin\Desktop\Whooby\Whooby\app\src\main\AndroidManifest.xml:27:23-70
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+40-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+41            android:name="androidx.startup.InitializationProvider"
+41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+42            android:authorities="com.example.whooby.androidx-startup"
+42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+43            android:exported="false" >
+43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+44            <meta-data
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+45                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+46                android:value="androidx.startup" />
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Admin\.gradle\caches\transforms-3\80b528038d14456a13dc877d02defa8f\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+47            <meta-data
+47-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+48                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+49                android:value="androidx.startup" />
+49-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Admin\.gradle\caches\transforms-3\a711bc5df5a379db74c9c6d9cac91024\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+50        </provider>
+51    </application>
+52
+53</manifest>
