@@ -22,12 +22,7 @@
         android:layout_height="98dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-<<<<<<< HEAD
         android:alpha="0.8"
-        android:text="WHOOBY"
-=======
-        android:alpha="0.6"
->>>>>>> hindi_tts
         android:onClick="mainApp"
         android:text="WHOOBY"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
@@ -39,16 +34,11 @@
 
     <ImageView
         android:id="@+id/developer"
-<<<<<<< HEAD
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
         android:text="Developers"
         android:alpha="0.8"
-=======
         android:layout_width="121dp"
         android:layout_height="108dp"
-        android:alpha="0.6"
->>>>>>> hindi_tts
         android:onClick="abt_author"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
