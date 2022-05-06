@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.whooby">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.ar"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.ar" />
 
     <application
         android:allowBackup="true"
@@ -13,9 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Whooby">
+
+        <activity
+            android:name=".opening"
+            android:exported="true" />
+
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"/>
+
+        <activity
+            android:name=".splashscreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +34,6 @@
             </intent-filter>
         </activity>
 
-    <activity android:name=".opening"
-        android:exported="true"></activity>
     </application>
 
 </manifest>

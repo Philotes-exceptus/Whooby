@@ -12,6 +12,7 @@ drawable bg
 drawable hover_buttons
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable splash
 drawable sysagar
 font aclonica
 id button
@@ -20,13 +21,16 @@ id editText
 id imageView3
 id root
 id sagar
+id splashimage
 id textView2
 id whooby_button
 layout about
 layout activity_main
+layout activity_splashscreen
 layout home_screen
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 string app_name
+style Theme.AppCompat.Light.NoActionBar.FullScreen
 style Theme.Whooby

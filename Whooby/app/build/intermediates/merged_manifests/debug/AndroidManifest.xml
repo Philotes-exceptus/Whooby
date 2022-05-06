@@ -24,17 +24,21 @@
         android:testOnly="true"
         android:theme="@style/Theme.Whooby" >
         <activity
+            android:name="com.example.whooby.opening"
+            android:exported="true" />
+        <activity
             android:name="com.example.whooby.MainActivity"
-            android:exported="true" >
+            android:exported="true" />
+        <activity
+            android:name="com.example.whooby.splashscreen"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.whooby.opening"
-            android:exported="true" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
