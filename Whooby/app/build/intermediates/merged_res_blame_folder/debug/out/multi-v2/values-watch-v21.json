@@ -4,7 +4,11 @@
             "outputFile": "C:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v21\\values-watch-v21.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\23b76ffe80af4d27184e38abe59be150\\transformed\\appcompat-1.4.1\\res\\values-watch-v21\\values-watch-v21.xml",
+=======
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\9c358a5ce2edee952aee663254e4dbc0\\transformed\\appcompat-1.4.1\\res\\values-watch-v21\\values-watch-v21.xml",
+>>>>>>> splash
                     "from": {
                         "startLines": "2,6,10",
                         "startColumns": "4,4,4",

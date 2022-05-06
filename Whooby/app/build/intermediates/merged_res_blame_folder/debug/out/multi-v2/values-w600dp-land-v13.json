@@ -4,7 +4,11 @@
             "outputFile": "C:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\b21dd1d969b1b90338eb5a4fcebf64d6\\transformed\\material-1.5.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+=======
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\1caffd53251648ab33d85fefcc89573b\\transformed\\material-1.5.0\\res\\values-w600dp-land-v13\\values-w600dp-land-v13.xml",
+>>>>>>> splash
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

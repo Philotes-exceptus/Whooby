@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Fri May 06 14:29:04 IST 2022
+=======
+#Fri May 06 14:10:40 IST 2022
+>>>>>>> splash
 base.2=C\:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.2=1/classes.dex
 base.1=C\:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

@@ -4,6 +4,7 @@
             "outputFile": "C:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v28\\values-v28.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\b21dd1d969b1b90338eb5a4fcebf64d6\\transformed\\material-1.5.0\\res\\values-v28\\values-v28.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
@@ -15,6 +16,9 @@
                 },
                 {
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\23b76ffe80af4d27184e38abe59be150\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+=======
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\9c358a5ce2edee952aee663254e4dbc0\\transformed\\appcompat-1.4.1\\res\\values-v28\\values-v28.xml",
+>>>>>>> splash
                     "from": {
                         "startLines": "2,3,4,8",
                         "startColumns": "4,4,4,4",
@@ -31,6 +35,19 @@
                         "endColumns": "74,86,12,12",
                         "endOffsets": "1211,1298,1528,1770"
                     }
+<<<<<<< HEAD
+=======
+                },
+                {
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\1caffd53251648ab33d85fefcc89573b\\transformed\\material-1.5.0\\res\\values-v28\\values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,248,343,441,529,617,705,793,880,967,1054",
+                        "endColumns": "97,94,94,97,87,87,87,87,86,86,86,86",
+                        "endOffsets": "148,243,338,436,524,612,700,788,875,962,1049,1136"
+                    }
+>>>>>>> splash
                 }
             ]
         }

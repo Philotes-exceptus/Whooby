@@ -4,7 +4,11 @@
             "outputFile": "C:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\23b76ffe80af4d27184e38abe59be150\\transformed\\appcompat-1.4.1\\res\\values-v24\\values-v24.xml",
+=======
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\9c358a5ce2edee952aee663254e4dbc0\\transformed\\appcompat-1.4.1\\res\\values-v24\\values-v24.xml",
+>>>>>>> splash
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +18,11 @@
                     }
                 },
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\b21dd1d969b1b90338eb5a4fcebf64d6\\transformed\\material-1.5.0\\res\\values-v24\\values-v24.xml",
+=======
+                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\1caffd53251648ab33d85fefcc89573b\\transformed\\material-1.5.0\\res\\values-v24\\values-v24.xml",
+>>>>>>> splash
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

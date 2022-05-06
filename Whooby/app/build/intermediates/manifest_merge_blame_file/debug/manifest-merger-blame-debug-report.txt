@@ -11,6 +11,7 @@
 9-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
 11-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:5:5-66
 11-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.CAMERA" />
@@ -88,3 +89,89 @@
 51    </application>
 52
 53</manifest>
+=======
+11-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.CAMERA" />
+12-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:6:5-65
+12-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:6:22-62
+13
+14    <uses-feature android:name="android.hardware.camera.ar" />
+14-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:8:5-63
+14-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:8:19-60
+15
+16    <application
+16-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:10:5-37:19
+17        android:allowBackup="true"
+17-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:11:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.7.0] C:\Users\swast\.gradle\caches\transforms-3\f13f5bdf682a6a4b34ed655b6f533ce1\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:icon="@mipmap/ic_launcher"
+20-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:12:9-43
+21        android:label="@string/app_name"
+21-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:13:9-41
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:14:9-54
+23        android:supportsRtl="true"
+23-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:15:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.Whooby" >
+25-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:16:9-44
+26        <activity
+26-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:18:9-20:39
+27            android:name="com.example.whooby.opening"
+27-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:19:13-36
+28            android:exported="true" />
+28-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:20:13-36
+29        <activity
+29-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:22:9-24:38
+30            android:name="com.example.whooby.MainActivity"
+30-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:23:13-41
+31            android:exported="true" />
+31-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:24:13-36
+32        <activity
+32-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:26:9-35:20
+33            android:name="com.example.whooby.splashscreen"
+33-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:27:13-41
+34            android:exported="true"
+34-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:28:13-36
+35            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
+35-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:29:13-80
+36            <intent-filter>
+36-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:30:13-34:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:31:17-69
+37-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:31:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:33:17-77
+39-->C:\Users\swast\OneDrive\Documents\Projects\whobi\Whooby\Whooby\app\src\main\AndroidManifest.xml:33:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <provider
+43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+44            android:name="androidx.startup.InitializationProvider"
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+45            android:authorities="com.example.whooby.androidx-startup"
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+46            android:exported="false" >
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+47            <meta-data
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+48                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+49                android:value="androidx.startup" />
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\swast\.gradle\caches\transforms-3\22a3e2acc51810e1a500f115eaac01f1\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+50            <meta-data
+50-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\swast\.gradle\caches\transforms-3\6a12481d44dd81782a5b3f28ac9bb381\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+51                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\swast\.gradle\caches\transforms-3\6a12481d44dd81782a5b3f28ac9bb381\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+52                android:value="androidx.startup" />
+52-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\swast\.gradle\caches\transforms-3\6a12481d44dd81782a5b3f28ac9bb381\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+53        </provider>
+54    </application>
+55
+56</manifest>
+>>>>>>> splash

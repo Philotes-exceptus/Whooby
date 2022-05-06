@@ -2507,7 +2507,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+<<<<<<< HEAD
 drawable sound_icon
+=======
+drawable splash
+>>>>>>> splash
 drawable sysagar
 drawable test_custom_background
 drawable test_level_drawable
@@ -2903,6 +2907,7 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
+id splashimage
 id spline
 id split_action_bar
 id spread
@@ -3085,6 +3090,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout about
 layout activity_main
+layout activity_splashscreen
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3804,6 +3810,7 @@ style Theme_AppCompat_Light_Dialog_Alert
 style Theme_AppCompat_Light_Dialog_MinWidth
 style Theme_AppCompat_Light_DialogWhenLarge
 style Theme_AppCompat_Light_NoActionBar
+style Theme_AppCompat_Light_NoActionBar_FullScreen
 style Theme_AppCompat_NoActionBar
 style Theme_Design
 style Theme_Design_BottomSheetDialog
