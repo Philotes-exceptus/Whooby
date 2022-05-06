@@ -2507,11 +2507,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
-<<<<<<< HEAD
 drawable sound_icon
-=======
 drawable splash
->>>>>>> splash
 drawable sysagar
 drawable test_custom_background
 drawable test_level_drawable

@@ -28,19 +28,11 @@
             android:exported="true" />
         <activity
             android:name="com.example.whooby.MainActivity"
-<<<<<<< HEAD
-            android:exported="true" >
-        </activity>
-        <activity
-            android:name="com.example.whooby.opening"
-            android:exported="true" >
-=======
             android:exported="true" />
         <activity
             android:name="com.example.whooby.splashscreen"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
->>>>>>> splash
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

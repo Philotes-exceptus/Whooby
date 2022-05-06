@@ -2506,16 +2506,13 @@ int drawable notification_template_icon_bg 0x7f080097
 int drawable notification_template_icon_low_bg 0x7f080098
 int drawable notification_tile_bg 0x7f080099
 int drawable notify_panel_notification_icon_bg 0x7f08009a
-<<<<<<< HEAD
 int drawable sound_icon 0x7f08009b
-=======
-int drawable splash 0x7f08009b
->>>>>>> splash
-int drawable sysagar 0x7f08009c
-int drawable test_custom_background 0x7f08009d
-int drawable test_level_drawable 0x7f08009e
-int drawable tooltip_frame_dark 0x7f08009f
-int drawable tooltip_frame_light 0x7f0800a0
+int drawable splash 0x7f08009c
+int drawable sysagar 0x7f08009d
+int drawable test_custom_background 0x7f08009e
+int drawable test_level_drawable 0x7f08009f
+int drawable tooltip_frame_dark 0x7f0800a0
+int drawable tooltip_frame_light 0x7f0800a1
 int font aclonica 0x7f090000
 int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001

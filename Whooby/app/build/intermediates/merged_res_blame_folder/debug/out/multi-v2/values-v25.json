@@ -1,14 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\swast\\OneDrive\\Documents\\Projects\\whobi\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
+            "outputFile": "C:\\Users\\swast\\Desktop\\Whooby\\Whooby\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\23b76ffe80af4d27184e38abe59be150\\transformed\\appcompat-1.4.1\\res\\values-v25\\values-v25.xml",
-=======
                     "source": "C:\\Users\\swast\\.gradle\\caches\\transforms-3\\9c358a5ce2edee952aee663254e4dbc0\\transformed\\appcompat-1.4.1\\res\\values-v25\\values-v25.xml",
->>>>>>> splash
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

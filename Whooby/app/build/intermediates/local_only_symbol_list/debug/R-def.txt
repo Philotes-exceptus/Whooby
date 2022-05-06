@@ -14,11 +14,8 @@ drawable bg
 drawable hover_buttons
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-<<<<<<< HEAD
 drawable sound_icon
-=======
 drawable splash
->>>>>>> splash
 drawable sysagar
 font aclonica
 id button
