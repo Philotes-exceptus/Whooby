@@ -22,6 +22,9 @@ class opening : AppCompatActivity() {
     {
         Toast.makeText(this, "opening info...", Toast.LENGTH_SHORT).show();
 
+        val intent1 = Intent(applicationContext, MainActivity::class.java)
+        startActivity(intent1)
+
         if(view.getId()==R.id.developer);
         startActivity(intent);
 
@@ -44,22 +47,22 @@ class opening : AppCompatActivity() {
     {
         Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
 
-        intent = Intent(applicationContext, MainActivity::class.java)
+        val intent3 = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
 
         if(view.getId()==R.id.whooby_button);
-        startActivity(intent);
+        startActivity(intent3);
 
     }
 
     fun convert(view: View)
     {
 
-        intent = Intent(applicationContext, language_select::class.java)
+       val intent2 = Intent(applicationContext, language_select::class.java)
 
 
         if(view.getId()==R.id.converter);
-        startActivity(intent);
+        startActivity(intent2);
 
     }
 
