@@ -16,15 +16,19 @@ import java.util.concurrent.ExecutionException
 
 class whooby : AppCompatActivity() {
 
-    val backgroundSceneView = findViewById<SceneView>(R.id.backgroundSceneView);
+     lateinit var transparentSceneView : SceneView
 
-    val transparentSceneView = findViewById<SceneView>(R.id.transparentSceneView);
+    lateinit var  backgroundSceneView : SceneView
+
+
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.whooby)
 
+         backgroundSceneView = findViewById<SceneView>(R.id.backgroundSceneView);
 
+         transparentSceneView = findViewById<SceneView>(R.id.transparentSceneView);
          transparentSceneView.setTransparent(true);
 
         loadModels();
