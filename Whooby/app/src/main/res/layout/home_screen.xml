@@ -24,7 +24,7 @@
         android:layout_marginEnd="16dp"
         android:alpha="0.8"
         android:onClick="mainApp"
-        android:text="WHOOBY"
+        android:text="whooby takes"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -34,7 +34,6 @@
 
     <ImageView
         android:id="@+id/developer"
-
         android:text="Developers"
         android:alpha="0.8"
         android:layout_width="121dp"
@@ -63,6 +62,20 @@
         app:layout_constraintVertical_bias="0.975"
         app:srcCompat="@drawable/converter"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/whooby"
+        android:layout_width="208dp"
+        android:layout_height="87dp"
+        android:onClick="anchor_whooby"
+        android:text="Whooby reads"
+        android:alpha="0.8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.565" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
