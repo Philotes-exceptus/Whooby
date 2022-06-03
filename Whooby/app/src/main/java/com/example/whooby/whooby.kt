@@ -9,7 +9,7 @@ import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
-import com.google.ar.sceneform.rendering.ModelRenderable
+import com.google.ar.sceneform.rendering.ModelRenderable.builder
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
 
@@ -26,9 +26,9 @@ class whooby : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.whooby)
 
-         backgroundSceneView = findViewById<SceneView>(R.id.backgroundSceneView);
+         backgroundSceneView = findViewById(R.id.backgroundSceneView);
 
-         transparentSceneView = findViewById<SceneView>(R.id.transparentSceneView);
+         transparentSceneView = findViewById(R.id.transparentSceneView);
          transparentSceneView.setTransparent(true);
 
         loadModels();
@@ -50,24 +50,25 @@ class whooby : AppCompatActivity() {
         transparentSceneView.pause()
     }
 
-    @RequiresApi(Build.VERSION_CODES.N)
+
     fun loadModels() {
-        val dragon = ModelRenderable
-            .builder()
+        val dragon = builder()
             .setSource(
-                this, Uri.parse("sampledata/aj.gltf")
+                this, Uri.parse("models/dragon.glb")
             )
             .setIsFilamentGltf(true)
             .setAsyncLoadEnabled(true)
             .build()
-        val backdrop = ModelRenderable
-            .builder()
+
+        val backdrop = builder()
             .setSource(
-                this, Uri.parse("sampledata/aj.gltf")
+                this, Uri.parse("models/backdrop.glb")
             )
             .setIsFilamentGltf(true)
             .setAsyncLoadEnabled(true)
             .build()
+
+
         CompletableFuture.allOf(dragon, backdrop)
             .handle<Any?> { ok: Void?, ex: Throwable? ->
                 try {
@@ -79,7 +80,7 @@ class whooby : AppCompatActivity() {
                         Quaternion.axisAngle(Vector3(0f, 1f, 0f), 75f)
                     )
                     modelNode1.localPosition = Vector3(0f, 0f, -1.0f)
-                    backgroundSceneView.getScene().addChild(modelNode1)
+                    backgroundSceneView.scene.addChild(modelNode1)
                     val modelNode2 = Node()
                     modelNode2.renderable = backdrop.get()
                     modelNode2.localScale = Vector3(0.3f, 0.3f, 0.3f)
@@ -88,7 +89,7 @@ class whooby : AppCompatActivity() {
                         Quaternion.axisAngle(Vector3(0f, 1f, 0f), 75f)
                     )
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
-                    backgroundSceneView.getScene().addChild(modelNode2)
+                    backgroundSceneView.scene.addChild(modelNode2)
                     val modelNode3 = Node()
                     modelNode3.renderable = dragon.get()
                     modelNode3.localScale = Vector3(0.3f, 0.3f, 0.3f)
@@ -100,7 +101,7 @@ class whooby : AppCompatActivity() {
                         ), 35f
                     )
                     modelNode3.localPosition = Vector3(0f, 0f, -1.0f)
-                    transparentSceneView.getScene().addChild(modelNode3)
+                    transparentSceneView.scene.addChild(modelNode3)
                     val modelNode4 = Node()
                     modelNode4.renderable = backdrop.get()
                     modelNode4.localScale = Vector3(0.3f, 0.3f, 0.3f)
@@ -112,13 +113,13 @@ class whooby : AppCompatActivity() {
                         ), 35f
                     )
                     modelNode4.localPosition = Vector3(0f, 0f, -1.0f)
-                    transparentSceneView.getScene().addChild(modelNode4)
+                    transparentSceneView.scene.addChild(modelNode4)
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
                 }
                 null
             }
+
+
     }
-
-
 }
