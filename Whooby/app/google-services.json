@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "425240264459",
+    "project_id": "whooby-a2879",
+    "storage_bucket": "whooby-a2879.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425240264459:android:6f115891e950e6906dec0e",
+        "android_client_info": {
+          "package_name": "com.example.whooby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425240264459-gsrr2rke0oe52gtv1257940ufucudjgj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBImiNb0c9rdW3dtn374p_V_knKfs4hjHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "425240264459-gsrr2rke0oe52gtv1257940ufucudjgj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
