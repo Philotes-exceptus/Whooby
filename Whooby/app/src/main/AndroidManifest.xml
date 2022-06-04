@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera.ar" />
+    <uses-feature android:glEsVersion="0x00030000" android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -30,6 +31,18 @@
             android:exported="true" >
         </activity>
         <activity
+
+            android:name=".whooby"
+            android:launchMode="singleTask"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".language_select"
+            android:launchMode="singleTask"
+            android:exported="true" >
+        </activity>
+        <activity
+
             android:name=".opening"
             android:launchMode="singleTask"
             android:exported="true" >

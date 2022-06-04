@@ -100,4 +100,15 @@ class opening : AppCompatActivity() {
         }
     }
 
+    fun anchor_whooby(view: View)
+    {
+
+        val intent4 = Intent(applicationContext, whooby::class.java)
+
+
+        if(view.getId()==R.id.whooby);
+        startActivity(intent4);
+
+    }
+
 }
