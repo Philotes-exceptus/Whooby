@@ -31,6 +31,7 @@
             android:exported="true" >
         </activity>
         <activity
+
             android:name=".whooby"
             android:launchMode="singleTask"
             android:exported="true" >
@@ -41,6 +42,7 @@
             android:exported="true" >
         </activity>
         <activity
+
             android:name=".opening"
             android:launchMode="singleTask"
             android:exported="true" >
