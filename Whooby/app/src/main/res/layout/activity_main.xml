@@ -8,16 +8,20 @@
 
     <ImageView
         android:id="@+id/button"
-        android:layout_width="76dp"
-        android:layout_height="69dp"
+        android:layout_width="127dp"
+        android:layout_height="73dp"
         android:background="@drawable/sound_icon"
         android:foreground="@drawable/sound_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.138"
+
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395"
         tools:srcCompat="@drawable/sound_icon" />
+
 
     <EditText
         android:id="@+id/editText"
@@ -31,18 +35,123 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324"
+        app:layout_constraintVertical_bias="0.148"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="257dp"
-        android:layout_height="47dp"
+        android:layout_width="158dp"
+        android:layout_height="69dp"
         android:entries="@array/language"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.152" />
+        app:layout_constraintVertical_bias="0.006" />
+
+    <Button
+        android:id="@+id/speedup"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/white"
+        android:text="inc"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/slowdown"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/white"
+        android:text="dec"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:background="@color/black"
+        android:text="SPEED"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:background="@color/black"
+        android:text="PITCH"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.139"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317" />
+
+    <Button
+        android:id="@+id/pitchi"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/white"
+        android:text="inc"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.373"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/pitchd"
+        android:layout_width="67dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/white"
+        android:text="dec"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="TouchTargetSizeCheck" />
+>>>>>>> speedx
 
 </androidx.constraintlayout.widget.ConstraintLayout>

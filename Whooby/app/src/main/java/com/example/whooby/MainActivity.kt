@@ -3,8 +3,13 @@ package com.example.whooby
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.widget.*
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -13,6 +18,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
 
     lateinit var textToSpeech: TextToSpeech
     var lang_code=1
+    private var speed = 1f
+    private var pitch = 1f
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -24,6 +31,28 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
         btn.setOnClickListener {
             var text: String = feed.text.toString()
             textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
+
+            var speed1=findViewById<Button>(R.id.speedup)
+            var speed2 =findViewById<Button>(R.id.slowdown)
+            speed1.setOnClickListener{
+                speed +=0.25f
+                textToSpeech.setSpeechRate(speed)
+            }
+            speed2.setOnClickListener{
+                speed -=0.25f
+                textToSpeech.setSpeechRate(speed)
+            }
+
+            var pitch1=findViewById<Button>(R.id.pitchi)
+            var pitch2=findViewById<Button>(R.id.pitchd)
+            pitch1.setOnClickListener{
+                pitch +=0.25f
+                textToSpeech.setPitch(pitch)
+            }
+            pitch2.setOnClickListener{
+                pitch -=0.25f
+                textToSpeech.setPitch(pitch)
+            }
         }
     }
 
