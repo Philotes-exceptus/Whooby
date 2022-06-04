@@ -35,11 +35,12 @@ class opening : AppCompatActivity() {
 
         val  whooby=findViewById<Button>(R.id.whooby_button)
         val author=findViewById<ImageView>(R.id.developer)
+        val convert=findViewById<ImageView>(R.id.converter)
         whooby.setAlpha(0f);
         //Animate the alpha value to 1f and set duration as 1.5 secs.
         whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-
+        convert.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
 
 
     }
@@ -53,19 +54,8 @@ class opening : AppCompatActivity() {
         val  developer=findViewById<ImageView>(R.id.developer)
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
-        val intent1 = Intent(applicationContext, MainActivity::class.java)
+        developer.startAnimation(animation);
 
-
-        if(view.getId()==R.id.developer);
-        run {
-
-            developer.startAnimation(animation);
-            val handler = Handler()
-            handler.postDelayed(Runnable {
-                startActivity(intent1);
-            }, 1500)
-
-        }
 
         val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.sagar))
 
@@ -91,7 +81,7 @@ class opening : AppCompatActivity() {
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
-
+        startActivity(intent3)
 
 
         if(view.getId()==R.id.whooby_button);
