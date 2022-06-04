@@ -15,6 +15,16 @@ import androidx.appcompat.app.AppCompatActivity
 
 class opening : AppCompatActivity() {
 
+    override fun onResume() {
+        super.onResume()
+        val  whooby=findViewById<Button>(R.id.whooby_button)
+        val author=findViewById<ImageView>(R.id.developer)
+        whooby.setAlpha(0f);
+        //Animate the alpha value to 1f and set duration as 1.5 secs.
+        whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
@@ -26,7 +36,6 @@ class opening : AppCompatActivity() {
         whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
 
-        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
 
     }
@@ -41,6 +50,7 @@ class opening : AppCompatActivity() {
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent1 = Intent(applicationContext, MainActivity::class.java)
+        startActivity(intent)
 
         if(view.getId()==R.id.developer);
         run {
@@ -77,6 +87,7 @@ class opening : AppCompatActivity() {
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
+        startActivity(intent)
 
 
         if(view.getId()==R.id.whooby_button);
@@ -96,6 +107,7 @@ class opening : AppCompatActivity() {
     {
 
        val intent2 = Intent(applicationContext, language_select::class.java)
+        startActivity(intent)
 
 
         if(view.getId()==R.id.converter);
