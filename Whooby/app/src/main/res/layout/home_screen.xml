@@ -50,19 +50,5 @@
         app:srcCompat="@drawable/developer"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/converter"
-        android:layout_width="92dp"
-        android:layout_height="86dp"
-        android:onClick="convert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
-        app:srcCompat="@drawable/converter"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

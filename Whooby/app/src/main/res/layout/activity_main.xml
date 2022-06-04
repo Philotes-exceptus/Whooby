@@ -14,10 +14,9 @@
         android:foreground="@drawable/sound_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="0.138"
         tools:srcCompat="@drawable/sound_icon" />
 
     <EditText
@@ -32,7 +31,18 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintVertical_bias="0.324"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="257dp"
+        android:layout_height="47dp"
+        android:entries="@array/language"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.152" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

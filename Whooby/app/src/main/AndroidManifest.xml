@@ -30,11 +30,6 @@
             android:exported="true" >
         </activity>
         <activity
-            android:name=".language_select"
-            android:launchMode="singleTask"
-            android:exported="true" >
-        </activity>
-        <activity
             android:name=".opening"
             android:launchMode="singleTask"
             android:exported="true" >
