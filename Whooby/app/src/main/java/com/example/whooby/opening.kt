@@ -19,18 +19,17 @@ class opening : AppCompatActivity() {
         super.onResume()
         val  whooby=findViewById<Button>(R.id.whooby_button)
         val author=findViewById<ImageView>(R.id.developer)
-        val convert=findViewById<ImageView>(R.id.converter)
+
         whooby.setAlpha(0f);
         author.setAlpha(0f)
-        convert.setAlpha(0f);
+
         whooby.setTranslationY(50F)
         author.setTranslationY(50F)
-        convert.setTranslationY(50F)
         
         //Animate the alpha value to 1f and set duration as 1.5 secs.
         whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        convert.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,14 +38,14 @@ class opening : AppCompatActivity() {
 
         val  whooby=findViewById<Button>(R.id.whooby_button)
         val author=findViewById<ImageView>(R.id.developer)
-        val convert=findViewById<ImageView>(R.id.converter)
+
         whooby.setAlpha(0f);
         author.setAlpha(0f);
-        convert.setAlpha(0f);
+
         //Animate the alpha value to 1f and set duration as 1.5 secs.
         whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        convert.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+
 
     }
 
