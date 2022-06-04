@@ -3,10 +3,12 @@ package com.example.whooby
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,9 @@ class opening : AppCompatActivity() {
         whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
 
+        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
+
     }
 
 
@@ -32,11 +37,21 @@ class opening : AppCompatActivity() {
     {
         Toast.makeText(this, "opening info...", Toast.LENGTH_SHORT).show();
 
+        val  developer=findViewById<ImageView>(R.id.developer)
+        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+
         val intent1 = Intent(applicationContext, MainActivity::class.java)
-        startActivity(intent1)
 
         if(view.getId()==R.id.developer);
-        startActivity(intent);
+        run {
+
+            developer.startAnimation(animation);
+            val handler = Handler()
+            handler.postDelayed(Runnable {
+                startActivity(intent1);
+            }, 1500)
+
+        }
 
         val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.sagar))
 
@@ -53,16 +68,28 @@ class opening : AppCompatActivity() {
 
     }
 
+
+
     fun mainApp(view :View)
     {
         Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
+        val  whooby=findViewById<Button>(R.id.whooby_button)
+        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
-        startActivity(intent)
+
 
         if(view.getId()==R.id.whooby_button);
-        startActivity(intent3);
+        run {
 
+            val whooby = findViewById<Button>(R.id.whooby_button)
+            whooby.startAnimation(animation);
+            val handler = Handler()
+            handler.postDelayed(Runnable {
+                startActivity(intent3);
+            }, 1500)
+
+        }
     }
 
     fun convert(view: View)
