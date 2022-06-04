@@ -55,15 +55,4 @@ class opening : AppCompatActivity() {
 
     }
 
-    fun convert(view: View)
-    {
-
-       val intent2 = Intent(applicationContext, language_select::class.java)
-
-
-        if(view.getId()==R.id.converter);
-        startActivity(intent2);
-
-    }
-
 }

@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
-import kotlin.properties.Delegates
-import com.example.whooby.language_select
 
-class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener{
+class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
+    AdapterView.OnItemSelectedListener {
 
     lateinit var textToSpeech: TextToSpeech
     var lang_code=1
@@ -32,16 +29,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener{
 
     fun setLang()
     {
-        var tappedImage : Int
-        val obj = language_select()
-        tappedImage = obj.getter()
-        if(tappedImage==1)
-            lang_code=1
-        else
-            lang_code=2
-
-        Log.d("mesage",""+lang_code)
-
+        val spinner: Spinner = findViewById(R.id.spinner)
+        spinner.onItemSelectedListener = this
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.language,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spinner.adapter = adapter
+        }
     }
 
 
@@ -49,12 +49,13 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener{
     override fun onInit(status: Int) {
         if(status== TextToSpeech.SUCCESS)
             {
-                val res :Int
+                var res :Int=1
                 Log.d("mesage",""+lang_code)
-                if(this.lang_code==1)
-                res = textToSpeech.setLanguage(Locale("hin"));
-                else
-                    res = textToSpeech.setLanguage(Locale.US);
+                if(lang_code==1)
+                res = textToSpeech.setLanguage(Locale("hin"))
+                    if(lang_code==0)
+                    res = textToSpeech.setLanguage(Locale.US)
+
 
                 if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
                 {
@@ -62,6 +63,32 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener{
                 }
 
         }
+    }
+
+    override fun onItemSelected(p0: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        lang_code=position
+        if(lang_code ==1)
+            Toast.makeText(this, "Hindi has been selected", Toast.LENGTH_SHORT).show()
+        else
+            if(lang_code ==0)
+                Toast.makeText(this, "English has been selected", Toast.LENGTH_SHORT).show()
+
+
+
+            var res :Int=1
+            Log.d("mesage",""+lang_code)
+            if(lang_code==1)
+                res = textToSpeech.setLanguage(Locale("hin"))
+            if(lang_code==0)
+                res = textToSpeech.setLanguage(Locale.US)
+
+
+
+
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 
 
