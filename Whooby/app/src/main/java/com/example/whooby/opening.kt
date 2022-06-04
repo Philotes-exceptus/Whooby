@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Gravity
 import android.view.View
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,14 @@ class opening : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
+
+        val  whooby=findViewById<Button>(R.id.whooby_button)
+        val author=findViewById<ImageView>(R.id.developer)
+        whooby.setAlpha(0f);
+        //Animate the alpha value to 1f and set duration as 1.5 secs.
+        whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+
     }
 
 
