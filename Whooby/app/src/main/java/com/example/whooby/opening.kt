@@ -22,11 +22,7 @@ class opening : AppCompatActivity() {
     {
         Toast.makeText(this, "opening info...", Toast.LENGTH_SHORT).show();
 
-        val intent1 = Intent(applicationContext, MainActivity::class.java)
-        startActivity(intent1)
 
-        if(view.getId()==R.id.developer);
-        startActivity(intent);
 
         val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.sagar))
 
