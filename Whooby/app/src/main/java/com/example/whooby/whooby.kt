@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.filament.utils.Float4
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
@@ -28,8 +29,7 @@ class whooby : AppCompatActivity() {
 
          backgroundSceneView = findViewById(R.id.backgroundSceneView);
 
-         transparentSceneView = findViewById(R.id.transparentSceneView);
-         transparentSceneView.setTransparent(true);
+
 
         loadModels();
     }
@@ -74,12 +74,13 @@ class whooby : AppCompatActivity() {
                 try {
                     val modelNode1 = Node()
                     modelNode1.renderable = dragon.get()
-                    modelNode1.localScale = Vector3(0.3f, 0.3f, 0.3f)
+                    modelNode1.localScale = Vector3(0.25f, 0.25f, 0.25f)
                     modelNode1.localRotation = Quaternion.multiply(
-                        Quaternion.axisAngle(Vector3(1f, 0f, 0f), 45f),
+                        Quaternion.axisAngle(Vector3(1f, 1f, 0f), 45f),
                         Quaternion.axisAngle(Vector3(0f, 1f, 0f), 75f)
                     )
                     modelNode1.localPosition = Vector3(0f, 0f, -1.0f)
+
                     backgroundSceneView.scene.addChild(modelNode1)
                     val modelNode2 = Node()
                     modelNode2.renderable = backdrop.get()
@@ -90,30 +91,11 @@ class whooby : AppCompatActivity() {
                     )
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
-                    val modelNode3 = Node()
-                    modelNode3.renderable = dragon.get()
-                    modelNode3.localScale = Vector3(0.3f, 0.3f, 0.3f)
-                    modelNode3.localRotation = Quaternion.axisAngle(
-                        Vector3(
-                            0f,
-                            1f,
-                            0f
-                        ), 35f
+
+                    modelNode1.renderableInstance?.material?.filamentMaterialInstance?.setBaseColor(
+                        Float4(0.1f,0.1f,0.1f,1f)
                     )
-                    modelNode3.localPosition = Vector3(0f, 0f, -1.0f)
-                    transparentSceneView.scene.addChild(modelNode3)
-                    val modelNode4 = Node()
-                    modelNode4.renderable = backdrop.get()
-                    modelNode4.localScale = Vector3(0.3f, 0.3f, 0.3f)
-                    modelNode4.localRotation = Quaternion.axisAngle(
-                        Vector3(
-                            0f,
-                            1f,
-                            0f
-                        ), 35f
-                    )
-                    modelNode4.localPosition = Vector3(0f, 0f, -1.0f)
-                    transparentSceneView.scene.addChild(modelNode4)
+
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
                 }
