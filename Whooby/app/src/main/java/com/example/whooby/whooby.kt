@@ -74,12 +74,12 @@ class whooby : AppCompatActivity() {
                 try {
                     val modelNode1 = Node()
                     modelNode1.renderable = dragon.get()
-                    modelNode1.localScale = Vector3(0.25f, 0.25f, 0.25f)
+                    modelNode1.localScale = Vector3(0.26f, 0.26f, 0.26f)
                     modelNode1.localRotation = Quaternion.multiply(
-                        Quaternion.axisAngle(Vector3(1f, 1f, 0f), 45f),
-                        Quaternion.axisAngle(Vector3(0f, 1f, 0f), 75f)
+                        Quaternion.axisAngle(Vector3(1f, 1f, 0f), 36f),
+                        Quaternion.axisAngle(Vector3(0f, 1f, 0.2f), 40f)
                     )
-                    modelNode1.localPosition = Vector3(0f, 0f, -1.0f)
+                    modelNode1.localPosition = Vector3(0.05f, 0f, -1.0f)
 
                     backgroundSceneView.scene.addChild(modelNode1)
                     val modelNode2 = Node()
@@ -87,14 +87,14 @@ class whooby : AppCompatActivity() {
                     modelNode2.localScale = Vector3(0.3f, 0.3f, 0.3f)
                     modelNode2.localRotation = Quaternion.multiply(
                         Quaternion.axisAngle(Vector3(1f, 0f, 0f), 45f),
-                        Quaternion.axisAngle(Vector3(0f, 1f, 0f), 75f)
+                        Quaternion.axisAngle(Vector3(0f, 1f, 0f), 0f)
                     )
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
 
-                    modelNode1.renderableInstance?.material?.filamentMaterialInstance?.setBaseColor(
-                        Float4(0.1f,0.1f,0.1f,1f)
-                    )
+//                    modelNode1.renderableInstance?.material?.filamentMaterialInstance?.setBaseColor(
+//                        Float4(0.1f,0.1f,0.1f,1f)
+//                    )
 
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
