@@ -49,6 +49,7 @@
         app:srcCompat="@drawable/developer"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
+
     <ImageView
         android:id="@+id/converter"
         android:layout_width="92dp"
@@ -76,6 +77,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.565" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
