@@ -53,7 +53,6 @@ class opening : AppCompatActivity() {
 
     fun abt_author(view :View)
     {
-        Toast.makeText(this, "opening info...", Toast.LENGTH_SHORT).show();
 
         val  developer=findViewById<ImageView>(R.id.developer)
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
@@ -79,7 +78,6 @@ class opening : AppCompatActivity() {
 
     fun mainApp(view :View)
     {
-        Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
         val  whooby=findViewById<Button>(R.id.whooby_button)
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
