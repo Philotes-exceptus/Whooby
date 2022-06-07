@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_marginTop="450dp"
+        app:layout_constraintBaseline_toBottomOf="@id/button"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="50dp"
+        android:fillViewport="false"
+        android:requiresFadingEdge="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <ImageView
         android:id="@+id/button"
         android:layout_width="127dp"
@@ -152,6 +163,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.428"
         tools:ignore="TouchTargetSizeCheck" />
->>>>>>> speedx
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
