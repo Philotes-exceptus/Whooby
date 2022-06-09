@@ -17,7 +17,6 @@ import java.util.concurrent.ExecutionException
 
 class whooby : AppCompatActivity() {
 
-     lateinit var transparentSceneView : SceneView
 
     lateinit var  backgroundSceneView : SceneView
 
@@ -38,7 +37,7 @@ class whooby : AppCompatActivity() {
         super.onResume()
         try {
             backgroundSceneView.resume()
-            transparentSceneView.resume()
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -47,14 +46,14 @@ class whooby : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         backgroundSceneView.pause()
-        transparentSceneView.pause()
+
     }
 
 
     fun loadModels() {
         val dragon = builder()
             .setSource(
-                this, Uri.parse("models/dragon.glb")
+                this, Uri.parse("models/model.glb")
             )
             .setIsFilamentGltf(true)
             .setAsyncLoadEnabled(true)
@@ -74,12 +73,12 @@ class whooby : AppCompatActivity() {
                 try {
                     val modelNode1 = Node()
                     modelNode1.renderable = dragon.get()
-                    modelNode1.localScale = Vector3(0.26f, 0.26f, 0.26f)
+                    modelNode1.localScale = Vector3(0.37f, 0.37f, 0.37f)
                     modelNode1.localRotation = Quaternion.multiply(
-                        Quaternion.axisAngle(Vector3(1f, 1f, 0f), 36f),
-                        Quaternion.axisAngle(Vector3(0f, 1f, 0.2f), 40f)
+                        Quaternion.axisAngle(Vector3(1f, 0f, 0.2f), 30f),
+                        Quaternion.axisAngle(Vector3(0f, 1f, 0f), 350f)
                     )
-                    modelNode1.localPosition = Vector3(0.05f, 0f, -1.0f)
+                    modelNode1.localPosition = Vector3(0.035f, -0.41f, -0.81f)
 
                     backgroundSceneView.scene.addChild(modelNode1)
                     val modelNode2 = Node()
@@ -92,15 +91,19 @@ class whooby : AppCompatActivity() {
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
 
-//                    modelNode1.renderableInstance?.material?.filamentMaterialInstance?.setBaseColor(
-//                        Float4(0.1f,0.1f,0.1f,1f)
+//                   modelNode2.getRenderableInstance()?.material?.filamentMaterialInstance?.setBaseColor(
+//                       Float4(0.1f,0.1f,0.1f,1f)
 //                    )
+
+                    modelNode1.getRenderableInstance().animate(true).start()
+                    modelNode2.getRenderableInstance().animate(true).start()
 
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
                 }
                 null
             }
+
 
 
     }
