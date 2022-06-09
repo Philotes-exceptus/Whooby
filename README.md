@@ -39,7 +39,7 @@ The application is using open source library `sceneform`, which is unstable . Ex
 ## Contributions
 There's a huge room for improvements! Please open an issue to report bugs, discuss ideas and so on.
 
-heck out the repo's [issue backlog](https://github.com/Philotes-exceptus/Whooby/issues) for source requests and bug reports.
+Check out the repo's [issue backlog](https://github.com/Philotes-exceptus/Whooby/issues) for source requests and bug reports.
 
 To get started with development, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
