@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
         sendinfo.setinputtext((typedtext))
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                databaseReference.setValue(sendinfo)
+                databaseReference.push().setValue(sendinfo)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
             }
 
         }
-        databaseReference.addValueEventListener((postListener))
+        databaseReference.addListenerForSingleValueEvent((postListener))
     }
 
 
