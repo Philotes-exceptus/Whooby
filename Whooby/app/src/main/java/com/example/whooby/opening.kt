@@ -1,5 +1,14 @@
 package com.example.whooby
 
+/*
+#########################################################################################################
+# This class is responsible to inflate 3 different layouts that is the Whooby feeds , Whooby reads and  #
+# developers info. The function  abt_author gives info about the developers. The function mainApp takes #
+# user to the Whooby feeds sections where user enters text. The function anchor_Whooby takes user to    #
+# section where Whooby reads the messages fed to it.                                                    #
+#########################################################################################################
+*/
+
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -13,22 +22,28 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class opening : AppCompatActivity() {
+class Opening : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val  whooby=findViewById<Button>(R.id.whooby_button)
+        val  whooby_feed=findViewById<Button>(R.id.whooby_button)
         val author=findViewById<ImageView>(R.id.developer)
+        val whooby_reads=findViewById<Button>(R.id.whooby_reads)
 
-        whooby.setAlpha(0f);
+        //sets the buttons transparency to invisible
+        whooby_feed.setAlpha(0f);
         author.setAlpha(0f)
+        whooby_reads.setAlpha(0f)
 
-        whooby.setTranslationY(50F)
+        //fixes the different whooby button's animation origin always at a constant coordinate
+        whooby_feed.setTranslationY(50F)
         author.setTranslationY(50F)
+        whooby_reads.setTranslationY(50F)
         
-        //Animate the alpha value to 1f and set duration as 1.5 secs.
-        whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
 
     }
 
@@ -57,9 +72,10 @@ class opening : AppCompatActivity() {
 
         val  developer=findViewById<ImageView>(R.id.developer)
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
-
+        //starts the animation
         developer.startAnimation(animation);
 
+        //inflates the about section in form of a custom toast layout
         val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.sagar))
 
         val myToast = Toast(applicationContext)
@@ -79,8 +95,9 @@ class opening : AppCompatActivity() {
 
     fun mainApp(view :View)
     {
+        //this function code opens the whooby feed section  where user enters the text
         Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
-        val  whooby=findViewById<Button>(R.id.whooby_button)
+
         val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
@@ -102,11 +119,10 @@ class opening : AppCompatActivity() {
 
     fun anchor_whooby(view: View)
     {
-
+    //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
 
-
-        if(view.getId()==R.id.whooby);
+        if(view.getId()==R.id.whooby_reads);
         startActivity(intent4);
 
     }

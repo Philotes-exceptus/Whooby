@@ -24,7 +24,7 @@
         android:layout_marginEnd="16dp"
         android:alpha="0.8"
         android:onClick="mainApp"
-        android:text="whooby takes"
+        android:text="Whooby takes"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -52,7 +52,7 @@
 
 
     <Button
-        android:id="@+id/whooby"
+        android:id="@+id/whooby_reads"
         android:layout_width="208dp"
         android:layout_height="87dp"
         android:onClick="anchor_whooby"
