@@ -9,6 +9,7 @@ package com.example.whooby
 #########################################################################################################
 */
 
+import CustomAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -21,6 +22,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import java.util.ArrayList
 
 class Opening : AppCompatActivity() {
 
@@ -121,6 +125,7 @@ class Opening : AppCompatActivity() {
     {
     //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
+
 
         if(view.getId()==R.id.whooby_reads);
         startActivity(intent4);

@@ -1,29 +1,36 @@
 package com.example.whooby
 
+import CustomAdapter
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
-import android.util.TypedValue
 import android.view.View
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.*
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
+
+class
+MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
     AdapterView.OnItemSelectedListener {
 
     lateinit var textToSpeech: TextToSpeech
     var lang_code=1
     private var speed = 1f
     private var pitch = 1f
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
         setLang()
         var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)
@@ -55,6 +62,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
             }
         }
     }
+
+
 
     fun setLang()
     {

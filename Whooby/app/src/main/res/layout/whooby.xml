@@ -8,15 +8,32 @@
 
     <com.google.ar.sceneform.SceneView
         android:id="@+id/backgroundSceneView"
-        android:layout_width="415dp"
-        android:layout_height="728dp"
+        android:layout_width="420dp"
+        android:layout_height="818dp"
         android:layout_weight="1"
         android:background="#FF0000FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:visibility="invisible"
+        android:layout_width="372dp"
+        android:layout_height="207dp"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="50dp"
+        android:fillViewport="false"
+        android:requiresFadingEdge="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
