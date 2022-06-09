@@ -12,12 +12,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
-class
-MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
-    AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
 
+    lateinit var firebaseDatabase: FirebaseDatabase
+    lateinit var databaseReference: DatabaseReference
+    lateinit var sendinfo: SendInfo
     lateinit var textToSpeech: TextToSpeech
     var lang_code=1
     private var speed = 1f
@@ -33,12 +39,16 @@ MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
 
         setLang()
         var btn: ImageView = findViewById(R.id.button)
-        var feed: EditText = findViewById(R.id.editText)
+        var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.getReference("InputText")
+        sendinfo = SendInfo()
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
             var text: String = feed.text.toString()
             textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
-
+            var typedtext = feed.getText().toString()
+            addDatatoFirebase(typedtext)
             var speed1=findViewById<Button>(R.id.speedup)
             var speed2 =findViewById<Button>(R.id.slowdown)
             speed1.setOnClickListener{
@@ -61,6 +71,23 @@ MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
                 textToSpeech.setPitch(pitch)
             }
         }
+    }
+
+
+    private fun addDatatoFirebase(typedtext: String)
+    {
+        sendinfo.setinputtext((typedtext))
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                databaseReference.push().setValue(sendinfo)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        }
+        databaseReference.addListenerForSingleValueEvent((postListener))
     }
 
 
