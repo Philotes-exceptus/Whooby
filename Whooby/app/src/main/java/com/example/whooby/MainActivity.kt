@@ -1,17 +1,17 @@
 package com.example.whooby
 
+import CustomAdapter
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.*
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import java.util.*
-
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -19,8 +19,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 
-class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
-    AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
 
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
@@ -29,10 +28,15 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
     var lang_code=1
     private var speed = 1f
     private var pitch = 1f
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
         setLang()
         var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
@@ -85,11 +89,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
         }
         databaseReference.addListenerForSingleValueEvent((postListener))
     }
-
-
-
-
-
 
 
 
