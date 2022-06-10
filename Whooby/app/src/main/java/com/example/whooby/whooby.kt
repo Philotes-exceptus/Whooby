@@ -149,6 +149,6 @@ class whooby : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
+        overridePendingTransition(R.anim.empty,R.anim.zoom_out)
     }
 }

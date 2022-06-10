@@ -153,7 +153,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.empty,R.anim.zoom_out)
-        overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
     }
 
 
