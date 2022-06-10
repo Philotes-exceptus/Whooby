@@ -25,8 +25,10 @@
         android:layout_marginEnd="16dp"
         android:alpha="0.8"
         android:onClick="mainApp"
+
         android:text="Whooby takes"
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +37,7 @@
 
     <ImageView
         android:id="@+id/developer"
-        android:text="Developers"
+        android:text="@string/developers"
         android:alpha="0.8"
         android:layout_width="121dp"
         android:layout_height="108dp"
@@ -57,7 +59,7 @@
         android:layout_width="208dp"
         android:layout_height="87dp"
         android:onClick="anchor_whooby"
-        android:text="Whooby reads"
+        android:text="@string/whooby_reads"
         android:alpha="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
