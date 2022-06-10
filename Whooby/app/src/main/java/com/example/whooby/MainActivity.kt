@@ -155,6 +155,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
     }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.right_left1,R.anim.right_left2)
+    }
 
 
 }

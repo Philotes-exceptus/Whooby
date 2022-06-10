@@ -27,9 +27,11 @@ class splashscreen : AppCompatActivity() {
         )
 
         Handler().postDelayed({
-            val intent = Intent(this, Opening::class.java)
-            startActivity(intent)
-            finish()
+            Intent(this, Opening::class.java).also {
+                startActivity(it)
+                finish()
+                overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
+            }
         }, 3000)
-    }
+        }
 }

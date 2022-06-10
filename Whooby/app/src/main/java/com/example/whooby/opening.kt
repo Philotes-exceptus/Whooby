@@ -135,14 +135,12 @@ class Opening : AppCompatActivity() {
             val whooby = findViewById<Button>(R.id.whooby_reads)
             whooby.startAnimation(animation);
             startActivity(intent4);
-            overridePendingTransition(R.anim.zoom_in, R.anim.empty)
+            overridePendingTransition(R.anim.right_left1,R.anim.right_left2)
         }
     }
 
     override fun onBackPressed() {
-
-        overridePendingTransition(R.anim.top_bottom1, R.anim.top_bottom2)
-        finish()
-
+        overridePendingTransition(R.anim.top_bottom1,R.anim.top_bottom2)
+        super.onBackPressed()
     }
 }
