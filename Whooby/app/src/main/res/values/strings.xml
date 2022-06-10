@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Whooby</string>
+    <string name="developers">Developers</string>
+    <string name="whooby_reads">Whooby reads</string>
+    <string name="whooby_takes">Whooby takes</string>
 </resources>

@@ -30,9 +30,9 @@ class Opening : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val  whooby_feed=findViewById<Button>(R.id.whooby_button)
-        val author=findViewById<ImageView>(R.id.developer)
-        val whooby_reads=findViewById<Button>(R.id.whooby_reads)
+        val whooby_feed = findViewById<Button>(R.id.whooby_button)
+        val author = findViewById<ImageView>(R.id.developer)
+        val whooby_reads = findViewById<Button>(R.id.whooby_reads)
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
@@ -43,7 +43,7 @@ class Opening : AppCompatActivity() {
         whooby_feed.setTranslationY(50F)
         author.setTranslationY(50F)
         whooby_reads.setTranslationY(50F)
-        
+
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
@@ -55,26 +55,27 @@ class Opening : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
 
-        val  whooby=findViewById<Button>(R.id.whooby_button)
-        val author=findViewById<ImageView>(R.id.developer)
+        val whooby_feed = findViewById<Button>(R.id.whooby_button)
+        val whooby_reads = findViewById<Button>(R.id.whooby_reads)
+        val author = findViewById<ImageView>(R.id.developer)
 
-        whooby.setAlpha(0f);
+        whooby_feed.setAlpha(0f);
+        whooby_reads.setAlpha(0f);
         author.setAlpha(0f);
 
         //Animate the alpha value to 1f and set duration as 1.5 secs.
-        whooby.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
 
 
     }
 
 
+    fun abt_author(view: View) {
 
-    fun abt_author(view :View)
-    {
-
-        val  developer=findViewById<ImageView>(R.id.developer)
-        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val developer = findViewById<ImageView>(R.id.developer)
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
         //starts the animation
         developer.startAnimation(animation);
 
@@ -86,8 +87,10 @@ class Opening : AppCompatActivity() {
         myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
         myToast.view = layout//setting the view of custom toast layout
         val countDownTimer = object : CountDownTimer(5000, 1000) {
-            override fun onTick(millisUntilFinished: Long) { }
-            override fun onFinish() { myToast.cancel() }
+            override fun onTick(millisUntilFinished: Long) {}
+            override fun onFinish() {
+                myToast.cancel()
+            }
         }
         myToast.show()
         countDownTimer.start()
@@ -95,41 +98,51 @@ class Opening : AppCompatActivity() {
     }
 
 
-
-    fun mainApp(view :View)
-    {
+    fun mainApp(view: View) {
 
         //this function code opens the whooby feed section  where user enters the text
         Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
 
-        val animation :     Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent3)
 
 
-        if(view.getId()==R.id.whooby_button);
+        if (view.getId() == R.id.whooby_button);
         run {
 
             val whooby = findViewById<Button>(R.id.whooby_button)
-            whooby.startAnimation(animation);
-            val handler = Handler()
-            handler.postDelayed(Runnable {
-                startActivity(intent3);
-            }, 1800)
+            whooby.startAnimation(animation)
+            startActivity(intent3)
+            overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
+//            val handler = Handler()
+//            handler.postDelayed(Runnable {
+//
+//            }, 1800)
 
         }
     }
 
-    fun anchor_whooby(view: View)
-    {
-    //This function inflates the whooby reads activity where the model reads the messages.
+    fun anchor_whooby(view: View) {
+        //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
 
-        if(view.getId()==R.id.whooby_reads);
-        startActivity(intent4);
-
+        if (view.getId() == R.id.whooby_reads);
+        run {
+            val whooby = findViewById<Button>(R.id.whooby_reads)
+            whooby.startAnimation(animation);
+            startActivity(intent4);
+            overridePendingTransition(R.anim.zoom_in, R.anim.empty)
+        }
     }
 
+    override fun onBackPressed() {
+
+        overridePendingTransition(R.anim.top_bottom1, R.anim.top_bottom2)
+        finish()
+
+    }
 }
