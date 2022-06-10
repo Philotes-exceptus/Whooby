@@ -33,7 +33,7 @@ class whooby : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.whooby)
 
-         backgroundSceneView = findViewById(R.id.backgroundSceneView);
+         backgroundSceneView = findViewById(R.id.backgroundSceneView)
 
 
         loadModels();
@@ -64,7 +64,7 @@ class whooby : AppCompatActivity() {
         val data = ArrayList<ItemsViewModel>()
 
         for (i in 1..20) {
-            data.add(ItemsViewModel("Item " + i))
+            data.add(ItemsViewModel("Item $i"))
         }
 
 
@@ -149,6 +149,6 @@ class whooby : AppCompatActivity() {
     }
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.empty,R.anim.zoom_out)
+        overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
     }
 }

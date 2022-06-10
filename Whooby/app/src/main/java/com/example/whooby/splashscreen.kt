@@ -32,6 +32,6 @@ class splashscreen : AppCompatActivity() {
                 finish()
                 overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
             }
-        }, 3000)
+        }, 2500)
         }
 }
