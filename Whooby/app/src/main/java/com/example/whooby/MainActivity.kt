@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("InputText")
+        databaseReference.database.setPersistenceEnabled(true)
         sendinfo = SendInfo()
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
