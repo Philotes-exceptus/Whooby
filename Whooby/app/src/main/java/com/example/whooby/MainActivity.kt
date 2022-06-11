@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     var lang_code=1
     private var speed = 1f
     private var pitch = 1f
-    var isCalled: Boolean = false
     private fun enablePersistence() {
         // [START rtdb_enable_persistence]
         firebaseDatabase.setPersistenceEnabled(true)
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("InputText")
-        //databaseReference.database.setPersistenceEnabled(true)
         sendinfo = SendInfo()
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
