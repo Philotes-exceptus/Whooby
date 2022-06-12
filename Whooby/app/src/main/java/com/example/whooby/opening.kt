@@ -124,11 +124,11 @@ class Opening : AppCompatActivity() {
         }
     }
 
+
     fun anchor_whooby(view: View) {
         //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
-
 
         if (view.getId() == R.id.whooby_reads);
         run {

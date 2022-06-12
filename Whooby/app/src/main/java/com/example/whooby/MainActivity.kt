@@ -146,9 +146,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             if(lang_code==0)
                 res = textToSpeech.setLanguage(Locale.US)
 
+    }
 
 
-
+    var pass: Int=0
+    @JvmName("getPass1")
+    fun getPass(): Int {
+        if(lang_code==1)
+            pass=1
+        if(lang_code==0)
+            pass=0
+        return pass
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
