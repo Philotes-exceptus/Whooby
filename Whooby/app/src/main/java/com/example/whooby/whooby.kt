@@ -6,56 +6,49 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.filament.utils.Float4
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
-import java.util.ArrayList
+import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
 
 
-class whooby : AppCompatActivity() {
+class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     lateinit var  backgroundSceneView : SceneView
-
+    private var speed = 1f
+    private var pitch = 1f
+     lateinit var textToSpeech: TextToSpeech
+    var lang_code=1
+    var i=1
+    var pass : Int=0
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.whooby)
-
-         backgroundSceneView = findViewById(R.id.backgroundSceneView)
-
-
-        loadModels();
-
-        run {
-
-            val handler = Handler()
-            handler.postDelayed(Runnable {
-            }, 4000)
-
-        }
-
-        //This function inflates the whooby reads activity where the model reads the messages.
-        val intent4 = Intent(applicationContext, whooby::class.java)
+        val obj= MainActivity()
+        pass=obj.getPass()
 
 
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
-        val sc = findViewById<SceneView>(R.id.backgroundSceneView)
+
         recyclerview.bringToFront()
-        sc.requestLayout()
-        sc.invalidate()
 
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
@@ -73,6 +66,25 @@ class whooby : AppCompatActivity() {
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
+
+//        val installIntent = Intent()
+//        installIntent.action = TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA
+//        startActivity(installIntent)
+
+         backgroundSceneView = findViewById(R.id.backgroundSceneView)
+        loadModels();
+
+        run {
+
+            val handler = Handler()
+            handler.postDelayed(Runnable {
+            }, 4000)
+
+        }
+
+        //This function inflates the whooby reads activity where the model reads the messages.
+        val intent4 = Intent(applicationContext, whooby::class.java)
+
 
     }
 
@@ -138,8 +150,64 @@ class whooby : AppCompatActivity() {
 //                       Float4(0.1f,0.1f,0.1f,1f)
 //                    )
 
-                    modelNode1.getRenderableInstance().animate(true).start()
-                    modelNode2.getRenderableInstance().animate(true).start()
+
+
+                    val recyclerviewer=findViewById<RecyclerView>(R.id.recyclerview)
+                    val msgcontent=findViewById<TextView>(R.id.msgcontent)
+                    val msgBox=findViewById<LinearLayout>(R.id.msgBox)
+                    val btn=findViewById<Button>(R.id.start)
+
+                    textToSpeech= TextToSpeech(this,this)
+                    btn.setOnClickListener {
+
+                        modelNode1.getRenderableInstance().animate(true).start()
+                        modelNode2.getRenderableInstance().animate(true).start()
+
+                        var j=0
+
+                        var text : String= (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(R.id.msgcontent))?.text
+                            .toString()
+                        Log.d("tag",text)
+                            textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
+                            j++
+                        run {
+
+                            val handler = Handler()
+                            handler.postDelayed(Runnable {
+                            }, 4000)
+
+                        }
+                        text = (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(R.id.msgcontent))?.text
+                            .toString()
+                        Log.d("tag",text)
+                        textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
+
+
+
+                        var speed1=findViewById<Button>(R.id.speedup)
+                        var speed2 =findViewById<Button>(R.id.slowdown)
+                        speed1.setOnClickListener{
+                            speed +=0.25f
+                            textToSpeech.setSpeechRate(speed)
+                        }
+                        speed2.setOnClickListener{
+                            speed -=0.25f
+                            textToSpeech.setSpeechRate(speed)
+                        }
+
+                        var pitch1=findViewById<Button>(R.id.pitchi)
+                        var pitch2=findViewById<Button>(R.id.pitchd)
+                        pitch1.setOnClickListener{
+                            pitch +=0.25f
+                            textToSpeech.setPitch(pitch)
+                        }
+                        pitch2.setOnClickListener{
+                            pitch -=0.25f
+                            textToSpeech.setPitch(pitch)
+                        }
+                    }
+
+
 
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
@@ -151,4 +219,30 @@ class whooby : AppCompatActivity() {
         super.onBackPressed()
         overridePendingTransition(R.anim.empty,R.anim.zoom_out)
     }
+
+    fun process()
+    {
+
+    }
+
+
+    override fun onInit(status: Int) {
+        if(status== TextToSpeech.SUCCESS)
+        {
+            var res :Int=1
+
+            if(pass==1)
+                res = textToSpeech.setLanguage(Locale("hin"))
+            if(pass==0)
+                res = textToSpeech.setLanguage(Locale.US)
+
+
+            if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
+            {
+                Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
+            }
+        }
+
+    }
+
 }
