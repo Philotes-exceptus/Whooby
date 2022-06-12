@@ -36,6 +36,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     var lang_code=1
     var i=1
     var pass : Int=0
+    val msg_queue: Queue<String> = LinkedList()
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +44,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         setContentView(R.layout.whooby)
         val obj= MainActivity()
         pass=obj.getPass()
+
 
 
         // getting the recyclerview by its id
@@ -57,7 +59,8 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         val data = ArrayList<ItemsViewModel>()
 
         for (i in 1..20) {
-            data.add(ItemsViewModel("Item $i"))
+            data.add(ItemsViewModel("Item "+i))
+            msg_queue.add("Item "+i)
         }
 
 
@@ -163,25 +166,29 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
 
-                        var j=0
+                        var j = 0
+                        while(j<20)
+                        {var text: String = msg_queue.first()
+                        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
 
-                        var text : String= (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(R.id.msgcontent))?.text
-                            .toString()
-                        Log.d("tag",text)
-                            textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
-                            j++
                         run {
+                            var text: String =
+                                (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(
+                                    R.id.msgcontent
+                                ))?.text
+                                    .toString()
+
 
                             val handler = Handler()
                             handler.postDelayed(Runnable {
+
+
                             }, 4000)
 
                         }
-                        text = (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(R.id.msgcontent))?.text
-                            .toString()
-                        Log.d("tag",text)
-                        textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
-
+                            j++
+                            msg_queue.poll()
+                    }
 
 
                         var speed1=findViewById<Button>(R.id.speedup)
