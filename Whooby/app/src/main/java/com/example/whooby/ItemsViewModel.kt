@@ -8,6 +8,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 
 data class ItemsViewModel(val text: String) : AppCompatActivity() {
     lateinit var firebaseDatabase: FirebaseDatabase
@@ -33,7 +34,8 @@ data class ItemsViewModel(val text: String) : AppCompatActivity() {
 
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val post = dataSnapshot.getValue()
+                val value = dataSnapshot.getValue<String>()
+
 
             }
             override fun onCancelled(error: DatabaseError) {
