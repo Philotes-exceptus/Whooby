@@ -1,11 +1,13 @@
 package com.example.whooby
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -70,6 +72,11 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
                 textToSpeech.setPitch(pitch)
             }
         }
+
+        val animationDrawable = findViewById<ConstraintLayout>(R.id.liveWp).background as AnimationDrawable
+        animationDrawable.setEnterFadeDuration(2000)
+        animationDrawable.setExitFadeDuration(4000)
+        animationDrawable.start()
     }
 
 
