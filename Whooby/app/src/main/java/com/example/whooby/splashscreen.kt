@@ -27,7 +27,7 @@ class splashscreen : AppCompatActivity() {
         )
 
         Handler().postDelayed({
-            Intent(this, Opening::class.java).also {
+            Intent(this, LoginActivity::class.java).also {
                 startActivity(it)
                 finish()
                 overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
