@@ -23,7 +23,7 @@
 - 3d-model acts as message reading anchor
 - Implements TTS modules to convert text to speech
 - Stores user feed in a database and runs them on the live screen 
-- Interractive UI
+- Interactive UI
 
 
 ## Installation
@@ -37,7 +37,7 @@ Check our releases to download our app.
 - Make sure your phone emulator opengl setting set to 3.0
 
 ## Known problems
-The application is using open source library `sceneform`, which is unstable . Expect random crashes or improper model rendering behaviours. Hopefully, they will be fixed within the next alpha release.
+The application is using open source library `Sceneform`, which is unstable . Expect random crashes or improper model rendering behaviours. Hopefully, they will be fixed within the next alpha release.
 
 ## Contributions
 There's a huge room for improvements! Please open an issue to report bugs, discuss ideas and so on.
@@ -46,7 +46,7 @@ Check out the repo's [issue backlog](https://github.com/Philotes-exceptus/Whooby
 
 To get started with development, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## Please Share & Star the repository to keep me motivated.
+## Please Share & Star the repository to keep us motivated.
   <a href = "https://github.com/Philotes-exceptus/Whooby">
      <img alt="GitHub Org's stars" src="https://img.shields.io/github/stars/Philotes-exceptus?style=social">
   </a>
