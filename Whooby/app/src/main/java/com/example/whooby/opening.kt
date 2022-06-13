@@ -9,11 +9,11 @@ package com.example.whooby
 #########################################################################################################
 */
 
-import CustomAdapter
 import android.content.Intent
+import android.media.MediaPlayer.OnPreparedListener
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import android.view.animation.Animation
@@ -21,10 +21,9 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+
 
 class Opening : AppCompatActivity() {
 
@@ -48,6 +47,14 @@ class Opening : AppCompatActivity() {
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+
+        val videoview = findViewById<VideoView>(R.id.video) as VideoView
+        val path = "android.resource://" + packageName + "/" + R.raw.abc
+
+        videoview.setVideoURI(Uri.parse(path))
+        videoview.start()
+
+        videoview.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
 
     }
 
