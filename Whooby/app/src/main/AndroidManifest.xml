@@ -46,6 +46,13 @@
             android:launchMode="singleTask"
             android:exported="true" >
         </activity>
+
+        <activity
+
+            android:name=".LoginActivity"
+            android:launchMode="singleTask"
+            android:exported="true" >
+        </activity>
     </application>
 
 </manifest>
