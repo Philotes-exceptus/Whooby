@@ -8,8 +8,8 @@
 
     <com.google.ar.sceneform.SceneView
         android:id="@+id/backgroundSceneView"
-        android:layout_width="420dp"
-        android:layout_height="818dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#FF0000FF"
         app:layout_constraintBottom_toBottomOf="parent"
