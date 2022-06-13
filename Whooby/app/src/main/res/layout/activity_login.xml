@@ -14,7 +14,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="45dp"
         android:gravity="center"
-        android:text="Welcome to Whooby"
+        android:text="@string/welcome_to_whooby"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold|normal|italic" />
@@ -100,7 +100,7 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="25dp"
-                android:visibility="gone">
+                >
 
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -134,7 +134,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:hint="Password"
+                    android:hint="@string/password"
                     app:boxStrokeColor="#4E4A4A"
                     app:boxStrokeWidth="1dp"
                     app:endIconMode="password_toggle"
@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Forget Password?"
+                    android:text="@string/forget_password"
                     android:textAlignment="textEnd"
                     android:textColor="#616161"
                     android:textSize="11sp"
@@ -169,7 +169,8 @@
                 android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="25dp">
+                android:padding="25dp"
+                android:visibility="gone">
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
@@ -178,7 +179,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:hint="Name"
+                    android:hint="@string/name"
                     app:boxStrokeColor="#4E4A4A"
                     app:boxStrokeWidth="1dp"
                     app:hintTextColor="#4E4A4A"
@@ -193,16 +194,17 @@
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal" />
-                </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:id="@+id/regdNo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:hint="Registration Number"
+                    android:hint="@string/registration_number"
                     app:boxStrokeColor="#4E4A4A"
                     app:boxStrokeWidth="1dp"
                     app:hintTextColor="#4E4A4A"
@@ -234,7 +236,7 @@
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordss"
+                        android:id="@+id/pass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -251,7 +253,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
-                    android:hint="Confirm Password"
+                    android:hint="@string/confirm_password"
                     app:boxStrokeColor="#4E4A4A"
                     app:boxStrokeWidth="1dp"
                     app:endIconMode="password_toggle"
@@ -259,7 +261,7 @@
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwords01"
+                        android:id="@+id/confmPass"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
@@ -294,14 +296,7 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:orientation="horizontal">
-
-
             </LinearLayout>
-
-
         </LinearLayout>
-
-
     </androidx.cardview.widget.CardView>
-
 </LinearLayout>

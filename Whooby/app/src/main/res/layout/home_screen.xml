@@ -34,12 +34,12 @@
 
     <ImageView
         android:id="@+id/developer"
-        android:text="@string/developers"
-        android:alpha="0.8"
         android:layout_width="121dp"
         android:layout_height="108dp"
+        android:alpha="0.8"
         android:onClick="abt_author"
         android:scaleType="centerInside"
+        android:text="@string/developers"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
@@ -64,6 +64,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="80dp"
+        android:layout_height="52dp"
+        android:text="@string/log_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

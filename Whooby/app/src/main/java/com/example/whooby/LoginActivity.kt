@@ -13,6 +13,9 @@ import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 
 class LoginActivity : AppCompatActivity() {
+
+    var isLogIn : Boolean=false
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,8 @@ class LoginActivity : AppCompatActivity() {
             llSingUp.visibility = View.VISIBLE
             llLogIN.visibility = View.GONE
             tvLogIn.setTextColor(resources.getColor(R.color.pinkColor,null))
+            isLogIn=true
+
 //            laySize.layout(38, 30, 38)
         }
         tvLogIn.setOnClickListener {
@@ -40,9 +45,25 @@ class LoginActivity : AppCompatActivity() {
             btnSingIn.text = "Login"
             llLogIN.visibility = View.VISIBLE
             tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
+            isLogIn=true
         }
         btnSingIn.setOnClickListener {
             startActivity(Intent(this,Opening::class.java))
         }
+    }
+
+    fun userInfo(){
+        val regdNo = findViewById<TextView>(R.id.regdNo).toString()
+        val logInPass= findViewById<TextView>(R.id.passwords)
+        val name = findViewById<TextView>(R.id.nameP).toString()
+        val pass = findViewById<TextView>(R.id.pass)
+        val cnfmPass = findViewById<TextView>(R.id.confmPass)
+    }
+
+    fun getLogIn(): Boolean{
+        return isLogIn
+    }
+    fun end(){
+        finish()
     }
 }
