@@ -12,7 +12,10 @@
 ---
 
 <p>
-  
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic1.jpeg" width="320" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic2.jpeg" width="320" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic3.jpeg" width="320" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic4.jpeg" width="320" />
 </p>
 
 ## Features
