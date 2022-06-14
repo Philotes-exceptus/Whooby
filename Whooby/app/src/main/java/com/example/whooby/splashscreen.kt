@@ -23,7 +23,7 @@ class splashscreen : AppCompatActivity() {
         setContentView(R.layout.activity_splashscreen)
 
         var haveLogged = false
-        val obj: LoginActivity = LoginActivity()
+        val obj = LoginActivity()
         haveLogged = obj.getLogIn()
 
 

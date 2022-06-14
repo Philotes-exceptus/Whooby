@@ -1,13 +1,12 @@
 package com.example.whooby
 
-import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
+
 import java.util.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -26,11 +25,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     private var speed = 1f
     private var pitch = 1f
     var isCalled: Boolean = false
-    private fun enablePersistence() {
-        // [START rtdb_enable_persistence]
-        firebaseDatabase.setPersistenceEnabled(true)
-        // [END rtdb_enable_persistence]
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,7 +88,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
 
         }
@@ -172,7 +166,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+
     }
     override fun onBackPressed() {
         super.onBackPressed()
