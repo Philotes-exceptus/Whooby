@@ -119,7 +119,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         val backdrop = builder()
             .setSource(
-                this, Uri.parse("models/backdrop.glb")
+                this, Uri.parse("models/backdrop2.glb")
             )
             .setIsFilamentGltf(true)
             .setAsyncLoadEnabled(true)
@@ -131,12 +131,12 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                 try {
                     val modelNode1 = Node()
                     modelNode1.renderable = dragon.get()
-                    modelNode1.localScale = Vector3(0.37f, 0.37f, 0.37f)
+                    modelNode1.localScale = Vector3(0.41f, 0.41f, 0.41f)
                     modelNode1.localRotation = Quaternion.multiply(
                         Quaternion.axisAngle(Vector3(1f, 0f, 0.2f), 30f),
                         Quaternion.axisAngle(Vector3(0f, 1f, 0f), 350f)
                     )
-                    modelNode1.localPosition = Vector3(0.035f, -0.41f, -0.81f)
+                    modelNode1.localPosition = Vector3(0.035f, -0.44f, -0.85f)
 
                     backgroundSceneView.scene.addChild(modelNode1)
                     val modelNode2 = Node()
@@ -161,6 +161,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     val btn=findViewById<Button>(R.id.start)
 
                     textToSpeech= TextToSpeech(this,this)
+                    textToSpeech.setSpeechRate(0.74f)
                     btn.setOnClickListener {
 
                         for (i in 1..20) {
