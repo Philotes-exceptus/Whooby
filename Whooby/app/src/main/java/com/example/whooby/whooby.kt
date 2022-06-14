@@ -163,6 +163,10 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     textToSpeech= TextToSpeech(this,this)
                     btn.setOnClickListener {
 
+                        for (i in 1..20) {
+                            msg_queue.add("Item "+i)
+                        }
+
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
 
@@ -190,28 +194,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                             msg_queue.poll()
                     }
 
-
-                        var speed1=findViewById<Button>(R.id.speedup)
-                        var speed2 =findViewById<Button>(R.id.slowdown)
-                        speed1.setOnClickListener{
-                            speed +=0.25f
-                            textToSpeech.setSpeechRate(speed)
-                        }
-                        speed2.setOnClickListener{
-                            speed -=0.25f
-                            textToSpeech.setSpeechRate(speed)
-                        }
-
-                        var pitch1=findViewById<Button>(R.id.pitchi)
-                        var pitch2=findViewById<Button>(R.id.pitchd)
-                        pitch1.setOnClickListener{
-                            pitch +=0.25f
-                            textToSpeech.setPitch(pitch)
-                        }
-                        pitch2.setOnClickListener{
-                            pitch -=0.25f
-                            textToSpeech.setPitch(pitch)
-                        }
                     }
 
 
