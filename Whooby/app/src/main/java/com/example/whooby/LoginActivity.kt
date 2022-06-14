@@ -7,10 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 
 class LoginActivity : AppCompatActivity() {
 
@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         val tvSingUp =findViewById<TextView>(R.id.singUp)
         val tvLogIn =findViewById<TextView>(R.id.logIn)
-        val llSingUp =findViewById<LinearLayout>(R.id.singUpLayout)
-        val llLogIN =findViewById<LinearLayout>(R.id.logInLayout)
+        val llSingUp =findViewById<ConstraintLayout>(R.id.singUpLayout)
+        val llLogIN =findViewById<ConstraintLayout>(R.id.logInLayout)
         val btnSingIn =findViewById<Button>(R.id.singIn)
         tvSingUp.setOnClickListener {
             tvSingUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
         }
         btnSingIn.setOnClickListener {
             startActivity(Intent(this,Opening::class.java))
+            overridePendingTransition(R.anim.zoom_in,R.anim.empty)
         }
     }
 
