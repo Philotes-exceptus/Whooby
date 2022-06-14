@@ -55,10 +55,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             speed1.setOnClickListener{
                 speed +=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed increased",Toast.LENGTH_LONG).show()
             }
             speed2.setOnClickListener{
                 speed -=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed decreased",Toast.LENGTH_LONG).show()
             }
 
             var pitch1=findViewById<Button>(R.id.pitchi)
@@ -66,10 +68,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             pitch1.setOnClickListener{
                 pitch +=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch increase",Toast.LENGTH_LONG).show()
             }
             pitch2.setOnClickListener{
                 pitch -=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch decrease",Toast.LENGTH_LONG).show()
             }
         }
 
@@ -154,9 +158,17 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             if(lang_code==0)
                 res = textToSpeech.setLanguage(Locale.US)
 
+    }
 
 
-
+    var pass: Int=0
+    @JvmName("getPass1")
+    fun getPass(): Int {
+        if(lang_code==1)
+            pass=1
+        if(lang_code==0)
+            pass=0
+        return pass
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {

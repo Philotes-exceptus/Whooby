@@ -25,8 +25,6 @@
         android:alpha="0.8"
         android:onClick="mainApp"
         android:text="@string/whooby_takes"
-        android:background="@drawable/whooby_buttons"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -60,8 +58,6 @@
         android:alpha="0.8"
         android:onClick="anchor_whooby"
         android:text="@string/whooby_reads"
-        android:background="@drawable/whooby_buttons"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -69,17 +65,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
 
-    <ImageView
+    <Button
         android:id="@+id/logOut"
-        android:layout_width="84dp"
-        android:layout_height="59dp"
-        android:src="@drawable/logout"
+        android:layout_width="80dp"
+        android:layout_height="52dp"
+        android:text="@string/log_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.041" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
