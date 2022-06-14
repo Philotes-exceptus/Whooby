@@ -33,7 +33,7 @@ class Opening : AppCompatActivity() {
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val author = findViewById<ImageView>(R.id.developer)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
-        val logOut=findViewById<Button>(R.id.logOut)
+        val logOut=findViewById<ImageView>(R.id.logOut)
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
@@ -80,7 +80,7 @@ class Opening : AppCompatActivity() {
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
 
-        val logOut=findViewById<Button>(R.id.logOut)
+        val logOut=findViewById<ImageView>(R.id.logOut)
         logOut.setOnClickListener {
             val obj: LoginActivity = LoginActivity()
             obj.isLogIn=false

@@ -55,10 +55,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             speed1.setOnClickListener{
                 speed +=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed increased",Toast.LENGTH_LONG).show()
             }
             speed2.setOnClickListener{
                 speed -=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed decreased",Toast.LENGTH_LONG).show()
             }
 
             var pitch1=findViewById<Button>(R.id.pitchi)
@@ -66,10 +68,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             pitch1.setOnClickListener{
                 pitch +=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch increase",Toast.LENGTH_LONG).show()
             }
             pitch2.setOnClickListener{
                 pitch -=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch decrease",Toast.LENGTH_LONG).show()
             }
         }
 
