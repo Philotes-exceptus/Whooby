@@ -155,10 +155,6 @@ class Opening : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-//        val obj: LoginActivity = LoginActivity()
-//        obj.end()
-//        Handler().postDelayed({
             finishAffinity()
-//        },300)
     }
 }
