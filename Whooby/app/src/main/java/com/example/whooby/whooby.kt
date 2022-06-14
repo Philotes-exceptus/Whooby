@@ -7,7 +7,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.speech.tts.TextToSpeech
-import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -149,9 +148,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
 
-//                   modelNode2.getRenderableInstance()?.material?.filamentMaterialInstance?.setBaseColor(
-//                       Float4(0.1f,0.1f,0.1f,1f)
-//                    )
 
 
 
