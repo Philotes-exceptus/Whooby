@@ -84,6 +84,7 @@ class Opening : AppCompatActivity() {
             obj.isLogIn=false
             Intent(this,LoginActivity::class.java).also{
                 startActivity(it)
+                overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
             }
         }
     }
