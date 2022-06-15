@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/Whooby/app/src/main/res/drawable/whooby_icon.jpeg" width="128" height="128" style="display: block; margin: 0 auto"/>
     <h1>Whooby</h1>
-    <p>A TTS based native android chat application for displaying messages within a community , organisation or group.</p>
+    <h3><p>A TTS(text-to-speech) based native android application which takes input from user of a community or organisation and displays it in open public where all members of the gropu or community can see it. It basically promotes freedom of speech and opinion in a group , organisation , education institution or community.</p></h3>
 
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
   ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
@@ -12,10 +12,12 @@
 ---
 
 <p>
-  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic1.jpeg" width="320" />
-  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic2.jpeg" width="320" />
-  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic3.jpeg" width="320" />
-  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/pic4.jpeg" width="320" />
+    <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/2.PNG" width="300" />
+    <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/5.PNG" width="300" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/1.PNG" width="300" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/6.PNG" width="300" />
+  <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/pictures/7.PNG" width="300" />
+
 </p>
 
 ## Features
