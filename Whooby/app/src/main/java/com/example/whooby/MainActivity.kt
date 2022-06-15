@@ -1,5 +1,6 @@
 package com.example.whooby
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         setLang()
         var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
