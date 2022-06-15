@@ -4,11 +4,15 @@ class SendInfo {
 
     private lateinit var inputtext: String
 
-     fun SendInfo() {
-         
+    public fun SendInfo() {
+
     }
 
-    fun setinputtext(inputtext: String){
+    public fun getinputtext(): String{
+        return inputtext
+    }
+
+    public fun setinputtext(inputtext: String){
         this.inputtext = inputtext
     }
 

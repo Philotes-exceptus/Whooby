@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "938497315940",
-    "project_id": "whooby-4ac82",
-    "storage_bucket": "whooby-4ac82.appspot.com"
+    "project_number": "392291481999",
+    "firebase_url": "https://whooby-69ac3-default-rtdb.firebaseio.com",
+    "project_id": "whooby-69ac3",
+    "storage_bucket": "whooby-69ac3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:938497315940:android:04d9a213804b0ad7743b71",
+        "mobilesdk_app_id": "1:392291481999:android:32a158513ad31fc779f3fa",
         "android_client_info": {
           "package_name": "com.example.whooby"
         }
       },
       "oauth_client": [
         {
-          "client_id": "938497315940-o502p26ev7lnqburm34nmjkp3802n9rl.apps.googleusercontent.com",
+          "client_id": "392291481999-9962gvv8ig5iathq2p66hfsaf5gh0bq2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCTg6Q_ek4INBWvooqhMwJyN3lFjBkIw8s"
+          "current_key": "AIzaSyB_M55PdtodTWbTyvjs8ty54i9Ia7jIfBw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "938497315940-o502p26ev7lnqburm34nmjkp3802n9rl.apps.googleusercontent.com",
+              "client_id": "392291481999-9962gvv8ig5iathq2p66hfsaf5gh0bq2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
