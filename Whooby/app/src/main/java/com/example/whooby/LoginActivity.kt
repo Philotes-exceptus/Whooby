@@ -1,6 +1,7 @@
 package com.example.whooby
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.nfc.cardemulation.CardEmulation
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         val tvSingUp =findViewById<TextView>(R.id.singUp)
         val tvLogIn =findViewById<TextView>(R.id.logIn)
         val llSingUp =findViewById<ConstraintLayout>(R.id.singUpLayout)

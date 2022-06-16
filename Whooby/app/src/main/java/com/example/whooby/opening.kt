@@ -10,6 +10,7 @@ package com.example.whooby
 */
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.media.MediaPlayer.OnPreparedListener
 import android.net.Uri
 import android.os.Bundle
@@ -64,6 +65,8 @@ class Opening : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
