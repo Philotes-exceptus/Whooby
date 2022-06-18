@@ -5,6 +5,7 @@ class SendInfo {
     private lateinit var inputtext: String
 
     public fun SendInfo() {
+
     }
 
     public fun getinputtext(): String{

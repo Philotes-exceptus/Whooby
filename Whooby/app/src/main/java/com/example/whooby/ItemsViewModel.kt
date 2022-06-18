@@ -1,5 +1,7 @@
 package com.example.whooby
 
+data class ItemsViewModel(val text: String)
+{}
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -49,3 +51,4 @@ data class ItemsViewModel(val text: String) : AppCompatActivity() {
 
 
 }
+

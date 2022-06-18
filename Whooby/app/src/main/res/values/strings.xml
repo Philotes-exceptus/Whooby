@@ -3,4 +3,11 @@
     <string name="developers">Developers</string>
     <string name="whooby_reads">Whooby reads</string>
     <string name="whooby_takes">Whooby takes</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="log_out">Log Out</string>
+    <string name="registration_number">Registration Number</string>
+    <string name="name">Name</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="password">Password</string>
+    <string name="welcome_to_whooby">Welcome to Whooby</string>
 </resources>

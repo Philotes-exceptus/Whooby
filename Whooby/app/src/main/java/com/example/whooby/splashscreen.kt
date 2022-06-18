@@ -9,10 +9,12 @@ package com.example.whooby
 */
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import kotlin.time.measureTimedValue
 
 
 @Suppress("DEPRICATION")
@@ -21,17 +23,35 @@ class splashscreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashscreen)
 
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+        var haveLogged = false
+        val obj = LoginActivity()
+        haveLogged = obj.getLogIn()
+
+
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        Handler().postDelayed({
-            Intent(this, Opening::class.java).also {
-                startActivity(it)
-                finish()
-                overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
-            }
-        }, 2500)
+        if (haveLogged == false) {
+            Handler().postDelayed({
+                Intent(this, LoginActivity::class.java).also {
+                    startActivity(it)
+                    finish()
+                    overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
+                }
+            }, 2500)
         }
+        else
+            Handler().postDelayed({
+                Intent(this, Opening::class.java).also {
+                    startActivity(it)
+                    finish()
+                    overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
+                }
+            }, 2500)
+    }
+
 }
