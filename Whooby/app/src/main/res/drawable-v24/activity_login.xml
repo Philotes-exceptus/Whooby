@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/forget_password"
+                    android:text="@string/forgot_password"
                     android:textAlignment="textEnd"
                     android:textColor="#616161"
                     android:textSize="11sp"
