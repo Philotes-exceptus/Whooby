@@ -25,6 +25,16 @@
         app:layout_constraintVertical_bias="0.463"
         tools:srcCompat="@drawable/sound_icon" />
 
+    <TextView
+        android:id="@+id/idTVRetrieveData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Retrieve Data"
+        android:textAlignment="center"
+        android:textColor="@color/purple_500"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="350dp"
@@ -168,6 +178,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.974"
         app:srcCompat="@drawable/br_icon" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
