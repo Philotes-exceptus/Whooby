@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "248113063495",
-    "firebase_url": "https://whooby-5b865-default-rtdb.firebaseio.com",
-    "project_id": "whooby-5b865",
-    "storage_bucket": "whooby-5b865.appspot.com"
+    "project_number": "392291481999",
+    "firebase_url": "https://whooby-69ac3-default-rtdb.firebaseio.com",
+    "project_id": "whooby-69ac3",
+    "storage_bucket": "whooby-69ac3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:248113063495:android:bdb635320d301e8787f362",
+        "mobilesdk_app_id": "1:392291481999:android:32a158513ad31fc779f3fa",
         "android_client_info": {
           "package_name": "com.example.whooby"
         }
       },
       "oauth_client": [
         {
-          "client_id": "248113063495-2n2ufkcgvlt0su10hvsta7ikj09en27i.apps.googleusercontent.com",
+          "client_id": "392291481999-9962gvv8ig5iathq2p66hfsaf5gh0bq2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDXPQomJTtDX4jRn02xIvPd-9GDeDcEY7E"
+          "current_key": "AIzaSyB_M55PdtodTWbTyvjs8ty54i9Ia7jIfBw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "248113063495-2n2ufkcgvlt0su10hvsta7ikj09en27i.apps.googleusercontent.com",
+              "client_id": "392291481999-9962gvv8ig5iathq2p66hfsaf5gh0bq2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
