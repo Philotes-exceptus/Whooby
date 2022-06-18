@@ -1,7 +1,7 @@
 <div align="center">
     <img src="https://github.com/Philotes-exceptus/Whooby/blob/main/Whooby/app/src/main/res/drawable/whooby_icon.jpeg" width="128" height="128" style="display: block; margin: 0 auto"/>
     <h1>Whooby</h1>
-    <h3><p>A TTS(text-to-speech) based native android application which takes input from user of a community or organisation and displays it in open public where all members of the gropu or community can see it. It basically promotes freedom of speech and opinion in a group , organisation , education institution or community.</p></h3>
+    <h3><p>A TTS(text-to-speech) based native android application which takes input from user of a community or organisation and displays it in open public where all members of the group or community can see it. It basically promotes freedom of speech and opinion in a group , organisation , educational institution or community.</p></h3>
 
 ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
   ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
@@ -23,7 +23,7 @@
 ## Features
 - Displays member's messages in a live screen
 - 3d-model acts as message reading anchor
-- Implements TTS modules to convert text to speech
+- Implements TTS module to convert text to speech
 - Stores user feed in a database and runs them on the live screen 
 - Interactive UI
 
@@ -36,7 +36,7 @@ Check our releases to download our app.
 ## Development setup
 
 - First off, you require the latest [Android Studio Arctic Fox](https://developer.android.com/studio) (or newer) to be able to build the app.
-- Make sure your phone emulator opengl setting set to 3.0
+- Make sure your phone emulator's opengl setting set to 3.0
 
 ## Known problems
 The application is using open source library `Sceneform`, which is unstable . Expect random crashes or improper model rendering behaviours. Hopefully, they will be fixed within the next alpha release.
