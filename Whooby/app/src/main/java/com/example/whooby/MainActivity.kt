@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.getValue
 
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.getReference("InputText")
         sendinfo = SendInfo()
+
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
             var text: String = feed.text.toString()
@@ -85,6 +87,23 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
 
         }
         databaseReference.addListenerForSingleValueEvent((postListener))
+    }
+
+
+    private fun getdata() {
+
+        val postListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val value = dataSnapshot.getValue<String>()
+
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        }
+        databaseReference.addValueEventListener((postListener))
     }
 
 
