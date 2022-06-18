@@ -57,7 +57,8 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
 
-
+    //BiometricAuth
+    implementation 'androidx.biometric:biometric:1.0.1'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.0.5'
     implementation 'com.google.firebase:firebase-database:19.2.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.5'

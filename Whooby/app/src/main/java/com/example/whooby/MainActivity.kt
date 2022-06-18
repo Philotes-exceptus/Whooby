@@ -1,13 +1,20 @@
 package com.example.whooby
 
+import android.app.KeyguardManager
+import android.content.Context
 import android.content.pm.ActivityInfo
+import android.content.pm.PackageManager
+import android.hardware.biometrics.BiometricPrompt
+import android.os.Build
 import android.os.Bundle
+import android.os.CancellationSignal
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.core.app.ActivityCompat
 import java.util.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -18,7 +25,23 @@ import com.google.firebase.database.ktx.getValue
 
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
+    private var cancellationSignal: CancellationSignal? = null
+    private val authenticationCallback: BiometricPrompt.AuthenticationCallback
+        get() = @RequiresApi(Build.VERSION_CODES.P)
+        object : BiometricPrompt.AuthenticationCallback() {
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
+                super.onAuthenticationError(errorCode, errString)
+                notifyUser("Authentication Error : $errString")
+            }
 
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
+                super.onAuthenticationSucceeded(result)
+                notifyUser("Authentication Succeeded")
+
+                // or start a new Activity
+
+            }
+        }
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
     lateinit var sendinfo: SendInfo
@@ -35,6 +58,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         setContentView(R.layout.activity_main)
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
+
+
 
         setLang()
         var btn: ImageView = findViewById(R.id.button)
@@ -83,6 +109,40 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
       //  animationDrawable.start()
 
     }
+            // it will be called when authentication is cancelled by the user
+            private fun getCancellationSignal(): CancellationSignal {
+                cancellationSignal = CancellationSignal()
+                cancellationSignal?.setOnCancelListener {
+                    notifyUser("Authentication was Cancelled by the user")
+                }
+                return cancellationSignal as CancellationSignal
+            }
+
+            // it checks whether the app the app has fingerprint permission
+            @RequiresApi(Build.VERSION_CODES.M)
+            private fun checkBiometricSupport(): Boolean {
+                val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+                if (!keyguardManager.isDeviceSecure) {
+                    notifyUser("Fingerprint authentication has not been enabled in settings")
+                    return false
+                }
+                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
+                    notifyUser("Fingerprint Authentication Permission is not enabled")
+                    return false
+                }
+                return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
+                    true
+                } else true
+            }
+
+            // this is a toast method which is responsible for showing toast
+            // it takes a string as parameter
+            private fun notifyUser(message: String) {
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            }
+
+
+
 
 
     private fun addDatatoFirebase(typedtext: String)
@@ -102,22 +162,22 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     }
 
 
-    private fun getdata() {
-
-        val postListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val value = dataSnapshot.getValue<String>()
-
-
-            }
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        }
-        databaseReference.addValueEventListener((postListener))
-    }
-
+//    private fun getdata() {
+//
+//        val postListener = object : ValueEventListener {
+//            override fun onDataChange(dataSnapshot: DataSnapshot) {
+//                val value = dataSnapshot.getValue<String>()
+//
+//
+//            }
+//            override fun onCancelled(error: DatabaseError) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        }
+//        databaseReference.addValueEventListener((postListener))
+//    }
+//
 
 
     fun setLang()
