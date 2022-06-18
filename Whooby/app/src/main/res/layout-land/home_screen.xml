@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<VideoView
+    android:id="@+id/video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="1.0" />
+
+<Button
+    android:id="@+id/whooby_button"
+    android:layout_width="163dp"
+    android:layout_height="87dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:alpha="0.8"
+    android:background="@drawable/whooby_buttons"
+    android:onClick="mainApp"
+    android:text="@string/whooby_takes"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.207"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.395" />
+
+
+<ImageView
+    android:id="@+id/developer"
+    android:layout_width="148dp"
+    android:layout_height="132dp"
+    android:alpha="0.8"
+    android:onClick="abt_author"
+    android:scaleType="centerInside"
+    android:text="@string/developers"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.974"
+    app:srcCompat="@drawable/developer"
+    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+<Button
+    android:id="@+id/whooby_reads"
+    android:layout_width="208dp"
+    android:layout_height="87dp"
+
+    android:alpha="0.8"
+    android:background="@drawable/whooby_buttons"
+    android:onClick="anchor_whooby"
+    android:text="@string/whooby_reads"
+    android:textColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.724"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.395" />
+
+<ImageView
+    android:id="@+id/logOut"
+    android:layout_width="84dp"
+    android:layout_height="59dp"
+    android:src="@drawable/logout"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.975"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.085" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

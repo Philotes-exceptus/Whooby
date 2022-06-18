@@ -1,11 +1,13 @@
+import android.R.attr.data
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whooby.ItemsViewModel
 import com.example.whooby.R
+import com.gorisse.thomas.sceneform.light.position
+
 
 class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
@@ -40,4 +42,6 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
 
         val textView: TextView = itemView.findViewById(R.id.msgcontent)
     }
+
+
 }

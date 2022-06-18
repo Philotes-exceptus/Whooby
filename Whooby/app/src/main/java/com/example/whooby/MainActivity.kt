@@ -1,11 +1,13 @@
 package com.example.whooby
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+
 import java.util.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -24,6 +26,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     var lang_code=1
     private var speed = 1f
     private var pitch = 1f
+
+    var isCalled: Boolean = false
+
     private fun enablePersistence() {
         // [START rtdb_enable_persistence]
         firebaseDatabase.setPersistenceEnabled(true)
@@ -31,10 +36,14 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     }
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         setLang()
         var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
@@ -53,10 +62,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             speed1.setOnClickListener{
                 speed +=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed increased",Toast.LENGTH_LONG).show()
             }
             speed2.setOnClickListener{
                 speed -=0.25f
                 textToSpeech.setSpeechRate(speed)
+                Toast.makeText(this,"speed decreased",Toast.LENGTH_LONG).show()
             }
 
             var pitch1=findViewById<Button>(R.id.pitchi)
@@ -64,12 +75,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             pitch1.setOnClickListener{
                 pitch +=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch increase",Toast.LENGTH_LONG).show()
             }
             pitch2.setOnClickListener{
                 pitch -=0.25f
                 textToSpeech.setPitch(pitch)
+                Toast.makeText(this,"pitch decrease",Toast.LENGTH_LONG).show()
             }
         }
+
+       // val animationDrawable = findViewById<ConstraintLayout>(R.id.liveWp).background as AnimationDrawable
+      //  animationDrawable.setEnterFadeDuration(2000)
+      //  animationDrawable.setExitFadeDuration(4000)
+      //  animationDrawable.start()
+
     }
 
 
@@ -82,7 +101,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
 
         }
@@ -163,13 +182,21 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             if(lang_code==0)
                 res = textToSpeech.setLanguage(Locale.US)
 
+    }
 
 
-
+    var pass: Int=0
+    @JvmName("getPass1")
+    fun getPass(): Int {
+        if(lang_code==1)
+            pass=1
+        if(lang_code==0)
+            pass=0
+        return pass
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+
     }
     override fun onBackPressed() {
         super.onBackPressed()

@@ -9,22 +9,21 @@ package com.example.whooby
 #########################################################################################################
 */
 
-import CustomAdapter
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.media.MediaPlayer.OnPreparedListener
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.Handler
-import android.view.Gravity
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import java.util.ArrayList
+
 
 class Opening : AppCompatActivity() {
 
@@ -33,27 +32,41 @@ class Opening : AppCompatActivity() {
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val author = findViewById<ImageView>(R.id.developer)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
+        val logOut=findViewById<ImageView>(R.id.logOut)
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
         author.setAlpha(0f)
         whooby_reads.setAlpha(0f)
+        logOut.setAlpha(0f)
 
         //fixes the different whooby button's animation origin always at a constant coordinate
         whooby_feed.setTranslationY(50F)
         author.setTranslationY(50F)
         whooby_reads.setTranslationY(50F)
+        logOut.setTranslationY(50F)
 
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
-        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        logOut.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+
+        val videoview = findViewById<VideoView>(R.id.video) as VideoView
+        val path = "android.resource://" + packageName + "/" + R.raw.abc
+
+        videoview.setVideoURI(Uri.parse(path))
+        videoview.start()
+
+        videoview.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
 
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
@@ -64,11 +77,19 @@ class Opening : AppCompatActivity() {
         author.setAlpha(0f);
 
         //Animate the alpha value to 1f and set duration as 1.5 secs.
-        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
-        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100);
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
 
-
+        val logOut=findViewById<ImageView>(R.id.logOut)
+        logOut.setOnClickListener {
+            val obj: LoginActivity = LoginActivity()
+            obj.isLogIn=false
+            Intent(this,LoginActivity::class.java).also{
+                startActivity(it)
+                overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
+            }
+        }
     }
 
 
@@ -77,16 +98,16 @@ class Opening : AppCompatActivity() {
         val developer = findViewById<ImageView>(R.id.developer)
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
         //starts the animation
-        developer.startAnimation(animation);
+        developer.startAnimation(animation)
 
         //inflates the about section in form of a custom toast layout
-        val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.sagar))
+        val layout = layoutInflater.inflate(R.layout.about, findViewById(R.id.root))
 
         val myToast = Toast(applicationContext)
 
-        myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+        //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
         myToast.view = layout//setting the view of custom toast layout
-        val countDownTimer = object : CountDownTimer(5000, 1000) {
+        val countDownTimer = object : CountDownTimer(5000, 5000) {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
                 myToast.cancel()
@@ -116,19 +137,14 @@ class Opening : AppCompatActivity() {
             whooby.startAnimation(animation)
             startActivity(intent3)
             overridePendingTransition(R.anim.zoom_in, R.anim.empty)
-//            val handler = Handler()
-//            handler.postDelayed(Runnable {
-//
-//            }, 1800)
-
         }
     }
+
 
     fun anchor_whooby(view: View) {
         //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
-
 
         if (view.getId() == R.id.whooby_reads);
         run {
@@ -137,5 +153,14 @@ class Opening : AppCompatActivity() {
             startActivity(intent4);
             overridePendingTransition(R.anim.zoom_in,R.anim.empty)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+//        val obj: LoginActivity = LoginActivity()
+//        obj.end()
+//        Handler().postDelayed({
+            finishAffinity()
+//        },300)
     }
 }
