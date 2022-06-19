@@ -12,17 +12,22 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
     var isLogIn : Boolean=false
-    private lateinit var 
+    private lateinit var regdno: com.google.android.material.textfield.TextInputLayout
+    private lateinit var passw: com.google.android.material.textfield.TextInputLayout
+    private lateinit var btnlogin: Button
+    private lateinit var mAuth: FirebaseAuth
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        mAuth = FirebaseAuth.getInstance()
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
         val tvSingUp =findViewById<TextView>(R.id.singUp)
@@ -30,6 +35,10 @@ class LoginActivity : AppCompatActivity() {
         val llSingUp =findViewById<ConstraintLayout>(R.id.singUpLayout)
         val llLogIN =findViewById<ConstraintLayout>(R.id.logInLayout)
         val btnSingIn =findViewById<Button>(R.id.singIn)
+        val regdno = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.passwords)
+        val passw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.eMail)
+
+
         tvSingUp.setOnClickListener {
             tvSingUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
             tvSingUp.setTextColor(resources.getColor(R.color.textColor,null))
@@ -50,7 +59,12 @@ class LoginActivity : AppCompatActivity() {
             btnSingIn.text = "Login"
             llLogIN.visibility = View.VISIBLE
             tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
-            isLogIn=true
+//            isLogIn=true
+
+            val regnot = regdno.text.toString()
+            val passt = passw.text.toString()
+
+            login(regnot , passt)
         }
         btnSingIn.setOnClickListener {
             startActivity(Intent(this,Opening::class.java))
@@ -65,6 +79,19 @@ class LoginActivity : AppCompatActivity() {
         val pass = findViewById<TextView>(R.id.pass)
         val cnfmPass = findViewById<TextView>(R.id.confmPass)
     }
+
+
+    
+
+
+
+
+
+
+
+
+
+
 
     fun getLogIn(): Boolean{
         return isLogIn
