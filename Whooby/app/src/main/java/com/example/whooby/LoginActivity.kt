@@ -16,6 +16,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 class LoginActivity : AppCompatActivity() {
 
     var isLogIn : Boolean=false
+    private lateinit var 
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
