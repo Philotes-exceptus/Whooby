@@ -9,16 +9,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
-
     var isLogIn : Boolean=false
-    private lateinit var regdno: com.google.android.material.textfield.TextInputLayout
-    private lateinit var passw: com.google.android.material.textfield.TextInputLayout
+    private lateinit var lregdno: com.google.android.material.textfield.TextInputLayout
+    private lateinit var sregdno: com.google.android.material.textfield.TextInputLayout
+    private lateinit var lpassw: com.google.android.material.textfield.TextInputLayout
+    private lateinit var spassw: com.google.android.material.textfield.TextInputLayout
+    private lateinit var spasswcon: com.google.android.material.textfield.TextInputLayout
     private lateinit var btnlogin: Button
     private lateinit var mAuth: FirebaseAuth
 
@@ -35,8 +38,12 @@ class LoginActivity : AppCompatActivity() {
         val llSingUp =findViewById<ConstraintLayout>(R.id.singUpLayout)
         val llLogIN =findViewById<ConstraintLayout>(R.id.logInLayout)
         val btnSingIn =findViewById<Button>(R.id.singIn)
-        val regdno = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.passwords)
-        val passw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.eMail)
+        val lregdno = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.passwords)
+        val lpassw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.eMail)
+        var sregdno = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.eMails)
+        var spassw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.pass)
+        var spasswcon = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.confmPass)
+//        userInfo()
 
 
         tvSingUp.setOnClickListener {
@@ -47,7 +54,14 @@ class LoginActivity : AppCompatActivity() {
             llSingUp.visibility = View.VISIBLE
             llLogIN.visibility = View.GONE
             tvLogIn.setTextColor(resources.getColor(R.color.pinkColor,null))
-            isLogIn=true
+//            isLogIn=true
+
+            //val regdNo = findViewById<TextView>(R.id.regdNo).toString()
+//            val logInPass= findViewById<TextView>(R.id.passwords).toString()
+
+
+
+
 
 //            laySize.layout(38, 30, 38)
         }
@@ -61,29 +75,76 @@ class LoginActivity : AppCompatActivity() {
             tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
 //            isLogIn=true
 
-            val regnot = regdno.text.toString()
-            val passt = passw.text.toString()
+            val lregnot = lregdno.text.toString()
+            val lpasst = lpassw.text.toString()
 
-            login(regnot , passt)
+            login(lregnot , lpasst)
         }
         btnSingIn.setOnClickListener {
-            startActivity(Intent(this,Opening::class.java))
-            overridePendingTransition(R.anim.zoom_in,R.anim.empty)
+            signup()
+
         }
     }
 
-    fun userInfo(){
-        val regdNo = findViewById<TextView>(R.id.regdNo).toString()
-        val logInPass= findViewById<TextView>(R.id.passwords)
-        val name = findViewById<TextView>(R.id.nameP).toString()
-        val pass = findViewById<TextView>(R.id.pass)
-        val cnfmPass = findViewById<TextView>(R.id.confmPass)
+//    fun userInfo(){
+//        val regdNo = findViewById<TextView>(R.id.regdNo).toString()
+//        val logInPass= findViewById<TextView>(R.id.passwords)
+//        val name = findViewById<TextView>(R.id.nameP).toString()
+//        val pass = findViewById<TextView>(R.id.pass)
+//        val cnfmPass = findViewById<TextView>(R.id.confmPass)
+//    }
+
+
+    private fun login(lregnot: String,lpasswt: String) {
+        mAuth.signInWithEmailAndPassword(lregnot,lpasswt)
+            .addOnCompleteListener(this) { task ->
+                if(task.isSuccessful) {
+                    isLogIn = true
+                } else {
+                    Toast.makeText(this@LoginActivity, "EoororrrLoginn", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
 
-    
 
 
+    private  fun signup() {
+        var sregdno = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.eMails)
+        var spassw = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.pass)
+        var spasswcon = findViewById<com.google.android.material.textfield.TextInputEditText>(R.id.confmPass)
+        val sregdnot = sregdno.text.toString()
+        val spasswt = spassw.text.toString()
+        val spasswcont = spasswcon.text.toString()
+        if (sregdnot.isBlank() || spasswt.isBlank() || spasswcont.isBlank()) {
+            Toast.makeText(this, "Email and Password can't be blank", Toast.LENGTH_SHORT).show()
+            isLogIn = false
+            return
+        }
+
+        if (spasswt != spasswcont) {
+            Toast.makeText(this, "Password and Confirm Password do not match", Toast.LENGTH_SHORT)
+                .show()
+            isLogIn = false
+            val intent = Intent(this, LoginActivity::class.java )
+            startActivity(intent)
+            return
+        }
+
+        mAuth.createUserWithEmailAndPassword(sregdnot,spasswt)
+            .addOnCompleteListener(this) { task ->
+                if(task.isSuccessful) {
+                    Toast.makeText(this, "Successfully Singed Up", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this,Opening::class.java))
+                    overridePendingTransition(R.anim.zoom_in,R.anim.empty)
+                    finish()
+                    isLogIn = true
+                } else {
+                    Toast.makeText(this@LoginActivity, "EoororrrSignupp", Toast.LENGTH_SHORT).show()
+                    isLogIn = false
+                }
+            }
+    }
 
 
 
