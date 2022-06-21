@@ -24,17 +24,19 @@ class LoginActivity : AppCompatActivity() {
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-        val tvSingUp =findViewById<TextView>(R.id.singUp)
+        val tvsignUp =findViewById<TextView>(R.id.signUp)
         val tvLogIn =findViewById<TextView>(R.id.logIn)
-        val llSingUp =findViewById<ConstraintLayout>(R.id.singUpLayout)
+        val llsignUp =findViewById<ConstraintLayout>(R.id.signUpLayout)
         val llLogIN =findViewById<ConstraintLayout>(R.id.logInLayout)
-        val btnSingIn =findViewById<Button>(R.id.singIn)
-        tvSingUp.setOnClickListener {
-            tvSingUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            tvSingUp.setTextColor(resources.getColor(R.color.textColor,null))
+        val btnSignIn =findViewById<Button>(R.id.signInBt)
+        tvsignUp.setOnClickListener {
+            tvsignUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            tvsignUp.setTextColor(resources.getColor(R.color.textColor,null))
             tvLogIn.background = null
-            btnSingIn.text = "Sign Up"
-            llSingUp.visibility = View.VISIBLE
+            btnSignIn.text = "Sign Up"
+            val id1 = "signUpBt"
+            btnSignIn.id
+            llsignUp.visibility = View.VISIBLE
             llLogIN.visibility = View.GONE
             tvLogIn.setTextColor(resources.getColor(R.color.pinkColor,null))
             isLogIn=true
@@ -42,25 +44,28 @@ class LoginActivity : AppCompatActivity() {
 //            laySize.layout(38, 30, 38)
         }
         tvLogIn.setOnClickListener {
-            tvSingUp.background = null
-            tvSingUp.setTextColor(resources.getColor(R.color.pinkColor,null))
+            tvsignUp.background = null
+            tvsignUp.setTextColor(resources.getColor(R.color.pinkColor,null))
             tvLogIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
-            llSingUp.visibility = View.GONE
-            btnSingIn.text = "Login"
+            llsignUp.visibility = View.GONE
+            btnSignIn.text = "Login"
             llLogIN.visibility = View.VISIBLE
             tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
             isLogIn=true
         }
-        btnSingIn.setOnClickListener {
+        btnSignIn.setOnClickListener {
             startActivity(Intent(this,Opening::class.java))
             overridePendingTransition(R.anim.zoom_in,R.anim.empty)
         }
     }
 
     fun userInfo(){
-        val regdNo = findViewById<TextView>(R.id.regdNo).toString()
-        val logInPass= findViewById<TextView>(R.id.passwords)
+        val loginRegd = findViewById<TextView>(R.id.regdNum).toString()
+        val loginEmail = findViewById<TextView>(R.id.email).toString()
+        val logInPass= findViewById<TextView>(R.id.password)
         val name = findViewById<TextView>(R.id.nameP).toString()
+        val regdNo = findViewById<TextView>(R.id.regdNo).toString()
+        val email = findViewById<TextView>(R.id.mail).toString()
         val pass = findViewById<TextView>(R.id.pass)
         val cnfmPass = findViewById<TextView>(R.id.confmPass)
     }

@@ -9,7 +9,7 @@ android:orientation="vertical"
 tools:context=".LoginActivity">
 
 <TextView
-    android:id="@+id/textView4"
+    android:id="@+id/welcTxt"
     android:layout_width="963dp"
     android:layout_height="113dp"
     android:layout_marginTop="28dp"
@@ -26,14 +26,14 @@ tools:context=".LoginActivity">
     app:layout_constraintTop_toTopOf="parent" />
 
 <ImageView
-    android:id="@+id/imageView2"
+    android:id="@+id/welcIcon"
     android:layout_width="501dp"
     android:layout_height="158dp"
     android:layout_marginTop="32dp"
     android:src="@drawable/whooby_icon"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+    app:layout_constraintTop_toBottomOf="@+id/welcTxt" />
 
 <androidx.cardview.widget.CardView
     android:layout_width="867dp"
@@ -45,12 +45,12 @@ tools:context=".LoginActivity">
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/imageView2"
+    app:layout_constraintTop_toBottomOf="@+id/welcIcon"
     app:layout_constraintVertical_bias="0.193">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="767dp"
-        android:layout_height="941dp"
+        android:layout_width="757dp"
+        android:layout_height="1037dp"
         android:layout_gravity="center"
         android:orientation="vertical">
 
@@ -94,7 +94,7 @@ tools:context=".LoginActivity">
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/singUp"
+                android:id="@+id/signUp"
                 android:layout_width="195dp"
                 android:layout_height="110dp"
                 android:layout_gravity="center"
@@ -124,8 +124,8 @@ tools:context=".LoginActivity">
             android:background="@color/white"
             android:gravity="center"
             android:orientation="vertical"
-
             android:padding="25dp"
+            
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@ tools:context=".LoginActivity">
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout2"
+                android:id="@+id/textInputLayoutA"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="545dp"
                 android:layout_height="110dp"
@@ -141,7 +141,7 @@ tools:context=".LoginActivity">
                 app:boxStrokeColor="#4E4A4A"
                 app:boxStrokeWidth="1dp"
                 app:hintTextColor="#4E4A4A"
-                app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayoutC"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -149,7 +149,7 @@ tools:context=".LoginActivity">
                 app:shapeAppearanceOverlay="@style/Button4">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwords"
+                    android:id="@+id/regdNum"
                     android:layout_width="match_parent"
                     android:layout_height="95dp"
                     android:ems="10"
@@ -161,7 +161,36 @@ tools:context=".LoginActivity">
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout"
+                android:id="@+id/textInputLayoutB"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="545dp"
+                android:layout_height="110dp"
+                android:hint="Email"
+                app:boxStrokeColor="#4E4A4A"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="#4E4A4A"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayoutC"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.86"
+                app:shapeAppearanceOverlay="@style/Button4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:textSize="40sp"
+                    android:textStyle="normal"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutC"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="545dp"
                 android:layout_height="110dp"
@@ -175,13 +204,13 @@ tools:context=".LoginActivity">
                 app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.421"
+                app:layout_constraintVertical_bias="0.9"
                 app:shapeAppearanceOverlay="@style/Button4">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/eMail"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="95dp"
+                    android:layout_height="110dp"
                     android:ems="10"
                     android:inputType="number"
                     android:textColor="@color/black"
@@ -190,7 +219,7 @@ tools:context=".LoginActivity">
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/fgtPass"
                 android:layout_width="539dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="100dp"
@@ -202,12 +231,12 @@ tools:context=".LoginActivity">
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
+                app:layout_constraintTop_toTopOf="@+id/textInputLayoutC" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/singUpLayout"
+            android:id="@+id/signUpLayout"
             android:layout_width="607dp"
             android:layout_height="622dp"
             android:layout_marginTop="60dp"
@@ -221,6 +250,7 @@ tools:context=".LoginActivity">
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput1"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="563dp"
                 android:layout_height="91dp"
@@ -250,7 +280,7 @@ tools:context=".LoginActivity">
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/regdNo"
+                android:id="@+id/textInput2"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="563dp"
                 android:layout_height="90dp"
@@ -269,7 +299,7 @@ tools:context=".LoginActivity">
                 app:shapeAppearanceOverlay="@style/Button4">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/eMails"
+                    android:id="@+id/regdNo"
                     android:layout_width="match_parent"
                     android:layout_height="79dp"
                     android:ems="10"
@@ -281,6 +311,38 @@ tools:context=".LoginActivity">
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="563dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:hint="Email"
+                app:boxStrokeColor="#4E4A4A"
+                app:boxStrokeWidth="1dp"
+                app:hintTextColor="#4E4A4A"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.52"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:shapeAppearanceOverlay="@style/Button4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="79dp"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="34sp"
+                    android:textStyle="normal"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput4"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="563dp"
                 android:layout_height="91dp"
@@ -290,7 +352,7 @@ tools:context=".LoginActivity">
                 app:boxStrokeColor="#4E4A4A"
                 app:boxStrokeWidth="1dp"
                 app:endIconMode="password_toggle"
-
+                app:layout_constraintVertical_bias="0.75"
                 app:hintTextColor="#4E4A4A"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -311,6 +373,7 @@ tools:context=".LoginActivity">
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInput5"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="563dp"
                 android:layout_height="91dp"
@@ -326,7 +389,7 @@ tools:context=".LoginActivity">
                 app:layout_constraintHorizontal_bias="0.313"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.788"
+                app:layout_constraintVertical_bias="1"
                 app:shapeAppearanceOverlay="@style/Button4">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -342,7 +405,7 @@ tools:context=".LoginActivity">
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/singIn"
+            android:id="@+id/signInBt"
             android:layout_width="256dp"
             android:layout_height="101dp"
             android:layout_gravity="center"
