@@ -55,6 +55,7 @@ tools:context=".LoginActivity">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
+
                 android:layout_width="180dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -120,8 +121,8 @@ tools:context=".LoginActivity">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/logInLayout"
-                android:layout_width="294dp"
-                android:layout_height="285dp"
+                android:layout_width="281dp"
+                android:layout_height="342dp"
                 android:layout_marginTop="12dp"
                 android:background="@color/white"
                 android:gravity="center"
@@ -131,8 +132,9 @@ tools:context=".LoginActivity">
                 app:layout_constraintBottom_toTopOf="@+id/signInBt"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-                
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                tools:ignore="NotSibling">
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputLayoutA"
@@ -155,7 +157,7 @@ tools:context=".LoginActivity">
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="number"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal"
@@ -183,7 +185,7 @@ tools:context=".LoginActivity">
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="textPassword"
+                        android:inputType="textEmailAddress"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal"
@@ -203,9 +205,9 @@ tools:context=".LoginActivity">
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintVertical_bias="0.65"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.55"
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -213,7 +215,7 @@ tools:context=".LoginActivity">
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="number"
+                        android:inputType="textPassword"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal" />
@@ -233,21 +235,76 @@ tools:context=".LoginActivity">
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/textInputLayoutC" />
 
+                <Button
+                    android:id="@+id/signInBt"
+                    android:layout_width="157dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center"
+                    android:elevation="15dp"
+                    android:gravity="center"
+                    android:text="Login"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textColor"
+                    android:textSize="17sp"
+                    app:backgroundTint="@color/pinkColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.888"
+                    app:shapeAppearanceOverlay="@style/Button5"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="225dp"
+                    android:layout_height="32dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Don't have an Account ?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtSignUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/Sign_up"
+                        android:textColor="@color/pinkColor"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/signUpLayout"
-                android:layout_width="290dp"
-                android:layout_height="361dp"
+                android:layout_width="294dp"
+                android:layout_height="414dp"
                 android:layout_marginTop="4dp"
                 android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="20dp"
                 android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/signInBt"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.428"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="NotSibling">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInput1"
@@ -295,7 +352,7 @@ tools:context=".LoginActivity">
                     app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.2"
+                    app:layout_constraintVertical_bias="0.176"
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -326,7 +383,7 @@ tools:context=".LoginActivity">
                     app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.4"
+                    app:layout_constraintVertical_bias="0.35"
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -334,7 +391,7 @@ tools:context=".LoginActivity">
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:inputType="number"
+                        android:inputType="textEmailAddress"
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal"
@@ -358,7 +415,7 @@ tools:context=".LoginActivity">
                     app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.61"
+                    app:layout_constraintVertical_bias="0.53"
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -389,7 +446,7 @@ tools:context=".LoginActivity">
                     app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.83"
+                    app:layout_constraintVertical_bias="0.72"
                     app:shapeAppearanceOverlay="@style/Button4">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -401,30 +458,64 @@ tools:context=".LoginActivity">
                         android:textColor="@color/black"
                         android:textSize="13sp"
                         android:textStyle="normal" />
+
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/signUpBt"
+                    android:layout_width="157dp"
+                    android:layout_height="49dp"
+                    android:layout_gravity="center"
+                    android:elevation="15dp"
+                    android:text="Sign Up"
+                    android:textColor="@color/textColor"
+                    android:textSize="16.5sp"
+                    app:backgroundTint="@color/pinkColor"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.923"
+                    app:shapeAppearanceOverlay="@style/Button5"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="254dp"
+                    android:layout_height="22dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    tools:ignore="MissingConstraints">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an Account ?"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtSignIn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/Sign_in"
+                        android:textColor="@color/pinkColor"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
-                android:id="@+id/signInBt"
-                android:layout_width="157dp"
-                android:layout_height="49dp"
-                android:layout_gravity="center"
-                android:elevation="15dp"
-                android:gravity="center"
-                android:text="Login"
-                android:textAllCaps="false"
-                android:textColor="@color/textColor"
-                android:textSize="17sp"
-                app:backgroundTint="@color/pinkColor"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1"
-                app:shapeAppearanceOverlay="@style/Button5"
-                tools:ignore="TouchTargetSizeCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

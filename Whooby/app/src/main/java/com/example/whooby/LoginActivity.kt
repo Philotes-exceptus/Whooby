@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -29,33 +30,71 @@ class LoginActivity : AppCompatActivity() {
         val llsignUp =findViewById<ConstraintLayout>(R.id.signUpLayout)
         val llLogIN =findViewById<ConstraintLayout>(R.id.logInLayout)
         val btnSignIn =findViewById<Button>(R.id.signInBt)
+        val switchLay =findViewById<ConstraintLayout>(R.id.constraintLayout)
+        val signInTxt =findViewById<TextView>(R.id.txtSignIn)
+        val signUpTxt =findViewById<TextView>(R.id.txtSignUp)
+        val btnSignUp =findViewById<Button>(R.id.signUpBt)
+
         tvsignUp.setOnClickListener {
             tvsignUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            switchLay.visibility = View.GONE
+            btnSignIn.visibility = View.GONE
             tvsignUp.setTextColor(resources.getColor(R.color.textColor,null))
             tvLogIn.background = null
-            btnSignIn.text = "Sign Up"
-            val id1 = "signUpBt"
-            btnSignIn.id
             llsignUp.visibility = View.VISIBLE
             llLogIN.visibility = View.GONE
             tvLogIn.setTextColor(resources.getColor(R.color.pinkColor,null))
             isLogIn=true
 
-//            laySize.layout(38, 30, 38)
+        }
+        signInTxt.setOnClickListener {
+            tvsignUp.background = null
+            switchLay.visibility = View.VISIBLE
+            btnSignIn.visibility = View.VISIBLE
+            tvsignUp.setTextColor(resources.getColor(R.color.pinkColor,null))
+            tvLogIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            llsignUp.visibility = View.GONE
+            llLogIN.visibility = View.VISIBLE
+            tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
+            isLogIn=true
+        }
+        signUpTxt.setOnClickListener {
+            tvsignUp.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            switchLay.visibility = View.GONE
+            btnSignIn.visibility = View.GONE
+            tvsignUp.setTextColor(resources.getColor(R.color.textColor,null))
+            tvLogIn.background = null
+            llsignUp.visibility = View.VISIBLE
+            llLogIN.visibility = View.GONE
+            tvLogIn.setTextColor(resources.getColor(R.color.pinkColor,null))
+            isLogIn=true
         }
         tvLogIn.setOnClickListener {
             tvsignUp.background = null
             tvsignUp.setTextColor(resources.getColor(R.color.pinkColor,null))
             tvLogIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
             llsignUp.visibility = View.GONE
-            btnSignIn.text = "Login"
             llLogIN.visibility = View.VISIBLE
             tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
             isLogIn=true
         }
         btnSignIn.setOnClickListener {
             startActivity(Intent(this,Opening::class.java))
+            Toast.makeText(this,"Signed in", Toast.LENGTH_SHORT).show()
             overridePendingTransition(R.anim.zoom_in,R.anim.empty)
+        }
+        btnSignUp.setOnClickListener{
+            tvsignUp.background = null
+            switchLay.visibility = View.VISIBLE
+            btnSignIn.visibility = View.VISIBLE
+            tvsignUp.setTextColor(resources.getColor(R.color.pinkColor,null))
+            tvLogIn.background = resources.getDrawable(R.drawable.switch_trcks,null)
+            llsignUp.visibility = View.GONE
+            llLogIN.visibility = View.VISIBLE
+            tvLogIn.setTextColor(resources.getColor(R.color.textColor,null))
+            isLogIn=true
+            Toast.makeText(this,"Account created", Toast.LENGTH_SHORT).show();
+
         }
     }
 
