@@ -158,12 +158,13 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
 
-                    
+
                     val btn=findViewById<Button>(R.id.start)
 
                     textToSpeech= TextToSpeech(this,this)
                     textToSpeech.setSpeechRate(0.74f)
                     btn.setOnClickListener {
+                        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null)
 
                         for (i in 1..20) {
                             msg_queue.add("Item "+i)
@@ -176,8 +177,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                         while(j<20)
                         {var text: String = msg_queue.first()
                         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
-
-
                             j++
                             msg_queue.poll()
                     }
