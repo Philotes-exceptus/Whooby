@@ -11,6 +11,7 @@ import android.os.CancellationSignal
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
+import android.view.WindowManager
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -59,7 +60,10 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
 
         setLang()
