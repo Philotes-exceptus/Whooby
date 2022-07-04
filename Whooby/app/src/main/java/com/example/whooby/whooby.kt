@@ -6,12 +6,9 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.speech.tts.TextToSpeech
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -84,18 +81,8 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 //        startActivity(installIntent)
 
          backgroundSceneView = findViewById(R.id.backgroundSceneView)
-        loadModels();
 
-        run {
-
-            val handler = Handler()
-            handler.postDelayed(Runnable {
-            }, 4000)
-
-        }
-
-        //This function inflates the whooby reads activity where the model reads the messages.
-        val intent4 = Intent(applicationContext, whooby::class.java)
+           loadModels()
 
 
     }
@@ -164,7 +151,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     textToSpeech= TextToSpeech(this,this)
                     textToSpeech.setSpeechRate(0.74f)
                     btn.setOnClickListener {
-                        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null)
+                        textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
 
                         for (i in 1..20) {
                             msg_queue.add("Item "+i)
