@@ -158,12 +158,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     modelNode2.localPosition = Vector3(0f, 0f, -1.0f)
                     backgroundSceneView.scene.addChild(modelNode2)
 
-
-
-
-                    val recyclerviewer=findViewById<RecyclerView>(R.id.recyclerview)
-                    val msgcontent=findViewById<TextView>(R.id.msgcontent)
-                    val msgBox=findViewById<LinearLayout>(R.id.msgBox)
+                    
                     val btn=findViewById<Button>(R.id.start)
 
                     textToSpeech= TextToSpeech(this,this)
@@ -182,21 +177,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                         {var text: String = msg_queue.first()
                         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
 
-                        run {
-                            var text: String =
-                                (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(
-                                    R.id.msgcontent
-                                ))?.text
-                                    .toString()
 
-
-                            val handler = Handler()
-                            handler.postDelayed(Runnable {
-
-
-                            }, 4000)
-
-                        }
                             j++
                             msg_queue.poll()
                     }

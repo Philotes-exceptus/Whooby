@@ -21,7 +21,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="372dp"
         android:layout_height="207dp"
         android:fadingEdge="horizontal"
