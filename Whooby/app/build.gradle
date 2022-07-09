@@ -71,4 +71,9 @@ dependencies {
 
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
+
+    //added remote image loading url library
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

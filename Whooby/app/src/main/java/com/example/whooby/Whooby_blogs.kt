@@ -1,37 +1,32 @@
 package com.example.whooby
 
-import CustomAdapter
-import android.content.Intent
+import android.R
 import android.content.pm.ActivityInfo
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
+import android.view.View
 import android.view.WindowManager
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
+import com.squareup.picasso.Picasso
 import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
 
 
-class Whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
+class whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     lateinit var  backgroundSceneView : SceneView
     lateinit var textToSpeech: TextToSpeech
+    var pass : Int=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.blogs)
@@ -44,7 +39,8 @@ class Whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
 
 
-
+        val obj= MainActivity()
+        pass=obj.getPass()
         backgroundSceneView = findViewById(R.id.backgroundSceneView)
 
         loadModels()
@@ -108,7 +104,7 @@ class Whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
                     }
 
 
-                    val begin = findViewById<android.widget.Button>(com.example.whooby.R.id.start)
+                    val begin = findViewById<Button>(R.id.start)
                     val animation: android.view.animation.Animation = android.view.animation.AnimationUtils.loadAnimation(this, com.example.whooby.R.anim.bounce);
                     //starts the animation
                     begin.startAnimation(animation)
@@ -141,12 +137,32 @@ class Whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
                 null
             }
 
+        var url = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/logo-new-2.svg"
+        val blogBG = findViewById<ImageView>(R.id.blogBg)
+        Picasso.get().load(url).into(blogBG)
+
 
     }
 
 
 
     override fun onInit(status: Int) {
+
+        if(status== TextToSpeech.SUCCESS)
+        {
+            var res :Int=1
+
+            if(pass==1)
+                res = textToSpeech.setLanguage(Locale("hin"))
+            if(pass==0)
+                res = textToSpeech.setLanguage(Locale.US)
+
+
+            if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
+            {
+                Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
+            }
+        }
 
     }
 

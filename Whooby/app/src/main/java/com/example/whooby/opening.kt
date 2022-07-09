@@ -129,7 +129,7 @@ class Opening : AppCompatActivity() {
     }
 
     fun Whooby_blogs(view: View) {
-        val intent_blogs = Intent(applicationContext, Whooby_blogs::class.java)
+        val intent_blogs = Intent(applicationContext, whooby_blogs::class.java)
         startActivity(intent_blogs)
     }
 
