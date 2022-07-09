@@ -3,7 +3,7 @@
 
 
     <item
-        android:drawable="@drawable/background_1"
+        android:drawable="@drawable/blog_bg"
         android:duration="4000"/>
     <item
         android:drawable="@drawable/background_2"

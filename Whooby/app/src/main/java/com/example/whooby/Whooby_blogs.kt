@@ -6,9 +6,13 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.speech.tts.TextToSpeech
 import android.view.WindowManager
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -24,20 +28,13 @@ import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
 
 
-class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
-
+class Whooby_blogs  : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     lateinit var  backgroundSceneView : SceneView
-     lateinit var textToSpeech: TextToSpeech
-    var lang_code=1
-    var i=1
-    var pass : Int=0
-    val msg_queue: Queue<String> = LinkedList()
-
-    @RequiresApi(Build.VERSION_CODES.N)
+    lateinit var textToSpeech: TextToSpeech
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.whooby)
+        setContentView(R.layout.blogs)
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
@@ -46,58 +43,12 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        val obj= MainActivity()
-        pass=obj.getPass()
 
 
+        backgroundSceneView = findViewById(R.id.backgroundSceneView)
 
-        // getting the recyclerview by its id
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
+        loadModels()
 
-        recyclerview.bringToFront()
-
-        // this creates a vertical layout Manager
-        recyclerview.layoutManager = LinearLayoutManager(this)
-
-        // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
-
-        for (i in 1..20) {
-            data.add(ItemsViewModel("Item "+i))
-            msg_queue.add("Item "+i)
-        }
-
-
-        // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
-
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
-
-//        val installIntent = Intent()
-//        installIntent.action = TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA
-//        startActivity(installIntent)
-
-         backgroundSceneView = findViewById(R.id.backgroundSceneView)
-
-           loadModels()
-
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        try {
-            backgroundSceneView.resume()
-
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        backgroundSceneView.pause()
 
     }
 
@@ -151,22 +102,36 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     btn.setOnClickListener {
                         textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
 
-                        for (i in 1..20) {
-                            msg_queue.add("Item "+i)
+
+
+
+                    }
+
+
+                    val begin = findViewById<android.widget.Button>(com.example.whooby.R.id.start)
+                    val animation: android.view.animation.Animation = android.view.animation.AnimationUtils.loadAnimation(this, com.example.whooby.R.anim.bounce);
+                    //starts the animation
+                    begin.startAnimation(animation)
+                    modelNode1.getRenderableInstance().animate(true).start()
+
+                    //inflates the about section in form of a custom toast layout
+                    val layout = layoutInflater.inflate(
+                        com.example.whooby.R.layout.blog, findViewById(
+                            com.example.whooby.R.id.blog_root))
+
+                    val myToast = android.widget.Toast(applicationContext)
+
+                    //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+                    myToast.view = layout//setting the view of custom toast layout
+                    val countDownTimer = object : android.os.CountDownTimer(5000, 5000) {
+                        override fun onTick(millisUntilFinished: kotlin.Long) {}
+                        override fun onFinish() {
+                            myToast.cancel()
                         }
-
-                        modelNode1.getRenderableInstance().animate(true).start()
-                        modelNode2.getRenderableInstance().animate(true).start()
-
-                        var j = 0
-                        while(j<20)
-                        {var text: String = msg_queue.first()
-                        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
-                            j++
-                            msg_queue.poll()
                     }
+                    myToast.show()
+                    countDownTimer.start()
 
-                    }
 
 
 
@@ -175,34 +140,13 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                 }
                 null
             }
-    }
-    override fun onBackPressed() {
-        super.onBackPressed()
-        overridePendingTransition(R.anim.empty,R.anim.zoom_out)
-    }
 
-    fun process()
-    {
 
     }
+
 
 
     override fun onInit(status: Int) {
-        if(status== TextToSpeech.SUCCESS)
-        {
-            var res :Int=1
-
-            if(pass==1)
-                res = textToSpeech.setLanguage(Locale("hin"))
-            if(pass==0)
-                res = textToSpeech.setLanguage(Locale.US)
-
-
-            if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
-            {
-                Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
-            }
-        }
 
     }
 

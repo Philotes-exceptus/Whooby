@@ -23,16 +23,16 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:alpha="0.8"
+        android:background="@drawable/whooby_buttons"
         android:onClick="mainApp"
         android:text="@string/whooby_takes"
-        android:background="@drawable/whooby_buttons"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.246" />
 
     <ImageView
         android:id="@+id/developer"
@@ -58,16 +58,32 @@
         android:layout_height="87dp"
         android:layout_marginBottom="280dp"
         android:alpha="0.8"
+        android:background="@drawable/whooby_buttons"
         android:onClick="anchor_whooby"
         android:text="@string/whooby_reads"
-        android:background="@drawable/whooby_buttons"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.848" />
+
+    <Button
+        android:id="@+id/whooby_blogs"
+        android:layout_width="177dp"
+        android:layout_height="73dp"
+        android:alpha="0.8"
+        android:background="@drawable/whooby_buttons"
+        android:onClick="Whooby_blogs"
+        android:text="@string/blogs"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
 
     <ImageView
         android:id="@+id/logOut"

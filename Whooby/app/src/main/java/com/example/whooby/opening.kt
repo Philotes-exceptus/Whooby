@@ -75,17 +75,21 @@ class Opening : AppCompatActivity() {
         )
 
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
+        val whooby_blogs = findViewById<Button>(R.id.whooby_button)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
         val author = findViewById<ImageView>(R.id.developer)
 
         whooby_feed.setAlpha(0f);
         whooby_reads.setAlpha(0f);
         author.setAlpha(0f);
+        whooby_blogs.setAlpha(0f);
+
 
         //Animate the alpha value to 1f and set duration as 1.5 secs.
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        whooby_blogs.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
 
         val logOut=findViewById<ImageView>(R.id.logOut)
         logOut.setOnClickListener {
@@ -122,6 +126,11 @@ class Opening : AppCompatActivity() {
         myToast.show()
         countDownTimer.start()
 
+    }
+
+    fun Whooby_blogs(view: View) {
+        val intent_blogs = Intent(applicationContext, Whooby_blogs::class.java)
+        startActivity(intent_blogs)
     }
 
 

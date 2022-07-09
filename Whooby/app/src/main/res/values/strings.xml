@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Whooby</string>
     <string name="developers">Developers</string>
-    <string name="whooby_reads">Whooby reads</string>
+    <string name="blogs">blogs</string>
+    <string name="whooby_reads">Tweets</string>
     <string name="whooby_takes">Whooby takes</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="log_out">Log Out</string>
