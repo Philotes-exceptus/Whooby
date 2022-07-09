@@ -13,13 +13,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/blog_root"
-        android:fadingEdge="horizontal"
-        android:fadingEdgeLength="50dp"
-        android:background= "@drawable/blog_bg"
+
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/blogBg"
+            android:layout_width="400dp"
+            android:layout_height="468dp"
+            android:src="@drawable/whooby_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="406dp"
             android:layout_height="154dp"
             app:layout_constraintBottom_toBottomOf="parent"
