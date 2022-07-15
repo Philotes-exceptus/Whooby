@@ -16,7 +16,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -68,11 +67,6 @@ class Opening : AppCompatActivity() {
         setContentView(R.layout.home_screen)
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
 
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
@@ -166,7 +160,7 @@ class Opening : AppCompatActivity() {
 //        val obj: LoginActivity = LoginActivity()
 //        obj.end()
 //        Handler().postDelayed({
-            finishAffinity()
+        finishAffinity()
 //        },300)
     }
 }

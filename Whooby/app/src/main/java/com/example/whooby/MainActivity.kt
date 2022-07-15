@@ -11,11 +11,11 @@ import android.os.CancellationSignal
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.view.WindowManager
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.google.firebase.auth.FirebaseAuth
 import java.util.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -28,6 +28,7 @@ import com.google.firebase.database.ktx.getValue
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
     private var cancellationSignal: CancellationSignal? = null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
+
         get() = @RequiresApi(Build.VERSION_CODES.P)
         object : BiometricPrompt.AuthenticationCallback() {
             override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
@@ -45,32 +46,31 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         }
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
+    private lateinit var mAuth: FirebaseAuth
     lateinit var sendinfo: SendInfo
     lateinit var textToSpeech: TextToSpeech
     var lang_code=1
     private var speed = 1f
     private var pitch = 1f
     var isCalled: Boolean = false
-
+    private lateinit var userList: ArrayList<User>
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        mAuth =  FirebaseAuth.getInstance()
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+
 
 
         setLang()
         var btn: ImageView = findViewById(R.id.button)
         var feed: EditText = findViewById(R.id.editText)  // 'feed' store text from textbox
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.getReference("InputText")
+        databaseReference = firebaseDatabase.getReference()
+        userList = ArrayList()
         //databaseReference.database.setPersistenceEnabled(true)
         sendinfo = SendInfo()
 
@@ -107,44 +107,45 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             }
         }
 
-       // val animationDrawable = findViewById<ConstraintLayout>(R.id.liveWp).background as AnimationDrawable
-      //  animationDrawable.setEnterFadeDuration(2000)
-      //  animationDrawable.setExitFadeDuration(4000)
-      //  animationDrawable.start()
+
+
+        // val animationDrawable = findViewById<ConstraintLayout>(R.id.liveWp).background as AnimationDrawable
+        //  animationDrawable.setEnterFadeDuration(2000)
+        //  animationDrawable.setExitFadeDuration(4000)
+        //  animationDrawable.start()
 
     }
-            // it will be called when authentication is cancelled by the user
-            private fun getCancellationSignal(): CancellationSignal {
-                cancellationSignal = CancellationSignal()
-                cancellationSignal?.setOnCancelListener {
-                    notifyUser("Authentication was Cancelled by the user")
-                }
-                return cancellationSignal as CancellationSignal
-            }
+    // it will be called when authentication is cancelled by the user
+    private fun getCancellationSignal(): CancellationSignal {
+        cancellationSignal = CancellationSignal()
+        cancellationSignal?.setOnCancelListener {
+            notifyUser("Authentication was Cancelled by the user")
+        }
+        return cancellationSignal as CancellationSignal
+    }
 
-            // it checks whether the app the app has fingerprint permission
-            @RequiresApi(Build.VERSION_CODES.M)
-            private fun checkBiometricSupport(): Boolean {
-                val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-                if (!keyguardManager.isDeviceSecure) {
-                    notifyUser("Fingerprint authentication has not been enabled in settings")
-                    return false
-                }
-                if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
-                    notifyUser("Fingerprint Authentication Permission is not enabled")
-                    return false
-                }
-                return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
-                    true
-                } else true
-            }
+    // it checks whether the app the app has fingerprint permission
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun checkBiometricSupport(): Boolean {
+        val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        if (!keyguardManager.isDeviceSecure) {
+            notifyUser("Fingerprint authentication has not been enabled in settings")
+            return false
+        }
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
+            notifyUser("Fingerprint Authentication Permission is not enabled")
+            return false
+        }
+        return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
+            true
+        } else true
+    }
 
-            // this is a toast method which is responsible for showing toast
-            // it takes a string as parameter
-            private fun notifyUser(message: String) {
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-            }
-
+    // this is a toast method which is responsible for showing toast
+    // it takes a string as parameter
+    private fun notifyUser(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
 
 
 
@@ -164,6 +165,9 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         }
         databaseReference.addListenerForSingleValueEvent((postListener))
     }
+
+
+
 
 
 //    private fun getdata() {
@@ -205,19 +209,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
 
     override fun onInit(status: Int) {
         if(status== TextToSpeech.SUCCESS)
-            {
-                var res :Int=1
-                Log.d("mesage",""+lang_code)
-                if(lang_code==1)
+        {
+            var res :Int=1
+            Log.d("mesage",""+lang_code)
+            if(lang_code==1)
                 res = textToSpeech.setLanguage(Locale("hin"))
-                    if(lang_code==0)
-                    res = textToSpeech.setLanguage(Locale.US)
+            if(lang_code==0)
+                res = textToSpeech.setLanguage(Locale.US)
 
 
-                if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
-                {
-                    Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
-                }
+            if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
+            {
+                Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
+            }
 
         }
     }
@@ -232,12 +236,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
 
 
 
-            var res :Int=1
-            Log.d("mesage",""+lang_code)
-            if(lang_code==1)
-                res = textToSpeech.setLanguage(Locale("hin"))
-            if(lang_code==0)
-                res = textToSpeech.setLanguage(Locale.US)
+        var res :Int=1
+        Log.d("mesage",""+lang_code)
+        if(lang_code==1)
+            res = textToSpeech.setLanguage(Locale("hin"))
+        if(lang_code==0)
+            res = textToSpeech.setLanguage(Locale.US)
 
     }
 
