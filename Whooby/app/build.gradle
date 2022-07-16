@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.whooby"
-        minSdk 25
+        minSdk 24
         targetSdk 28
         versionCode 1
         versionName "1.0"
