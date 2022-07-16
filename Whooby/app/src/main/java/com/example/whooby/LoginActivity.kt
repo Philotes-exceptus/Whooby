@@ -180,7 +180,7 @@ class LoginActivity : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    addUserTODatabase(regd,name,email, mAuth.currentUser?.uid!!)
+                    addUserTODatabase(regd,name,email, mAuth.currentUser?.uid!!,password)
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     finish()
                     startActivity(intent)
@@ -192,9 +192,9 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun addUserTODatabase(regd: String, name: String, email: String, uid: String){
+    private fun addUserTODatabase(regd: String, name: String, email: String, uid: String, pass : String){
         mDatabaseReference = FirebaseDatabase.getInstance().getReference()
 
-        mDatabaseReference.child("User").child(uid).setValue(User(regd,name,email,uid))
+        mDatabaseReference.child("User").child(uid).setValue(User(regd,name,email,uid,pass))
     }
 }

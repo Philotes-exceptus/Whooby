@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.whooby"
-        minSdk 24
-        targetSdk 31
+        minSdk 25
+        targetSdk 28
         versionCode 1
         versionName "1.0"
 
@@ -56,6 +56,7 @@ apply plugin: 'com.google.gms.google-services'
 
 
 dependencies {
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
 
     //BiometricAuth
     implementation 'androidx.biometric:biometric:1.0.1'

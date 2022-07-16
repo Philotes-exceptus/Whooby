@@ -80,13 +80,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         backgroundSceneView = findViewById(R.id.backgroundSceneView)
         loadModels();
 
-        run {
-
-            val handler = Handler()
-            handler.postDelayed(Runnable {
-            }, 4000)
-
-        }
 
         //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
@@ -156,8 +149,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
                     val recyclerviewer=findViewById<RecyclerView>(R.id.recyclerview)
-                    val msgcontent=findViewById<TextView>(R.id.msgcontent)
-                    val msgBox=findViewById<LinearLayout>(R.id.msgBox)
                     val btn=findViewById<Button>(R.id.start)
 
                     textToSpeech= TextToSpeech(this,this)
@@ -169,28 +160,11 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                         }
 
                         modelNode1.getRenderableInstance().animate(true).start()
-                        modelNode2.getRenderableInstance().animate(true).start()
 
                         var j = 0
                         while(j<20)
                         {var text: String = msg_queue.first()
                             textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
-
-                            run {
-                                var text: String =
-                                    (recyclerviewer.findViewHolderForAdapterPosition(j)?.itemView?.findViewById<TextView>(
-                                        R.id.msgcontent
-                                    ))?.text
-                                        .toString()
-
-
-                                val handler = Handler()
-                                handler.postDelayed(Runnable {
-
-
-                                }, 4000)
-
-                            }
                             j++
                             msg_queue.poll()
                         }

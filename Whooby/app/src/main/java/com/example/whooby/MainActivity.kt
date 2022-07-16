@@ -125,7 +125,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     }
 
     // it checks whether the app the app has fingerprint permission
-    @RequiresApi(Build.VERSION_CODES.M)
     private fun checkBiometricSupport(): Boolean {
         val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
         if (!keyguardManager.isDeviceSecure) {
