@@ -30,7 +30,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     lateinit var  backgroundSceneView : SceneView
     private var speed = 1f
     private var pitch = 1f
-     lateinit var textToSpeech: TextToSpeech
+    lateinit var textToSpeech: TextToSpeech
     var lang_code=1
     var i=1
     var pass : Int=0
@@ -80,9 +80,9 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 //        installIntent.action = TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA
 //        startActivity(installIntent)
 
-         backgroundSceneView = findViewById(R.id.backgroundSceneView)
+        backgroundSceneView = findViewById(R.id.backgroundSceneView)
 
-           loadModels()
+        loadModels()
 
 
     }
@@ -163,10 +163,10 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                         var j = 0
                         while(j<20)
                         {var text: String = msg_queue.first()
-                        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
+                            textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
                             j++
                             msg_queue.poll()
-                    }
+                        }
 
                     }
 
@@ -181,6 +181,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.empty,R.anim.zoom_out)
+        textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
     }
 
     fun process()
