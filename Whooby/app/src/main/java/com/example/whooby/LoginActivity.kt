@@ -155,6 +155,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
+        //It is used to remove a number of Activities belonging to a specific application from the current task
         finishAffinity()
     }
 

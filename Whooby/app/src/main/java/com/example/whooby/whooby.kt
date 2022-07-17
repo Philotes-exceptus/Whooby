@@ -6,11 +6,9 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
 import android.speech.tts.TextToSpeech
+import android.view.WindowManager
 import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +43,11 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+
         val obj= MainActivity()
         pass=obj.getPass()
 
@@ -78,11 +81,8 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 //        startActivity(installIntent)
 
         backgroundSceneView = findViewById(R.id.backgroundSceneView)
-        loadModels();
 
-
-        //This function inflates the whooby reads activity where the model reads the messages.
-        val intent4 = Intent(applicationContext, whooby::class.java)
+        loadModels()
 
 
     }
@@ -146,20 +146,19 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     backgroundSceneView.scene.addChild(modelNode2)
 
 
-
-
-                    val recyclerviewer=findViewById<RecyclerView>(R.id.recyclerview)
                     val btn=findViewById<Button>(R.id.start)
 
                     textToSpeech= TextToSpeech(this,this)
                     textToSpeech.setSpeechRate(0.74f)
                     btn.setOnClickListener {
+                        textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
 
                         for (i in 1..20) {
                             msg_queue.add("Item "+i)
                         }
 
                         modelNode1.getRenderableInstance().animate(true).start()
+                        modelNode2.getRenderableInstance().animate(true).start()
 
                         var j = 0
                         while(j<20)
@@ -182,6 +181,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.empty,R.anim.zoom_out)
+        textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
     }
 
     fun process()
