@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.whooby.ItemsViewModel
 import com.example.whooby.R
+import com.example.whooby.Receive
 import com.gorisse.thomas.sceneform.light.position
 
 
@@ -23,12 +24,12 @@ class CustomAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adap
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         val ItemsViewModel = mList[position]
 
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.text
+
 
     }
 

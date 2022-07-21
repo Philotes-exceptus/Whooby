@@ -7,17 +7,16 @@
     android:layout_margin="6dp"
     android:background="@drawable/ll_bg"
     app:cardCornerRadius="16dp"
-    app:cardElevation="6dp">
+    app:cardElevation="12dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:orientation="horizontal"
         android:id="@+id/msgBox"
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_gravity="center"
         android:background="@drawable/ll_bg"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
 
 
         <TextView

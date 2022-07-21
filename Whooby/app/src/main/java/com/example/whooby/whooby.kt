@@ -1,7 +1,6 @@
 package com.example.whooby
 
 import CustomAdapter
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
@@ -19,6 +18,7 @@ import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
+import com.google.firebase.database.*
 import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
@@ -28,6 +28,8 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     lateinit var  backgroundSceneView : SceneView
+    lateinit var firebaseDatabase: FirebaseDatabase
+    lateinit var databaseReference: DatabaseReference
     private var speed = 1f
     private var pitch = 1f
     lateinit var textToSpeech: TextToSpeech
@@ -48,33 +50,58 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        val obj= MainActivity()
-        pass=obj.getPass()
-
-
-
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
 
-        recyclerview.bringToFront()
-
+      
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
 
+        firebaseDatabase = FirebaseDatabase.getInstance()
+        databaseReference = firebaseDatabase.getReference()
         // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
+
+        val user_text: DatabaseReference = databaseReference.child("inputtext")
+
+        val valueEventListener: ValueEventListener = object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val data = ArrayList<ItemsViewModel>()
+                for (ds in dataSnapshot.children) {
+
+                    val uid : String? = ds.value as String?
+                    data.add(ItemsViewModel(uid as String))
+
+
+                }
+
+                // This will pass the ArrayList to our Adapter
+                val adapter = CustomAdapter(data)
+
+                // Setting the Adapter with the recyclerview
+                recyclerview.adapter = adapter
+
+                //Do what you need to do with your list
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                //kept empty
+            }
+
+
+        }
+        user_text.addListenerForSingleValueEvent(valueEventListener)
+
+
 
         for (i in 1..20) {
-            data.add(ItemsViewModel("Item "+i))
+          //data.add(ItemsViewModel("Item "+i))
             msg_queue.add("Item "+i)
         }
 
 
-        // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
 
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
+
+
 
 //        val installIntent = Intent()
 //        installIntent.action = TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA
@@ -102,6 +129,7 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         backgroundSceneView.pause()
 
     }
+
 
 
     fun loadModels() {
