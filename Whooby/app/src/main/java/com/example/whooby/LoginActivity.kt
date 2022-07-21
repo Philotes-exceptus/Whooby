@@ -196,6 +196,6 @@ class LoginActivity : AppCompatActivity() {
     private fun addUserTODatabase(regd: String, name: String, email: String, uid: String, pass : String){
         mDatabaseReference = FirebaseDatabase.getInstance().getReference()
 
-        mDatabaseReference.child("User").child(uid).setValue(User(regd,name,email,uid,pass))
+        mDatabaseReference.child("User").child(uid).setValue(User(regd,name,email,uid))
     }
 }
