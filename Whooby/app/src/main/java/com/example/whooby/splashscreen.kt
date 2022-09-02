@@ -26,7 +26,6 @@ class splashscreen : AppCompatActivity() {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
 
-
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -34,12 +33,13 @@ class splashscreen : AppCompatActivity() {
 
 
             Handler().postDelayed({
-                Intent(this, Home::class.java).also {
+                Intent(this, LoginActivity::class.java).also {
                     startActivity(it)
                     finish()
                     overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
                 }
             }, 2500)
-    }
 
+
+        }
 }

@@ -88,7 +88,7 @@ class SignUp  : AppCompatActivity()  {
                     // if the user created intent to login activity
                     val intent = Intent(
                         this@SignUp,
-                        Login::class.java
+                        LoginActivity::class.java
                     )
                     startActivity(intent)
                 } else {

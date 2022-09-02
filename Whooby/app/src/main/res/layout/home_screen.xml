@@ -16,6 +16,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/whooby_buton"
+        android:layout_width="201dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="mainApp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/play_button"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <Button
         android:id="@+id/whooby_button"
         android:layout_width="152dp"
@@ -34,23 +53,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.292" />
 
-    <ImageView
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/developer"
-        android:layout_width="121dp"
-        android:layout_height="108dp"
-        android:alpha="0.8"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:onClick="abt_author"
-        android:scaleType="centerInside"
-        android:text="@string/developers"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.01"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.979"
-        app:srcCompat="@drawable/developer"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/developer"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/whooby_reads"
@@ -69,17 +88,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961" />
 
-    <ImageView
-        android:id="@+id/logOut"
-        android:layout_width="84dp"
-        android:layout_height="59dp"
-        android:src="@drawable/logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

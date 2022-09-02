@@ -6,8 +6,19 @@
     android:layout_height="match_parent"
     android:background="@drawable/backgd"
     android:gravity="center"
-    android:orientation="vertical"
-    tools:context=".Login">
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/welcTxt"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/welcome_to_whooby"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:textStyle="bold|normal" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"

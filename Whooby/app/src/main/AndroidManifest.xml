@@ -43,7 +43,7 @@
 
         <activity
 
-            android:name=".Opening"
+            android:name=".Home"
             android:launchMode="singleTask"
             android:exported="true" >
         </activity>
@@ -52,6 +52,13 @@
 
             android:name=".LoginActivity"
             android:launchMode="standard"
+            android:exported="true" >
+        </activity>
+
+        <activity
+
+            android:name=".SignUp"
+            android:launchMode="singleTask"
             android:exported="true" >
         </activity>
     </application>
