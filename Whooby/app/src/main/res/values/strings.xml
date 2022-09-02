@@ -12,4 +12,8 @@
     <string name="welcome_to_whooby">Welcome to Whooby</string>
     <string name="Sign_in"><u>Sign In</u></string>
     <string name="Sign_up"><u>Sign Up</u></string>
+    <string name="sign_up">New User? Sign up.</string>
+    <string name="next">Next</string>
+    <string name="username">Username</string>
+    <string name="login">LOGIN</string>
 </resources>

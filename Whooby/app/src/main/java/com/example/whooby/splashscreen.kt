@@ -25,9 +25,6 @@ class splashscreen : AppCompatActivity() {
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-        var haveLogged = false
-        val obj = LoginActivity()
-        haveLogged = obj.getLogIn()
 
 
         window.setFlags(
@@ -35,18 +32,9 @@ class splashscreen : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        if (haveLogged == false) {
+
             Handler().postDelayed({
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                    finish()
-                    overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
-                }
-            }, 2500)
-        }
-        else
-            Handler().postDelayed({
-                Intent(this, Opening::class.java).also {
+                Intent(this, Home::class.java).also {
                     startActivity(it)
                     finish()
                     overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
