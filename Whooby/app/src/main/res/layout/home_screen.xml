@@ -18,18 +18,18 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/whooby_buton"
-        android:layout_width="201dp"
-        android:layout_height="153dp"
+        android:layout_width="154dp"
+        android:layout_height="229dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:onClick="mainApp"
-
+        android:text="@string/whooby_takes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292"
+        app:layout_constraintVertical_bias="0.256"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/play_button"
@@ -56,8 +56,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/developer"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="108dp"
+        android:layout_height="105dp"
         android:onClick="abt_author"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"

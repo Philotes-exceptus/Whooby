@@ -32,25 +32,24 @@ class Home : AppCompatActivity() {
         val whooby_feed = findViewById<Button>(R.id.whooby_button)
         val author = findViewById<ImageView>(R.id.developer)
         val whooby_reads = findViewById<Button>(R.id.whooby_reads)
-        val logOut=findViewById<ImageView>(R.id.logOut)
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
         author.setAlpha(0f)
         whooby_reads.setAlpha(0f)
-        logOut.setAlpha(0f)
+
 
         //fixes the different whooby button's animation origin always at a constant coordinate
         whooby_feed.setTranslationY(50F)
         author.setTranslationY(50F)
         whooby_reads.setTranslationY(50F)
-        logOut.setTranslationY(50F)
+
 
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        logOut.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+
 
         val videoview = findViewById<VideoView>(R.id.video) as VideoView
         val path = "android.resource://" + packageName + "/" + R.raw.abc
@@ -81,14 +80,7 @@ class Home : AppCompatActivity() {
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
 
-        val logOut=findViewById<ImageView>(R.id.logOut)
-        logOut.setOnClickListener {
 
-            Intent(this,LoginActivity::class.java).also{
-                startActivity(it)
-                overridePendingTransition(R.anim.left_right1,R.anim.left_right2)
-            }
-        }
     }
 
 
