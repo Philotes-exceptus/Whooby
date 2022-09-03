@@ -64,14 +64,9 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
                 //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
                 myToast.view = layout//setting the view of custom toast layout
-                val countDownTimer = object : CountDownTimer(5000, 5000) {
-                    override fun onTick(millisUntilFinished: Long) {}
-                    override fun onFinish() {
-                        myToast.cancel()
-                    }
-                }
+
                 myToast.show()
-                countDownTimer.start()
+
             }
 
         }

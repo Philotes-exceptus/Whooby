@@ -1,28 +1,21 @@
 package com.example.whooby
 
-import android.app.KeyguardManager
-import android.content.Context
 import android.content.pm.ActivityInfo
-import android.content.pm.PackageManager
-import android.hardware.biometrics.BiometricPrompt
-import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.os.Handler
 import android.speech.tts.TextToSpeech
+import android.speech.tts.UtteranceProgressListener
 import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import com.airbnb.lottie.LottieAnimationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.getValue
 
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
@@ -38,6 +31,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
     private var pitch = 1f
     var isCalled: Boolean = false
     private lateinit var userList: ArrayList<User>
+    lateinit var visualiser : LottieAnimationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -55,9 +49,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         userList = ArrayList()
         //databaseReference.database.setPersistenceEnabled(true)
         sendinfo = SendInfo()
+        visualiser=findViewById<LottieAnimationView>(R.id.visualizer)
+        visualiser.visibility=View.INVISIBLE
 
         textToSpeech= TextToSpeech(this,this)
         btn.setOnClickListener {
+            visualiser.visibility=View.VISIBLE
             var text: String = feed.text.toString()
             textToSpeech.speak(text,TextToSpeech.QUEUE_FLUSH,null)
             var typedtext = feed.getText().toString()
@@ -87,6 +84,20 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
                 textToSpeech.setPitch(pitch)
                 Toast.makeText(this,"pitch decrease",Toast.LENGTH_LONG).show()
             }
+
+        }
+
+        val handler = Handler()
+        GlobalScope.launch {
+
+            handler.post {
+
+                if(textToSpeech.isSpeaking)
+                    visualiser.visibility=View.VISIBLE
+                else
+                    visualiser.visibility=View.INVISIBLE
+
+            }
         }
 
     }
@@ -98,6 +109,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 databaseReference.push().setValue(sendinfo)
+
             }
 
             override fun onCancelled(error: DatabaseError) {
