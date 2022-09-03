@@ -17,41 +17,26 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/whooby_buton"
-        android:layout_width="154dp"
-        android:layout_height="229dp"
+        android:id="@+id/whooby_button"
+        android:layout_width="247dp"
+        android:layout_height="191dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:onClick="mainApp"
+        android:scaleType="fitCenter"
         android:text="@string/whooby_takes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
+        app:layout_constraintVertical_bias="0.25"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/play_button"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/whooby_button"
-        android:layout_width="152dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:alpha="0.8"
-        android:onClick="mainApp"
-        android:text="@string/whooby_takes"
-        android:background="@drawable/whooby_buttons"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -71,23 +56,67 @@
         app:lottie_rawRes="@raw/developer"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/whooby_reads"
-        android:layout_width="208dp"
-        android:layout_height="87dp"
-        android:layout_marginBottom="280dp"
-        android:alpha="0.8"
-        android:onClick="anchor_whooby"
-        android:text="@string/whooby_reads"
-        android:background="@drawable/whooby_buttons"
-        android:textColor="@color/white"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/github"
+        android:layout_width="108dp"
+        android:layout_height="105dp"
+        android:onClick="githubStar"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.974"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/github"
+        tools:ignore="SpeakableTextPresentCheck" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/whooby_reads"
+        android:layout_width="247dp"
+        android:layout_height="191dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="anchor_whooby"
+        android:scaleType="fitCenter"
+        android:text="@string/whooby_reads"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/red"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/whooby_takes_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whooby_takes"
+        android:textSize="20sp"
+        android:fontFamily="@font/shojumaru"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/whooby_button"
+        app:layout_constraintEnd_toEndOf="@+id/whooby_button"
+        app:layout_constraintStart_toStartOf="@+id/whooby_button"
+        app:layout_constraintTop_toTopOf="@+id/whooby_button" />
+
+    <TextView
+        android:id="@+id/whooby_reads_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whooby_reads"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:fontFamily="@font/shojumaru"
+        app:layout_constraintBottom_toBottomOf="@+id/whooby_reads"
+        app:layout_constraintEnd_toEndOf="@+id/whooby_reads"
+        app:layout_constraintStart_toStartOf="@+id/whooby_reads"
+        app:layout_constraintTop_toTopOf="@+id/whooby_reads" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.whooby
 
-import CustomAdapter
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
@@ -14,11 +13,14 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.Whooby.personAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
+import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
@@ -31,10 +33,10 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var speed = 1f
     private var pitch = 1f
     lateinit var textToSpeech: TextToSpeech
-    var lang_code=1
     var i=1
     var pass : Int=0
     val msg_queue: Queue<String> = LinkedList()
+    private lateinit var  adapter: personAdapter
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,17 +63,18 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         // this creates a vertical layout Manager
         recyclerview.layoutManager = LinearLayoutManager(this)
 
-        // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
 
-        for (i in 1..20) {
-            data.add(ItemsViewModel("Item "+i))
-            msg_queue.add("Item "+i)
-        }
+        val query1 = FirebaseDatabase.getInstance().getReference()
 
+        val options: FirebaseRecyclerOptions<User> = FirebaseRecyclerOptions.Builder<User>()
+            .setQuery(query1, User::class.java)
+            .build()
+
+
+        msg_queue.add("Item "+i)
 
         // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
+        adapter = personAdapter(options)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
@@ -83,7 +86,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         backgroundSceneView = findViewById(R.id.backgroundSceneView)
 
         loadModels()
-
 
     }
 
@@ -207,6 +209,19 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
             }
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        adapter.startListening()
+    }
+
+    // Function to tell the app to stop getting
+    // data from database on stopping of the activity
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
     }
 
 }

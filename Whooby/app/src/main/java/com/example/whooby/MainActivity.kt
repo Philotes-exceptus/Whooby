@@ -27,23 +27,7 @@ import com.google.firebase.database.ktx.getValue
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterView.OnItemSelectedListener {
     private var cancellationSignal: CancellationSignal? = null
-    private val authenticationCallback: BiometricPrompt.AuthenticationCallback
 
-        get() = @RequiresApi(Build.VERSION_CODES.P)
-        object : BiometricPrompt.AuthenticationCallback() {
-            override fun onAuthenticationError(errorCode: Int, errString: CharSequence?) {
-                super.onAuthenticationError(errorCode, errString)
-                notifyUser("Authentication Error : $errString")
-            }
-
-            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
-                super.onAuthenticationSucceeded(result)
-                notifyUser("Authentication Succeeded")
-
-                // or start a new Activity
-
-            }
-        }
     lateinit var firebaseDatabase: FirebaseDatabase
     lateinit var databaseReference: DatabaseReference
     private lateinit var mAuth: FirebaseAuth
@@ -61,8 +45,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         setContentView(R.layout.activity_main)
         mAuth =  FirebaseAuth.getInstance()
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
-
-
 
 
         setLang()
@@ -107,46 +89,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
             }
         }
 
-
-
-        // val animationDrawable = findViewById<ConstraintLayout>(R.id.liveWp).background as AnimationDrawable
-        //  animationDrawable.setEnterFadeDuration(2000)
-        //  animationDrawable.setExitFadeDuration(4000)
-        //  animationDrawable.start()
-
     }
-    // it will be called when authentication is cancelled by the user
-    private fun getCancellationSignal(): CancellationSignal {
-        cancellationSignal = CancellationSignal()
-        cancellationSignal?.setOnCancelListener {
-            notifyUser("Authentication was Cancelled by the user")
-        }
-        return cancellationSignal as CancellationSignal
-    }
-
-    // it checks whether the app the app has fingerprint permission
-    private fun checkBiometricSupport(): Boolean {
-        val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        if (!keyguardManager.isDeviceSecure) {
-            notifyUser("Fingerprint authentication has not been enabled in settings")
-            return false
-        }
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.USE_BIOMETRIC) != PackageManager.PERMISSION_GRANTED) {
-            notifyUser("Fingerprint Authentication Permission is not enabled")
-            return false
-        }
-        return if (packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
-            true
-        } else true
-    }
-
-    // this is a toast method which is responsible for showing toast
-    // it takes a string as parameter
-    private fun notifyUser(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
-
 
 
     private fun addDatatoFirebase(typedtext: String)
@@ -164,27 +107,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,AdapterVie
         }
         databaseReference.addListenerForSingleValueEvent((postListener))
     }
-
-
-
-
-
-//    private fun getdata() {
-//
-//        val postListener = object : ValueEventListener {
-//            override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                val value = dataSnapshot.getValue<String>()
-//
-//
-//            }
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        }
-//        databaseReference.addValueEventListener((postListener))
-//    }
-//
 
 
     fun setLang()

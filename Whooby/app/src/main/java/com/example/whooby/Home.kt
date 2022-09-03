@@ -23,15 +23,16 @@ import android.widget.ImageView
 import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
 
 
 class Home : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        val whooby_feed = findViewById<Button>(R.id.whooby_button)
+        val whooby_feed = findViewById<LottieAnimationView>(R.id.whooby_button)
         val author = findViewById<ImageView>(R.id.developer)
-        val whooby_reads = findViewById<Button>(R.id.whooby_reads)
+        val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
@@ -67,8 +68,8 @@ class Home : AppCompatActivity() {
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
 
-        val whooby_feed = findViewById<Button>(R.id.whooby_button)
-        val whooby_reads = findViewById<Button>(R.id.whooby_reads)
+        val whooby_feed = findViewById<LottieAnimationView>(R.id.whooby_button)
+        val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
         val author = findViewById<ImageView>(R.id.developer)
 
         whooby_feed.setAlpha(0f);
@@ -109,6 +110,20 @@ class Home : AppCompatActivity() {
 
     }
 
+    fun githubStar(view: View) {
+
+        val github = findViewById<ImageView>(R.id.github)
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        //starts the animation
+        github.startAnimation(animation)
+
+        val uri = Uri.parse("http://github.com/Philotes-exceptus/Whooby") // missing 'http://' will cause crashed
+
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
+
+    }
+
 
     fun mainApp(view: View) {
 
@@ -124,7 +139,7 @@ class Home : AppCompatActivity() {
         if (view.getId() == R.id.whooby_button);
         run {
 
-            val whooby = findViewById<Button>(R.id.whooby_button)
+            val whooby = findViewById<LottieAnimationView>(R.id.whooby_button)
             whooby.startAnimation(animation)
             startActivity(intent3)
             overridePendingTransition(R.anim.zoom_in, R.anim.empty)
@@ -139,7 +154,7 @@ class Home : AppCompatActivity() {
 
         if (view.getId() == R.id.whooby_reads);
         run {
-            val whooby = findViewById<Button>(R.id.whooby_reads)
+            val whooby = findViewById<LottieAnimationView>(R.id.whooby_reads)
             whooby.startAnimation(animation);
             startActivity(intent4);
             overridePendingTransition(R.anim.zoom_in,R.anim.empty)
