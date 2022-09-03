@@ -1,11 +1,9 @@
 package com.example.whooby
 
-import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
 import android.speech.tts.TextToSpeech
 import android.view.WindowManager
@@ -15,7 +13,6 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.whooby.personAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
@@ -33,11 +30,11 @@ import java.util.concurrent.ExecutionException
 class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
-    lateinit var  backgroundSceneView : SceneView
+    lateinit var backgroundSceneView: SceneView
     lateinit var textToSpeech: TextToSpeech
-    var i=1
-    var pass : Int=0
-    private lateinit var  adapter: personAdapter
+    var i = 1
+    var pass: Int = 0
+    private lateinit var adapter: personAdapter
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +48,8 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
-        val obj= MainActivity()
-        pass=obj.getPass()
+        val obj = MainActivity()
+        pass = obj.getPass()
 
         val handler = Handler()
         GlobalScope.launch {
@@ -162,33 +159,27 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     backgroundSceneView.scene.addChild(modelNode2)
 
 
-                    val btn=findViewById<Button>(R.id.start)
+                    val btn = findViewById<Button>(R.id.start)
 
-                    textToSpeech= TextToSpeech(this,this)
+                    textToSpeech = TextToSpeech(this, this)
                     textToSpeech.setSpeechRate(0.74f)
                     btn.setOnClickListener {
                         textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
-
-//                        for (i in 1..20) {
-//                            msg_queue.add("Item "+i)
-//                        }
 
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
 
                         val obj = User()
-                        val msg_queue=obj.messagePopulate()
+                        val msg_queue = obj.messagePopulate()
 
 
-                        while(!(msg_queue.isEmpty()))
-                        {var text: String = msg_queue.first()
+                        while (!(msg_queue.isEmpty())) {
+                            var text: String = msg_queue.first()
                             textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
                             msg_queue.poll()
                         }
 
                     }
-
-
 
                 } catch (ignore: InterruptedException) {
                 } catch (ignore: ExecutionException) {
@@ -196,32 +187,26 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                 null
             }
     }
+
     override fun onBackPressed() {
         super.onBackPressed()
-        overridePendingTransition(R.anim.empty,R.anim.zoom_out)
+        overridePendingTransition(R.anim.empty, R.anim.zoom_out)
         textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
-    }
-
-    fun process()
-    {
-
     }
 
 
     override fun onInit(status: Int) {
-        if(status== TextToSpeech.SUCCESS)
-        {
-            var res :Int=1
+        if (status == TextToSpeech.SUCCESS) {
+            var res: Int = 1
 
-            if(pass==1)
+            if (pass == 1)
                 res = textToSpeech.setLanguage(Locale("hin"))
-            if(pass==0)
+            if (pass == 0)
                 res = textToSpeech.setLanguage(Locale.US)
 
 
-            if(res==TextToSpeech.LANG_MISSING_DATA || res==TextToSpeech.LANG_NOT_SUPPORTED)
-            {
-                Toast.makeText(this,"language not supported",Toast.LENGTH_LONG).show()
+            if (res == TextToSpeech.LANG_MISSING_DATA || res == TextToSpeech.LANG_NOT_SUPPORTED) {
+                Toast.makeText(this, "language not supported", Toast.LENGTH_LONG).show()
             }
         }
 

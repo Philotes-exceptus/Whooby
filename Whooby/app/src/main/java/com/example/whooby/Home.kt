@@ -14,11 +14,9 @@ import android.content.pm.ActivityInfo
 import android.media.MediaPlayer.OnPreparedListener
 import android.net.Uri
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.VideoView
@@ -37,24 +35,24 @@ class Home : AppCompatActivity() {
 
 
         //sets the buttons transparency to invisible
-        whooby_feed.setAlpha(0f);
-        author.setAlpha(0f)
-        whooby_reads.setAlpha(0f)
-        github.setAlpha(0f)
+        whooby_feed.alpha = 0f
+        author.alpha = 0f
+        whooby_reads.alpha = 0f
+        github.alpha = 0f
 
 
         //fixes the different whooby button's animation origin always at a constant coordinate
-        whooby_feed.setTranslationY(50F)
-        author.setTranslationY(50F)
-        whooby_reads.setTranslationY(50F)
-        github.setTranslationY(50F)
+        whooby_feed.translationY = 50F
+        author.translationY = 50F
+        whooby_reads.translationY = 50F
+        github.translationY = 50F
 
 
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
-        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        github.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        github.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
 
 
         val videoview = findViewById<VideoView>(R.id.video) as VideoView
@@ -71,20 +69,20 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
 
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val whooby_feed = findViewById<LottieAnimationView>(R.id.whooby_button)
         val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
         val author = findViewById<ImageView>(R.id.developer)
 
-        whooby_feed.setAlpha(0f);
-        whooby_reads.setAlpha(0f);
-        author.setAlpha(0f);
+        whooby_feed.alpha = 0f
+        whooby_reads.alpha = 0f
+        author.alpha = 0f
 
         //Animate the alpha value to 1f and set duration as 1.5 secs.
-        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
-        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
 
 
     }
@@ -93,7 +91,7 @@ class Home : AppCompatActivity() {
     fun abt_author(view: View) {
 
         val developer = findViewById<ImageView>(R.id.developer)
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         //starts the animation
         developer.startAnimation(animation)
 
@@ -113,11 +111,12 @@ class Home : AppCompatActivity() {
     fun githubStar(view: View) {
 
         val github = findViewById<ImageView>(R.id.github)
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         //starts the animation
         github.startAnimation(animation)
 
-        val uri = Uri.parse("http://github.com/Philotes-exceptus/Whooby") // missing 'http://' will cause crashed
+        val uri =
+            Uri.parse("http://github.com/Philotes-exceptus/Whooby") // missing 'http://' will cause crashed
 
         val intent = Intent(Intent.ACTION_VIEW, uri)
         startActivity(intent)
@@ -128,15 +127,15 @@ class Home : AppCompatActivity() {
     fun mainApp(view: View) {
 
         //this function code opens the whooby feed section  where user enters the text
-        Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "opening Whooby...", Toast.LENGTH_SHORT).show()
 
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
 
         val intent3 = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent3)
 
 
-        if (view.getId() == R.id.whooby_button);
+        if (view.id == R.id.whooby_button);
         run {
 
             val whooby = findViewById<LottieAnimationView>(R.id.whooby_button)
@@ -150,23 +149,19 @@ class Home : AppCompatActivity() {
     fun anchor_whooby(view: View) {
         //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, whooby::class.java)
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
 
-        if (view.getId() == R.id.whooby_reads);
+        if (view.id == R.id.whooby_reads);
         run {
             val whooby = findViewById<LottieAnimationView>(R.id.whooby_reads)
-            whooby.startAnimation(animation);
-            startActivity(intent4);
-            overridePendingTransition(R.anim.zoom_in,R.anim.empty)
+            whooby.startAnimation(animation)
+            startActivity(intent4)
+            overridePendingTransition(R.anim.zoom_in, R.anim.empty)
         }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-//        val obj: LoginActivity = LoginActivity()
-//        obj.end()
-//        Handler().postDelayed({
         finishAffinity()
-//        },300)
     }
 }

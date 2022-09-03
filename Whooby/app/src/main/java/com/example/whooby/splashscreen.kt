@@ -14,7 +14,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.time.measureTimedValue
 
 
 @Suppress("DEPRICATION")
@@ -32,14 +31,14 @@ class splashscreen : AppCompatActivity() {
         )
 
 
-            Handler().postDelayed({
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                    finish()
-                    overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
-                }
-            }, 2500)
+        Handler().postDelayed({
+            Intent(this, LoginActivity::class.java).also {
+                startActivity(it)
+                finish()
+                overridePendingTransition(R.anim.right_left1, R.anim.right_left2)
+            }
+        }, 2500)
 
 
-        }
+    }
 }

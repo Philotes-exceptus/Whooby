@@ -2,8 +2,6 @@ package com.example.whooby
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.os.Handler
 import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
@@ -20,18 +18,19 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 //This class is used for new user signup
-class SignUp  : AppCompatActivity()  {
+class SignUp : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
-    lateinit private var userName : TextInputEditText
-    lateinit private var userPassword : TextInputEditText
+    private lateinit var userName: TextInputEditText
+    private lateinit var userPassword: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getWindow().setFlags(
+        window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
 
         setContentView(R.layout.signup_page)
 
@@ -39,7 +38,7 @@ class SignUp  : AppCompatActivity()  {
         userName = findViewById(R.id.signup_name)
         userPassword = findViewById(R.id.signup_password)
 
-        val signUpButton=findViewById<Button>(R.id.SignUpButton)
+        val signUpButton = findViewById<Button>(R.id.SignUpButton)
         signUpButton.setOnClickListener(View.OnClickListener { registerNewUser() })
 
     }
@@ -100,7 +99,6 @@ class SignUp  : AppCompatActivity()  {
                         Toast.LENGTH_LONG
                     )
                         .show()
-
                 }
             }
     }
@@ -113,7 +111,7 @@ class SignUp  : AppCompatActivity()  {
         val layout = layoutInflater.inflate(R.layout.signed, findViewById(R.id.root))
 
         val thanks = layout.findViewById<LottieAnimationView>(R.id.signUpVerification)
-        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
         //starts the animation
         thanks.startAnimation(animation)
         val myToast = Toast(applicationContext)
@@ -121,12 +119,10 @@ class SignUp  : AppCompatActivity()  {
         myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
         myToast.view = layout//setting the view of custom toast layout
 
-        myToast.duration=Toast.LENGTH_LONG
+        myToast.duration = Toast.LENGTH_LONG
         myToast.show()
 
 
     }
-
-
 
 }
