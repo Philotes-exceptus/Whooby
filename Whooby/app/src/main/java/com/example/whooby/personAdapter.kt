@@ -1,4 +1,4 @@
-package com.example.Whooby
+package com.example.whooby
 
 import android.view.LayoutInflater;
 import android.view.View;

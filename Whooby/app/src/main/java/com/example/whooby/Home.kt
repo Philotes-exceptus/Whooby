@@ -33,23 +33,28 @@ class Home : AppCompatActivity() {
         val whooby_feed = findViewById<LottieAnimationView>(R.id.whooby_button)
         val author = findViewById<ImageView>(R.id.developer)
         val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
+        val github = findViewById<LottieAnimationView>(R.id.github)
+
 
         //sets the buttons transparency to invisible
         whooby_feed.setAlpha(0f);
         author.setAlpha(0f)
         whooby_reads.setAlpha(0f)
+        github.setAlpha(0f)
 
 
         //fixes the different whooby button's animation origin always at a constant coordinate
         whooby_feed.setTranslationY(50F)
         author.setTranslationY(50F)
         whooby_reads.setTranslationY(50F)
+        github.setTranslationY(50F)
 
 
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
+        github.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).setDuration(1100)
 
 
         val videoview = findViewById<VideoView>(R.id.video) as VideoView
@@ -99,14 +104,9 @@ class Home : AppCompatActivity() {
 
         //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
         myToast.view = layout//setting the view of custom toast layout
-        val countDownTimer = object : CountDownTimer(5000, 5000) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                myToast.cancel()
-            }
-        }
+
         myToast.show()
-        countDownTimer.start()
+
 
     }
 

@@ -5,6 +5,8 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import android.speech.tts.TextToSpeech
 import android.view.WindowManager
 import android.widget.Button
@@ -13,7 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.Whooby.personAdapter
+import com.example.whooby.personAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.ar.sceneform.Node
 import com.google.ar.sceneform.SceneView
@@ -21,6 +23,8 @@ import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
@@ -30,12 +34,9 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     lateinit var  backgroundSceneView : SceneView
-    private var speed = 1f
-    private var pitch = 1f
     lateinit var textToSpeech: TextToSpeech
     var i=1
     var pass : Int=0
-    val msg_queue: Queue<String> = LinkedList()
     private lateinit var  adapter: personAdapter
 
     @RequiresApi(Build.VERSION_CODES.N)
@@ -53,7 +54,27 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         val obj= MainActivity()
         pass=obj.getPass()
 
+        val handler = Handler()
+        GlobalScope.launch {
 
+            handler.post {
+                val layout = layoutInflater.inflate(R.layout.loading, findViewById(R.id.root))
+
+                val myToast = Toast(applicationContext)
+
+                //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+                myToast.view = layout//setting the view of custom toast layout
+                val countDownTimer = object : CountDownTimer(5000, 5000) {
+                    override fun onTick(millisUntilFinished: Long) {}
+                    override fun onFinish() {
+                        myToast.cancel()
+                    }
+                }
+                myToast.show()
+                countDownTimer.start()
+            }
+
+        }
 
         // getting the recyclerview by its id
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerview)
@@ -70,8 +91,6 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
             .setQuery(query1, User::class.java)
             .build()
 
-
-        msg_queue.add("Item "+i)
 
         // This will pass the ArrayList to our Adapter
         adapter = personAdapter(options)
@@ -155,18 +174,20 @@ class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     btn.setOnClickListener {
                         textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
 
-                        for (i in 1..20) {
-                            msg_queue.add("Item "+i)
-                        }
+//                        for (i in 1..20) {
+//                            msg_queue.add("Item "+i)
+//                        }
 
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
 
-                        var j = 0
-                        while(j<20)
+                        val obj = User()
+                        val msg_queue=obj.messagePopulate()
+
+
+                        while(!(msg_queue.isEmpty()))
                         {var text: String = msg_queue.first()
                             textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
-                            j++
                             msg_queue.poll()
                         }
 

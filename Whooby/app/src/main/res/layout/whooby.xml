@@ -21,13 +21,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:visibility="visible"
-        android:layout_width="372dp"
-        android:layout_height="207dp"
+        android:layout_width="387dp"
+        android:layout_height="211dp"
         android:fadingEdge="horizontal"
         android:fadingEdgeLength="50dp"
         android:fillViewport="false"
         android:requiresFadingEdge="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.78"

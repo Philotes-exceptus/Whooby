@@ -1,9 +1,12 @@
 package com.example.whooby
 
+import java.util.*
+
 class User {
     var regd: String?= null
-    var name: String? = "golu"
+    var name: String? = ""
     var inputtext: String? = ""
+    val msg_queue: Queue<String> = LinkedList()
 
 
     @JvmName("setName1")
@@ -18,12 +21,17 @@ class User {
 
     @JvmName("getStatement1")
     fun getStatement(): String? {
+        msg_queue.add(inputtext)
         return inputtext
     }
 
     @JvmName("getName1")
     fun getName(): String? {
         return name
+    }
+
+    fun messagePopulate(): Queue<String> {
+        return msg_queue
     }
 
 }
