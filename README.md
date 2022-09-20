@@ -4,7 +4,7 @@
     <h3><p>A TTS(text-to-speech) based native android application which takes input from user of a community or organisation and displays it in open public where all members of the group or community can see it. It basically promotes freedom of speech and opinion in a group , organisation , educational institution or community.</p></h3>
 
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white)
-![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
+	![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
   ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
     <a href="https://www.lottiefiles.com/"><img src="https://img.shields.io/badge/-Lottie%20Files-yellow" alt="Lottiefiles" width="100" /></a>
   <a href="https://github.com/SceneView/sceneform-android"><img src="https://raw.githubusercontent.com/kboy-silvergym/ARCore-Kotlin-Sampler/master/readmeImages/sceneform.jpg" width="100" />
