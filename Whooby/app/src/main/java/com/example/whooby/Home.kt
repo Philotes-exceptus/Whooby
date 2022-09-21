@@ -4,11 +4,12 @@ package com.example.whooby
 #########################################################################################################
 # This class is responsible to inflate 3 different layouts that is the Whooby feeds , Whooby reads and  #
 # developers info. The function  abt_author gives info about the developers. The function mainApp takes #
-# user to the Whooby feeds sections where user enters text. The function anchor_Whooby takes user to    #
+# user to the Whooby feeds sections where user enters text. The function anchor Whooby takes user to    #
 # section where Whooby reads the messages fed to it.                                                    #
 #########################################################################################################
 */
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.media.MediaPlayer.OnPreparedListener
@@ -65,6 +66,7 @@ class Home : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.home_screen)
@@ -148,7 +150,7 @@ class Home : AppCompatActivity() {
 
     fun anchor_whooby(view: View) {
         //This function inflates the whooby reads activity where the model reads the messages.
-        val intent4 = Intent(applicationContext, whooby::class.java)
+        val intent4 = Intent(applicationContext, Whooby::class.java)
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
 
         if (view.id == R.id.whooby_reads);

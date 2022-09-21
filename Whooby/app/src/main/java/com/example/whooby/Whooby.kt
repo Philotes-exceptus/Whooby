@@ -27,7 +27,7 @@ import java.util.concurrent.CompletableFuture
 import java.util.concurrent.ExecutionException
 
 
-class whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
+class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 
     lateinit var backgroundSceneView: SceneView
