@@ -115,7 +115,6 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 databaseReference.push().setValue(sendinfo)
-
             }
 
             override fun onCancelled(error: DatabaseError) {

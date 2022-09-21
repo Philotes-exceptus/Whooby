@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.firebase.ui.database.FirebaseRecyclerOptions
+import java.util.*
 
 // FirebaseRecyclerAdapter is a class provided by
 // FirebaseUI. it provides functions to bind, adapt and show
@@ -43,7 +44,6 @@ personAdapter(
     internal inner class personsViewholder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         var statement: TextView
-
 
         init {
             statement = itemView.findViewById(R.id.msgcontent)

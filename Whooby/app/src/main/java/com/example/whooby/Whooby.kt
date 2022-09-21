@@ -1,11 +1,13 @@
 package com.example.whooby
 
+import android.content.ContentValues.TAG
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.speech.tts.TextToSpeech
+import android.util.Log
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
@@ -19,7 +21,7 @@ import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.math.Quaternion
 import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.util.*
@@ -35,6 +37,7 @@ class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     var i = 1
     var pass: Int = 0
     private lateinit var adapter: personAdapter
+    val msg_queue: Queue<String> = LinkedList()
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,6 +85,24 @@ class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
         val options: FirebaseRecyclerOptions<User> = FirebaseRecyclerOptions.Builder<User>()
             .setQuery(query1, User::class.java)
             .build()
+
+
+        val database = FirebaseDatabase.getInstance().reference
+        val ref = database.ref
+
+
+        ref.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (singleSnapshot in dataSnapshot.children) {
+                   Log.d("kula",""+singleSnapshot)
+                    msg_queue.add(singleSnapshot.value as String?)
+                }
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException())
+            }
+        })
 
 
         // This will pass the ArrayList to our Adapter
@@ -168,9 +189,6 @@ class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
 
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
-
-                        val obj = User()
-                        val msg_queue = obj.messagePopulate()
 
 
                         while (!(msg_queue.isEmpty())) {
