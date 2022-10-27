@@ -1,5 +1,6 @@
 package com.example.whooby
 
+import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
@@ -36,7 +37,7 @@ class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
     var pass: Int = 0
     private lateinit var adapter: personAdapter
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.whooby)

@@ -60,6 +60,21 @@
             android:launchMode="singleTask"
             android:exported="true" >
         </activity>
+
+        <activity
+
+            android:name=".ExpandableCard"
+            android:launchMode="singleTask"
+            android:exported="true" >
+
+        </activity>
+
+        <activity
+
+            android:name=".BlogEdu"
+            android:launchMode="singleTask"
+            android:exported="true" >
+        </activity>
     </application>
 
 </manifest>
