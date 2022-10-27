@@ -15,7 +15,7 @@ await mongoose.connect(dbURI, (err, db) => {
     else {
         console.log('connected to db')
         //listen for request
-        app.listen(3000)
+        app.listen(process.env.api_key)
 
         run();
     }

@@ -24,7 +24,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var userEmail: TextInputEditText
     private lateinit var userPassword: TextInputEditText
     private lateinit var userRegNo: TextInputEditText
-    private val baseUrl="http://10.0.2.2:3000"
+    private val baseUrl="https://whooby-backend.onrender.com"
     private lateinit var retrofitInstance : Auth_Interface
 
     override fun onCreate(savedInstanceState: Bundle?) {
