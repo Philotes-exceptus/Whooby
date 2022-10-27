@@ -1,10 +1,9 @@
 package com.example.whooby
 
-import android.content.ContentValues.TAG
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
@@ -16,33 +15,45 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 //This class is responsible for user login into the app using firebase authentication
 class LoginActivity : AppCompatActivity() {
 
 
-    private lateinit var mAuth: FirebaseAuth
-    lateinit private var userName: TextInputEditText
-    lateinit private var userPassword: TextInputEditText
 
+    private lateinit var userName: TextInputEditText
+    private lateinit var userPassword: TextInputEditText
+    private lateinit var userRegNo: TextInputEditText
+    private val baseUrl="http://10.0.2.2:3000"
+    private lateinit var retrofitInstance : Auth_Interface
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        getWindow().setFlags(
+        window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
         setContentView(R.layout.login_page)
 
+        val retrofit = Retrofit.Builder().baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retrofitInstance = retrofit.create(Auth_Interface::class.java)
+
+
         //mAuth= FirebaseAuth.getInstance()
-        mAuth = Firebase.auth
         userName = findViewById(R.id.name)
         userPassword = findViewById(R.id.password)
+        userRegNo = findViewById(R.id.regNo)
 
         val loginButton = findViewById<Button>(R.id.LoginButton)
         loginButton.setOnClickListener(View.OnClickListener { previousUser() })
@@ -63,16 +74,24 @@ class LoginActivity : AppCompatActivity() {
 
     //This function is to check if there already exist a user for our app
     private fun previousUser() {
-        val name: String
-        val password: String
-        name = userName.text.toString()
-        password = userPassword.text.toString()
+        val email: String = userName.text.toString()
+        val password: String = userPassword.text.toString()
+        val regNo: String = userRegNo.text.toString()
 
 
-        if (TextUtils.isEmpty(name)) {
+        if (TextUtils.isEmpty(email)) {
             Toast.makeText(
                 applicationContext,
                 "Please enter your email!!",
+                Toast.LENGTH_LONG
+            )
+                .show()
+            return
+        }
+        if (TextUtils.isEmpty(regNo)) {
+            Toast.makeText(
+                applicationContext,
+                "Please enter Registration no!!",
                 Toast.LENGTH_LONG
             )
                 .show()
@@ -88,26 +107,32 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        mAuth.signInWithEmailAndPassword(name, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
-                    val user = mAuth.currentUser
-                    val homeIntent = Intent(this, Home::class.java)
+        val map: HashMap<String, String> = HashMap()
+        map["reg_no"] = regNo
+        map["password"] = password
+        map["email"] = email
+
+
+        retrofitInstance.executeLogin(map)?.enqueue(object : Callback<LoginResult?> {
+            override fun onResponse(call: Call<LoginResult?>?, response: Response<LoginResult?>) {
+                if (response.code() == 200) {
+
+                    val homeIntent = Intent(this@LoginActivity, Home::class.java)
                     startActivity(homeIntent)
 
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(
-                        baseContext, "Not a registered member",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    invalid()
+                } else if (response.code() == 404) {
 
+                    invalid()
                 }
             }
+
+            override fun onFailure(call: Call<LoginResult?>?, t: Throwable) {
+
+                invalid()
+
+            }
+        })
+
     }
 
 

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.Gravity
-import android.view.View
 import android.view.WindowManager
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -13,16 +12,20 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.textfield.TextInputEditText
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 //This class is used for new user signup
 class SignUp : AppCompatActivity() {
 
-    private lateinit var mAuth: FirebaseAuth
-    private lateinit var userName: TextInputEditText
+    private lateinit var userEmail: TextInputEditText
     private lateinit var userPassword: TextInputEditText
+    private lateinit var userRegNo: TextInputEditText
+    private val baseUrl="http://10.0.2.2:3000"
+    private lateinit var retrofitInstance : Auth_Interface
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,27 +37,41 @@ class SignUp : AppCompatActivity() {
 
         setContentView(R.layout.signup_page)
 
-        mAuth = Firebase.auth
-        userName = findViewById(R.id.signup_name)
+        val retrofit = Retrofit.Builder().baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        retrofitInstance = retrofit.create(Auth_Interface::class.java)
+
+
+        userEmail = findViewById(R.id.signup_email)
         userPassword = findViewById(R.id.signup_password)
+        userRegNo = findViewById(R.id.signup_regNo)
 
         val signUpButton = findViewById<Button>(R.id.SignUpButton)
-        signUpButton.setOnClickListener(View.OnClickListener { registerNewUser() })
+        signUpButton.setOnClickListener { registerNewUser() }
 
     }
 
     private fun registerNewUser() {
 
-        val name: String
-        val password: String
-        name = userName.text.toString()
-        password = userPassword.text.toString()
+        val email: String = userEmail.text.toString()
+        val password: String = userPassword.text.toString()
+        val reg_No: String = userRegNo.text.toString()
 
-
-        if (TextUtils.isEmpty(name)) {
+        if (TextUtils.isEmpty(email)) {
             Toast.makeText(
                 applicationContext,
                 "Please enter your name!!",
+                Toast.LENGTH_LONG
+            )
+                .show()
+            return
+        }
+        if (TextUtils.isEmpty(reg_No)) {
+            Toast.makeText(
+                applicationContext,
+                "Please enter your registration no!!",
                 Toast.LENGTH_LONG
             )
                 .show()
@@ -71,9 +88,17 @@ class SignUp : AppCompatActivity() {
         }
 
         // create new user or register new user
-        mAuth.createUserWithEmailAndPassword(name, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
+        val map: HashMap<String, String> = HashMap()
+        map["email"] = email
+        map["reg_no"] = reg_No
+        map["password"] = password
+
+        retrofitInstance.executeSignup(map)?.enqueue(object : Callback<Void?> {
+            override fun onResponse(
+                call: Call<Void?>,
+                response: Response<Void?>
+            ) {
+                if (response.code() == 200) {
                     Toast.makeText(
                         applicationContext,
                         "Registration successful!",
@@ -83,24 +108,31 @@ class SignUp : AppCompatActivity() {
 
                     signed()
 
-
                     // if the user created intent to login activity
                     val intent = Intent(
                         this@SignUp,
                         LoginActivity::class.java
                     )
                     startActivity(intent)
-                } else {
-
-                    // Registration failed
+                } else if (response.code() == 400) {
                     Toast.makeText(
-                        applicationContext, "Registration failed!!"
-                                + " Please try again later",
-                        Toast.LENGTH_LONG
-                    )
-                        .show()
+                        this@SignUp,
+                        "Already registered", Toast.LENGTH_LONG
+                    ).show()
                 }
             }
+
+            override fun onFailure(call: Call<Void?>, t: Throwable) {
+                // Registration failed
+                Toast.makeText(
+                    applicationContext, "Registration failed!!"
+                            + " Please try again later",
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
+        })
+
     }
 
 

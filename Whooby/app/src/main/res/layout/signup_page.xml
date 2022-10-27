@@ -8,7 +8,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:id="@+id/rootSignUp"
-    tools:context=".Login">
+    >
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -42,10 +42,27 @@
                 android:padding="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/signup_name"
+                    android:id="@+id/signup_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890_-@."
+                    android:inputType="textFilter|textVisiblePassword|textNoSuggestions" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="Registration no."
+                android:padding="10dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/signup_regNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="1234567890"
                     android:inputType="textFilter|textVisiblePassword|textNoSuggestions" />
 
             </com.google.android.material.textfield.TextInputLayout>
