@@ -1,4 +1,4 @@
-package com.example.whooby
+package com.example.whooby.DataClasses
 
 data class Author(
     val branch: String,

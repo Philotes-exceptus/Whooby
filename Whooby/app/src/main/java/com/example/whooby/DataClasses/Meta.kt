@@ -1,4 +1,4 @@
-package com.example.whooby
+package com.example.whooby.DataClasses
 
 data class Meta(
     val description: String,

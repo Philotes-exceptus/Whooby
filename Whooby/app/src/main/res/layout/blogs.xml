@@ -1,155 +1,17 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#413F42">
+        android:layout_height="wrap_content"
+        tools:itemCount="5"
+        tools:listitem="@layout/expand_cards" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:divider="@color/purple_500"
-            android:dividerPadding="4dp"
-            android:orientation="vertical"
-            android:showDividers="middle">
-
-            <TextView android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:fontFamily="@font/aclonica"
-                android:textSize="20dp"
-                android:text="Heres what Whooby has for you today.."
-                android:textColor="#E5F1D7"/>
-
-            <LinearLayout android:id="@+id/sec1"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:elevation="30dp"
-                    app:cardBackgroundColor="#6E6969">
-                    <ImageView android:id="@+id/im1"
-                        android:layout_width="200dp"
-                        android:layout_height="250dp"
-                        android:scaleType="centerCrop"
-                        tools:srcCompat="@tools:sample/avatars"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="261dp"
-                    android:layout_height="150dp"
-                    android:elevation="30dp"
-                    app:cardBackgroundColor="#ECDDDD">
-                    <TextView android:id="@+id/dtex"
-                        android:layout_width="236dp"
-                        android:layout_height="104dp"
-                        android:layout_gravity="center"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/cardview_compat_inset_shadow"
-                        android:text="Hello World!"/>
-
-                    <TextView
-                        android:id="@+id/dtime1"
-                        android:layout_width="60dp"
-                        android:layout_height="34dp"
-                        android:layout_gravity="end|bottom"
-                        android:gravity="center_horizontal"
-                        android:textSize="17sp"
-                        android:padding="@dimen/cardview_compat_inset_shadow"
-                        android:text="0000" />
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/sec2"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:elevation="30dp"
-                    app:cardBackgroundColor="#6E6969">
-
-                    <ImageView
-                        android:id="@+id/im2"
-                        android:layout_width="200dp"
-                        android:layout_height="250dp"
-                        android:scaleType="centerCrop"
-                        tools:srcCompat="@tools:sample/avatars"/>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="261dp"
-                    android:layout_height="150dp"
-                    app:cardBackgroundColor="#ECDDDD">
-                    <TextView android:id="@+id/dtex2"
-                        android:layout_width="236dp"
-                        android:layout_height="104dp"
-                        android:layout_gravity="center"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/cardview_compat_inset_shadow"
-                        android:text="Hello World!"/>
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-            <LinearLayout android:id="@+id/sec3"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:elevation="30dp"
-                    app:cardBackgroundColor="#6E6969">
-                    <ImageView
-                        android:id="@+id/im3"
-                        android:layout_width="200dp"
-                        android:layout_height="250dp"
-                        android:scaleType="centerCrop"
-                        tools:srcCompat="@tools:sample/avatars"/>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="261dp"
-                    android:layout_height="150dp"
-                    app:cardBackgroundColor="#ECDDDD">
-
-                    <TextView
-                        android:id="@+id/dtex3"
-                        android:layout_width="236dp"
-                        android:layout_height="104dp"
-                        android:layout_gravity="center"
-                        android:gravity="center_horizontal"
-                        android:padding="@dimen/cardview_compat_inset_shadow"
-                        android:text="Hello World!"/>
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-            <LinearLayout android:id="@+id/sec4" android:layout_width="match_parent" android:layout_height="200dp" android:orientation="horizontal">
-                <androidx.cardview.widget.CardView android:layout_width="150dp" android:layout_height="150dp" android:elevation="30dp" app:cardBackgroundColor="#6E6969">
-                    <ImageView android:id="@+id/im4" android:layout_width="200dp" android:layout_height="250dp" android:scaleType="centerCrop" tools:srcCompat="@tools:sample/avatars"/>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_width="261dp" android:layout_height="150dp" app:cardBackgroundColor="#ECDDDD">
-                    <TextView android:id="@+id/dtex4" android:layout_width="236dp" android:layout_height="104dp" android:layout_gravity="center" android:gravity="center_horizontal" android:padding="@dimen/cardview_compat_inset_shadow" android:text="Hello World!"/>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
