@@ -1,21 +1,30 @@
 package com.example.whooby
 
-import android.R.attr.country
-import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
 import android.view.WindowManager
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 
 
 //This class is used to fetch blog data from Enigma blogs using Enigma api
 class BlogEdu : AppCompatActivity() {
+
+    private lateinit var arrow: ImageButton
+    private lateinit var hiddenView: LinearLayout
+    private lateinit var cardView: CardView
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,13 +68,17 @@ class BlogEdu : AppCompatActivity() {
 
         }
 
+
+
+
         Thread.sleep(5000)
 
         // This will pass the ArrayList to our Adapter
-        val adapter = BlogAdapter(data)
+        val adapter = BlogAdapter(data,recyclerview)
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
+
 
     }
 

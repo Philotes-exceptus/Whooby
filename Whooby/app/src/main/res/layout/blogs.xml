@@ -5,13 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".BlogEdu">
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView4"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="90dp"-->
+<!--        android:textSize="35sp"-->
+<!--        android:textColor="@color/pinkColor"-->
+<!--        android:fontFamily="@font/aclonica"-->
+<!--        android:background="@color/material_dynamic_tertiary10"-->
+<!--        android:textAlignment="center"-->
+<!--        android:text="Blogs and Articles" />-->
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:itemCount="5"
         tools:listitem="@layout/expand_cards" />
+
 
 </LinearLayout>

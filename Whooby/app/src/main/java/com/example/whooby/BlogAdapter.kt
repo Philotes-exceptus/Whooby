@@ -4,11 +4,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BlogAdapter(private val mList: List<BlogViewModel>) : RecyclerView.Adapter<BlogAdapter.ViewHolder>() {
+class BlogAdapter(private val mList: List<BlogViewModel> , private  val recyclerView: RecyclerView) : RecyclerView.Adapter<BlogAdapter.ViewHolder>() {
 
+    var mExpandedPosition=-1
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view view
@@ -24,11 +26,24 @@ class BlogAdapter(private val mList: List<BlogViewModel>) : RecyclerView.Adapter
 
         val ItemsViewModel = mList[position]
 
+
+        val isExpanded = position == mExpandedPosition
+        holder.hiddenView.visibility = if (isExpanded) View.VISIBLE else View.GONE
+        holder.itemView.isActivated = isExpanded
+        holder.arrow.setOnClickListener{
+
+                mExpandedPosition = if (isExpanded) -1 else position
+                notifyItemChanged(position)
+
+        }
+
         // sets the image to the imageview from our itemHolder class
         holder.imageView.setImageResource(ItemsViewModel.image)
 
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.text
+
+
 
     }
 
@@ -41,5 +56,7 @@ class BlogAdapter(private val mList: List<BlogViewModel>) : RecyclerView.Adapter
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val imageView: ImageView = itemView.findViewById(R.id.icon)
         val textView: TextView = itemView.findViewById(R.id.heading)
+        val arrow: ImageView = itemView.findViewById(R.id.arrow_button)
+        val hiddenView: LinearLayout = itemView.findViewById(R.id.hidden_view)
     }
 }
