@@ -15,6 +15,7 @@ import android.content.pm.ActivityInfo
 import android.media.MediaPlayer.OnPreparedListener
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -23,6 +24,9 @@ import android.widget.Toast
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 
 class Home : AppCompatActivity() {
@@ -33,6 +37,7 @@ class Home : AppCompatActivity() {
         val author = findViewById<ImageView>(R.id.developer)
         val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
         val github = findViewById<LottieAnimationView>(R.id.github)
+        val whooby_blogs =findViewById<LottieAnimationView>(R.id.whooby_blog_button)
 
 
         //sets the buttons transparency to invisible
@@ -47,6 +52,7 @@ class Home : AppCompatActivity() {
         author.translationY = 50F
         whooby_reads.translationY = 50F
         github.translationY = 50F
+        whooby_blogs.translationY = 50F
 
 
         //Animate the alpha value to 1f and set duration as 1.5 secs. This is applied to button animation
@@ -54,15 +60,16 @@ class Home : AppCompatActivity() {
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
         github.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        whooby_blogs.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
 
 
-        val videoview = findViewById<VideoView>(R.id.video) as VideoView
-        val path = "android.resource://" + packageName + "/" + R.raw.abc
-
-        videoview.setVideoURI(Uri.parse(path))
-        videoview.start()
-
-        videoview.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
+//        val videoview = findViewById<VideoView>(R.id.video) as VideoView
+//        val path = "android.resource://" + packageName + "/" + R.raw.abc
+//
+//        videoview.setVideoURI(Uri.parse(path))
+//        videoview.start()
+//
+//        videoview.setOnPreparedListener(OnPreparedListener { mp -> mp.isLooping = true })
 
     }
 
@@ -76,8 +83,11 @@ class Home : AppCompatActivity() {
         val whooby_feed = findViewById<LottieAnimationView>(R.id.whooby_button)
         val whooby_reads = findViewById<LottieAnimationView>(R.id.whooby_reads)
         val author = findViewById<ImageView>(R.id.developer)
+        val whooby_blogs =findViewById<LottieAnimationView>(R.id.whooby_blog_button)
+
 
         whooby_feed.alpha = 0f
+        whooby_blogs.alpha = 0f
         whooby_reads.alpha = 0f
         author.alpha = 0f
 
@@ -85,6 +95,7 @@ class Home : AppCompatActivity() {
         whooby_feed.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
         whooby_reads.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
         author.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
+        whooby_blogs.animate().alpha(1f).translationYBy(-50F).setStartDelay(150).duration = 1100
 
 
     }
@@ -148,18 +159,51 @@ class Home : AppCompatActivity() {
     }
 
 
+    fun blogs(view: View) {
+
+        //this function code opens the whooby feed section  where user enters the text
+        Toast.makeText(this, "opening Blogs", Toast.LENGTH_SHORT).show()
+
+        val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+
+        val intent5 = Intent(applicationContext, BlogEdu::class.java)
+        startActivity(intent5)
+
+
+        if (view.id == R.id.whooby_blog_button);
+        run {
+
+            val whooby = findViewById<LottieAnimationView>(R.id.whooby_blog_button)
+            whooby.startAnimation(animation)
+            startActivity(intent5)
+            overridePendingTransition(R.anim.zoom_in, R.anim.empty)
+        }
+    }
+
+
     fun anchor_whooby(view: View) {
         //This function inflates the whooby reads activity where the model reads the messages.
         val intent4 = Intent(applicationContext, Whooby::class.java)
         val animation: Animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
 
-        if (view.id == R.id.whooby_reads);
-        run {
-            val whooby = findViewById<LottieAnimationView>(R.id.whooby_reads)
-            whooby.startAnimation(animation)
-            startActivity(intent4)
-            overridePendingTransition(R.anim.zoom_in, R.anim.empty)
+        GlobalScope.async {
+
+            if (view.id == R.id.whooby_reads);
+            run {
+                val whooby = findViewById<LottieAnimationView>(R.id.whooby_reads)
+                whooby.startAnimation(animation)
+                startActivity(intent4)
+                overridePendingTransition(R.anim.zoom_in, R.anim.empty)
+            }
+
         }
+
+//        GlobalScope.launch {
+//
+//
+//        }
+
+
     }
 
     override fun onBackPressed() {
