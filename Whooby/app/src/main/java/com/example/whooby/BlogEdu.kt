@@ -13,6 +13,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import java.lang.Thread.sleep
 
 
 //This class is used to fetch blog data from Enigma blogs using Enigma api
@@ -45,7 +46,7 @@ class BlogEdu : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<BlogViewModel>()
 
-        GlobalScope.async {
+        GlobalScope.launch {
 
             val result = enigmaApi.getBlog()
             //Log.d("sagar: ", result.body().toString())
@@ -56,18 +57,15 @@ class BlogEdu : AppCompatActivity() {
                     Log.d("dtest",item.title)
                     if(item.title!="")
                     data.add(BlogViewModel(R.drawable.enigma, item.title))
-                    if(item.data.blocks[1].type=="paragraph")
-                    Log.d("test", item.data.blocks[1].data.text)
+                    if(item.data.blocks.isNotEmpty())
+                    if(item.data.blocks[0].type=="paragraph")
+                    Log.d("test", item.data.blocks[0].data.text)
                 }
 
             }
 
         }
 
-
-
-
-        Thread.sleep(5000)
 
         // This will pass the ArrayList to our Adapter
         val adapter = BlogAdapter(data,recyclerview)

@@ -8,36 +8,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".BlogEdu">
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView4"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="90dp"-->
-<!--        android:textSize="35sp"-->
-<!--        android:textColor="@color/pinkColor"-->
-<!--        android:fontFamily="@font/aclonica"-->
-<!--        android:background="@color/material_dynamic_tertiary10"-->
-<!--        android:textAlignment="center"-->
-<!--        android:text="Blogs and Articles" />-->
-
-
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/apibg2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        />
-
-
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -45,12 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/expand_cards"
-        android:background="#00000000"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="@+id/background"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/background"
-        app:layout_constraintTop_toTopOf="@+id/background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"/>
 
 

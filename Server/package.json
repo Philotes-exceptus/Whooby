@@ -7,5 +7,16 @@
     "nodemailer": "^6.8.0",
     "nodemailer-express-handlebars": "^5.0.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server"
+  },
+  "name": "whooby-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

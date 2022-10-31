@@ -10,19 +10,20 @@ const login = (req, res) => {
         email: req.body.email,
         password: req.body.password
     }
-
+    console.log(query)
 
 
     User.findOne(query, (err, result) => {
+      console.log('result', result)
 
         if (result != null) {
 
             const objToSend = {
-                reg_no: res.reg_no,
-                email: res.email
+                reg_no: result.reg_no,
+                email: result.email
             }
 
-            res.status(200).send(JSON.stringify(objToSend))
+            res.status(200).json(objToSend)
 
         } else {
             res.status(404).send()
