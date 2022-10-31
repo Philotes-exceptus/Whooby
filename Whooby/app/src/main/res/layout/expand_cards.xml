@@ -61,8 +61,8 @@
 
                 <TextView
                     android:id="@+id/heading"
-                    android:layout_width="120dp"
-                    android:layout_height="130dp"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
                     android:text="Enigma Blog 101"
                     android:textColor="#006600"
                     android:textSize="25sp"
@@ -111,8 +111,8 @@
                     android:elevation="30dp"
                     app:cardBackgroundColor="#ECDDDD">
                     <TextView android:id="@+id/dtex"
-                        android:layout_width="256dp"
-                        android:layout_height="104dp"
+                        android:layout_width="260dp"
+                        android:layout_height="105dp"
                         android:layout_gravity="center"
                         android:textSize="20sp"
                         android:textColor="@color/common_google_signin_btn_text_dark_focused"
