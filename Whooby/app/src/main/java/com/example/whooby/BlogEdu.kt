@@ -1,5 +1,6 @@
 package com.example.whooby
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
@@ -19,10 +20,8 @@ import java.lang.Thread.sleep
 //This class is used to fetch blog data from Enigma blogs using Enigma api
 class BlogEdu : AppCompatActivity() {
 
-    private lateinit var arrow: ImageButton
-    private lateinit var hiddenView: LinearLayout
-    private lateinit var cardView: CardView
 
+    @SuppressLint("SuspiciousIndentation")
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,11 +45,13 @@ class BlogEdu : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<BlogViewModel>()
 
-        GlobalScope.launch {
+        GlobalScope.async {
 
             val result = enigmaApi.getBlog()
             //Log.d("sagar: ", result.body().toString())
             val ts = result.body()?.blogs
+            
+
             if (ts != null) {
                 for (item in ts)
                 {
