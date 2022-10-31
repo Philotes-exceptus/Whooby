@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
     private lateinit var userList: ArrayList<User>
     lateinit var visualiser: LottieAnimationView
 
-    @OptIn(DelicateCoroutinesApi::class)
+
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -93,19 +93,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener,
             }
 
         }
-        //coroutine for animation
-        val handler = Handler()
-        GlobalScope.launch {
 
-            handler.post {
-
-                if (textToSpeech.isSpeaking)
-                    visualiser.visibility = View.VISIBLE
-                else
-                    visualiser.visibility = View.INVISIBLE
-
-            }
-        }
 
     }
 

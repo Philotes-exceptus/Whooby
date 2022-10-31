@@ -1,12 +1,7 @@
 package com.example.whooby
 
-import android.os.Build
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.LinearLayout
@@ -60,10 +55,10 @@ class BlogEdu : AppCompatActivity() {
                     Log.d("dtest",item.title)
                     if(item.title!="")
                     data.add(BlogViewModel(R.drawable.enigma, item.title))
-                    //Log.d("test", item.data.blocks[1].data.meta.description)
+//                    if(item.data.blocks[1].type=="paragraph")
+//                    Log.d("test", item.data.blocks[1].data.text)
                 }
 
-//                    Log.d("test", result.body()?.blogs.toString())
             }
 
         }
