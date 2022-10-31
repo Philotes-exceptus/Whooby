@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var userName: TextInputEditText
     private lateinit var userPassword: TextInputEditText
     private lateinit var userRegNo: TextInputEditText
-    private val baseUrl="http://10.0.2.2:3000/"
+    private val baseUrl="https://whooby-server.onrender.com"
     private lateinit var retrofitInstance : Auth_Interface
 
 
