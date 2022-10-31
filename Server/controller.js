@@ -22,43 +22,6 @@ const login = (req, res) => {
                 email: res.email
             }
 
-
-            var transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                  user: 'soumyasagar135@gmail.com',
-                  pass: 'sy_sagar123'
-                }
-              });
-              
-              const handlebarOptions = {
-                viewEngine: {
-                  extName: ".handlebars",
-                  partialsDir: path.resolve('./views'),
-                  defaultLayout: false,
-                },
-                viewPath: path.resolve('./views'),
-                extName: ".handlebars",
-              }
-              
-              transporter.use('compile', hbs(handlebarOptions));
-              
-              var mailOptions = {
-                from: 'soumyasagar135@gmail.com',
-                to: "sysagar07@gmail.com",
-                subject: 'Sending Email using Node.js',
-                template: 'email'
-
-              };
-              
-              transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                  console.log(error);
-                } else {
-                  console.log('Email sent: ' + info.response);
-                }
-              });
-
             res.status(200).send(JSON.stringify(objToSend))
 
         } else {
@@ -84,6 +47,47 @@ const signUp = (req, res) => {
 
         if (result == null) {
             User.create(newUser, (err, result) => {
+
+
+
+              var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                  user: 'soumyasagar135@gmail.com',
+                  pass: 'sy_sagar123'
+                }
+              });
+              
+              const handlebarOptions = {
+                viewEngine: {
+                  extName: ".html",
+                  partialsDir: path.resolve('./views'),
+                  defaultLayout: false,
+                },
+                viewPath: path.resolve('./views'),
+                extName: ".html",
+              }
+              
+              transporter.use('compile', hbs(handlebarOptions));
+              
+              var mailOptions = {
+                from: 'soumyasagar135@gmail.com',
+                to: req.body.email,
+                subject: 'Sending Email using Node.js',
+                template: 'email'
+
+              };
+              
+              transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+              });
+
+
+
                 res.status(200).send()
                 console.log("new user created")
             })

@@ -29,10 +29,10 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var userName: TextInputEditText
     private lateinit var userPassword: TextInputEditText
     private lateinit var userRegNo: TextInputEditText
-    private val baseUrl="https://whooby-server.onrender.com"
+    private val baseUrl="http://10.0.2.2:3000/"
     private lateinit var retrofitInstance : Auth_Interface
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -17,4 +17,6 @@
     <string name="username">Username</string>
     <string name="login">LOGIN</string>
     <string name="blogs">Blogs</string>
+    <string name="email">email</string>
+    <string name="registration_no">Registration no</string>
 </resources>

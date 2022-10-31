@@ -29,7 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
 
             <TextView
                 android:layout_width="300dp"
@@ -48,7 +49,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="email"
+                android:hint="@string/email"
                 android:padding="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -65,7 +66,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="Registration no"
+                android:hint="@string/registration_no"
                 android:padding="10dp">
 
                 <com.google.android.material.textfield.TextInputEditText

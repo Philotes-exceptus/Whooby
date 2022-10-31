@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 
@@ -44,7 +45,7 @@ class BlogEdu : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<BlogViewModel>()
 
-        GlobalScope.launch {
+        GlobalScope.async {
 
             val result = enigmaApi.getBlog()
             //Log.d("sagar: ", result.body().toString())
@@ -55,8 +56,8 @@ class BlogEdu : AppCompatActivity() {
                     Log.d("dtest",item.title)
                     if(item.title!="")
                     data.add(BlogViewModel(R.drawable.enigma, item.title))
-//                    if(item.data.blocks[1].type=="paragraph")
-//                    Log.d("test", item.data.blocks[1].data.text)
+                    if(item.data.blocks[1].type=="paragraph")
+                    Log.d("test", item.data.blocks[1].data.text)
                 }
 
             }
