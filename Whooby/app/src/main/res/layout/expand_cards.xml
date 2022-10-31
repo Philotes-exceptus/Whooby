@@ -111,9 +111,12 @@
                     android:elevation="30dp"
                     app:cardBackgroundColor="#ECDDDD">
                     <TextView android:id="@+id/dtex"
-                        android:layout_width="236dp"
+                        android:layout_width="256dp"
                         android:layout_height="104dp"
                         android:layout_gravity="center"
+                        android:textSize="20sp"
+                        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                        android:fontFamily="@font/aclonica"
                         android:gravity="center_horizontal"
                         android:padding="@dimen/cardview_compat_inset_shadow"
                         android:text="Hello World!"/>

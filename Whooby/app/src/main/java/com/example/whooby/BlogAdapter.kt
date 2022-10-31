@@ -43,6 +43,9 @@ class BlogAdapter(private val mList: List<BlogViewModel> , private  val recycler
         // sets the text to the textview from our itemHolder class
         holder.textView.text = ItemsViewModel.text
 
+        //sets content
+        holder.blogContent.text=ItemsViewModel.content
+
 
 
     }
@@ -58,5 +61,6 @@ class BlogAdapter(private val mList: List<BlogViewModel> , private  val recycler
         val textView: TextView = itemView.findViewById(R.id.heading)
         val arrow: ImageView = itemView.findViewById(R.id.arrow_button)
         val hiddenView: LinearLayout = itemView.findViewById(R.id.hidden_view)
+        var blogContent : TextView = itemView.findViewById(R.id.dtex)
     }
 }

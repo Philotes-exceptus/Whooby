@@ -2,10 +2,12 @@ package com.example.whooby
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -45,28 +47,45 @@ class BlogEdu : AppCompatActivity() {
         // ArrayList of class ItemsViewModel
         val data = ArrayList<BlogViewModel>()
 
-        GlobalScope.async {
+        val fetch = GlobalScope.async {
 
             val result = enigmaApi.getBlog()
             //Log.d("sagar: ", result.body().toString())
             val ts = result.body()?.blogs
-            
+
 
             if (ts != null) {
                 for (item in ts)
                 {
                     Log.d("dtest",item.title)
                     if(item.title!="")
-                    data.add(BlogViewModel(R.drawable.enigma, item.title))
                     if(item.data.blocks.isNotEmpty())
                     if(item.data.blocks[0].type=="paragraph")
-                    Log.d("test", item.data.blocks[0].data.text)
+                    {
+                        data.add(BlogViewModel(R.drawable.enigma, item.title,item.data.blocks[0].data.text))
+                    }
+                    //Log.d("test", item.data.blocks[0].data.text)
                 }
 
             }
 
         }
 
+        fetch.onAwait
+        val handler = Handler()
+
+            handler.post {
+                val layout = layoutInflater.inflate(R.layout.loading, findViewById(R.id.root))
+
+                val myToast = Toast(applicationContext)
+
+                //myToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
+                myToast.view = layout//setting the view of custom toast layout
+
+                myToast.show()
+        }
+
+        sleep(3000)
 
         // This will pass the ArrayList to our Adapter
         val adapter = BlogAdapter(data,recyclerview)
