@@ -22,6 +22,7 @@ import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable.builder
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.*
 import java.util.concurrent.CompletableFuture
@@ -163,21 +164,26 @@ class Whooby : AppCompatActivity(), TextToSpeech.OnInitListener {
                     val btn = findViewById<Button>(R.id.start)
 
                     textToSpeech = TextToSpeech(this, this)
-                    textToSpeech.setSpeechRate(0.74f)
+                    textToSpeech.setSpeechRate(0.67f)
                     btn.setOnClickListener {
                         textToSpeech.speak("", TextToSpeech.QUEUE_FLUSH, null)
 
                         modelNode1.getRenderableInstance().animate(true).start()
                         modelNode2.getRenderableInstance().animate(true).start()
 
-                        val obj = User()
-                        val msg_queue = obj.messagePopulate()
 
+                        GlobalScope.launch {
 
-                        while (!(msg_queue.isEmpty())) {
-                            var text: String = msg_queue.first()
-                            textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
-                            msg_queue.poll()
+                            val obj = User()
+                            val msg_queue = obj.messagePopulate()
+
+                            while (!(msg_queue.isEmpty())) {
+                                var text: String = msg_queue.first()
+                                textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null)
+                                delay(4500)
+                                msg_queue.poll()
+                            }
+
                         }
 
                     }

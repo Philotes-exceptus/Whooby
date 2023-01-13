@@ -14,6 +14,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputEditText
 import retrofit2.Call
 import retrofit2.Callback
@@ -32,6 +38,9 @@ class LoginActivity : AppCompatActivity() {
     private val baseUrl="https://whooby-backend.onrender.com"
     private lateinit var retrofitInstance : Auth_Interface
 
+    var gso: GoogleSignInOptions? = null
+    var gsc: GoogleSignInClient? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +51,19 @@ class LoginActivity : AppCompatActivity() {
         );
 
         setContentView(R.layout.login_page)
+
+        gso =
+            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build()
+        gsc = GoogleSignIn.getClient(this, gso!!)
+
+        val acct = GoogleSignIn.getLastSignedInAccount(this)
+        if (acct != null) {
+            navigateToSecondActivity()
+        }
+
+        val GoogleSignINButton=findViewById<Button>(R.id.GoogleSignIn)
+
+        GoogleSignINButton.setOnClickListener(View.OnClickListener { signIn() })
 
         val retrofit = Retrofit.Builder().baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
@@ -135,6 +157,30 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    fun signIn() {
+        val signInIntent: Intent = gsc!!.getSignInIntent()
+        startActivityForResult(signInIntent, 1000)
+    }
+
+    fun navigateToSecondActivity() {
+        finish()
+        val homeIntent=Intent(this, Home::class.java)
+        startActivity(homeIntent)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1000) {
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                task.getResult(ApiException::class.java)
+                navigateToSecondActivity()
+            } catch (e: ApiException) {
+                Toast.makeText(applicationContext, "Something went wrong "+e, Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+    }
 
     //if the user doesn't exist then the app notifies with an error entry symbol
     fun invalid() {
